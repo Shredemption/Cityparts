@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "streetparts",
-  "version": "0.1",
+  "version": "${version}",
 
   "name": "Streetparts",
   "description": "Adds all kinds of street and building parts and blocks",
