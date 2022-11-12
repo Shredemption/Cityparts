@@ -3,13 +3,16 @@
   "values": [
     "streetparts:stone_pavement",
     "streetparts:stone_pavement_stairs",
-    "streetparts:stone_pavement_slab"
-//    "streetparts:andesite_pavement",
-//    "streetparts:andesite_pavement_slab",
-//    "streetparts:diorite_pavement",
-//    "streetparts:diorite_pavement_slab",
-//    "streetparts:granite_pavement",
-//    "streetparts:granite_pavement_slab",
+    "streetparts:stone_pavement_slab",
+    "streetparts:andesite_pavement",
+    "streetparts:andesite_pavement_stairs",
+    "streetparts:andesite_pavement_slab"
+    "streetparts:diorite_pavement",
+    "streetparts:diorite_pavement_stairs",
+    "streetparts:diorite_pavement_slab",
+    "streetparts:granite_pavement",
+    "streetparts:granite_pavement_stairs",
+    "streetparts:granite_pavement_slab",
 //    "streetparts:gray_bricks",
 //    "streetparts:brown_bricks",
 //    "streetparts:sandstone_bricks",

@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "streetparts:blocks/diorite_pavement",
+        "top": "streetparts:blocks/diorite_pavement",
+        "side": "streetparts:blocks/diorite_pavement"
+    }
+}

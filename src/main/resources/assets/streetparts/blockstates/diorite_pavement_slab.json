@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "streetparts:block/blocks/diorite_pavement_slab" },
+        "type=top": { "model": "streetparts:block/blocks/diorite_pavement_slab_top" },
+        "type=double": { "model": "streetparts:block/blocks/diorite_pavement" }
+    }
+}
