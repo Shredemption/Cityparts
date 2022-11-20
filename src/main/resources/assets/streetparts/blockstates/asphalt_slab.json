@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "streetparts:block/blocks/asphalt_slab" },
+        "type=top": { "model": "streetparts:block/blocks/asphalt_slab_top" },
+        "type=double": { "model": "streetparts:block/blocks/asphalt" }
+    }
+}

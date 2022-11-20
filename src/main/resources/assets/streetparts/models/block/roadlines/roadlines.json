@@ -1,0 +1,10 @@
+{
+    "parent": "streetparts:block/test/horizontalrotatingblock",
+    "textures": {
+        "bottom": "streetparts:blocks/asphalt",
+        "side1": "streetparts:blocks/asphalt",
+        "side2": "streetparts:blocks/asphalt",
+        "side3": "streetparts:blocks/asphalt",
+        "side4": "streetparts:blocks/asphalt"
+    }
+}

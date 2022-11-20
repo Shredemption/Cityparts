@@ -11,17 +11,25 @@
 	"block.streetparts.granite_pavement": "Granite Pavement",
 	"block.streetparts.granite_pavement_stairs": "Granite Pavement Stairs",
 	"block.streetparts.granite_pavement_slab": "Granite Pavement Slab",
+
 	"block.streetparts.gray_bricks": "Gray Bricks",
+	"block.streetparts.gray_bricks_stairs": "Gray Bricks Stairs",
+	"block.streetparts.gray_bricks_slab": "Gray Bricks Slab",
 	"block.streetparts.brown_bricks": "Brown Bricks",
+	"block.streetparts.brown_bricks_stairs": "Brown Bricks Stairs",
+	"block.streetparts.brown_bricks_slab": "Brown Bricks Slab",
 	"block.streetparts.sandstone_bricks": "Sandstone Bricks",
+	"block.streetparts.sandstone_bricks_stairs": "Sandstone Bricks Stairs",
+	"block.streetparts.sandstone_bricks_slab": "Sandstone Bricks Slab",
 	"block.streetparts.asphalt": "Asphalt",
-	"block.streetparts.red_asphalt": "Red Asphalt",
 	"block.streetparts.asphalt_slab": "Asphalt Slab",
+	"block.streetparts.red_asphalt": "Red Asphalt",
+	"block.streetparts.red_asphalt_slab": "Red Asphalt Slab",
 	
 	
 	"block.streetparts.roadlines_midline": "Middle Line Block",
 	"block.streetparts.roadlines_sideline": "Side Line Block",
-	"block.streetparts.roadlines_straitarrow": "Strait Arrow Block",
+	"block.streetparts.roadlines_straightarrow": "Strait Arrow Block",
 	"block.streetparts.roadlines_innercorner": "Inner Corner Block",
 	"block.streetparts.roadlines_outercorner": "Outer Corner Block",
 	"block.streetparts.roadlines_tsplitmid": "Middle T-Split Block",
@@ -92,10 +100,11 @@
 
 
 	"item.streetparts.line_painter": "Line Painter",
+	"block.streetparts.h_rot_test": "Horizontal Rotation Testing Block",
 
 
 	"itemGroup.streetparts.main": "Street Parts",
-	"itemGroup.streetparts.road": "Road Blocks",
+	"itemGroup.streetparts.roadlines": "Road Blocks",
 	"itemGroup.streetparts.post": "Light Post Blocks",
 	"itemGroup.streetparts.sign": "Sign Blocks",
 	"itemGroup.streetparts.test": "Test Parts"

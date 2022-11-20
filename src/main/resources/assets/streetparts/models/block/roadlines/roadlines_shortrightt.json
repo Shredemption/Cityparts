@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/roadlines/roadlines",
+    "textures": {
+        "top": "streetparts:blocks/roadlines_shortrightt"
+    }
+}

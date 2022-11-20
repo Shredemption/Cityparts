@@ -9,5 +9,6 @@ import net.minecraft.util.Identifier;
 public class ModItemGroup {
 
     public static final ItemGroup MAIN = FabricItemGroupBuilder.build(new Identifier(StreetParts.MOD_ID, "main"), () -> new ItemStack(ModBlocks.STONE_PAVEMENT));
+    public static final ItemGroup ROADLINES = FabricItemGroupBuilder.build(new Identifier(StreetParts.MOD_ID, "roadlines"), () -> new ItemStack(ModBlocks.ASPHALT));
     public static final ItemGroup TEST = FabricItemGroupBuilder.build(new Identifier(StreetParts.MOD_ID, "test"), () -> new ItemStack(ModItems.LINE_PAINTER));
 }

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "streetparts:block/roadlines/roadlines_halfline" },
+        "facing=south": { "model": "streetparts:block/roadlines/roadlines_halfline", "y": 180 },
+        "facing=west":  { "model": "streetparts:block/roadlines/roadlines_halfline", "y": 270 },
+        "facing=east":  { "model": "streetparts:block/roadlines/roadlines_halfline", "y": 90 }
+    }
+}
