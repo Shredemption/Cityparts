@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/signs/sign_round_temp",
+    "textures": {
+        "sign": "streetparts:blocks/sign_rnd_arrow_fr"
+    }
+}

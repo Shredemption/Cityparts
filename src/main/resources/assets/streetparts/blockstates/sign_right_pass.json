@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "streetparts:block/signs/sign_right_pass" },
+        "facing=south": { "model": "streetparts:block/signs/sign_right_pass", "y": 180 },
+        "facing=west":  { "model": "streetparts:block/signs/sign_right_pass", "y": 270 },
+        "facing=east":  { "model": "streetparts:block/signs/sign_right_pass", "y": 90 }
+    }
+}

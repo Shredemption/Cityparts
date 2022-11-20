@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "streetparts:block/test/signtest" },
+        "facing=south": { "model": "streetparts:block/test/signtest", "y": 180 },
+        "facing=west":  { "model": "streetparts:block/test/signtest", "y": 270 },
+        "facing=east":  { "model": "streetparts:block/test/signtest", "y": 90 }
+    }
+}

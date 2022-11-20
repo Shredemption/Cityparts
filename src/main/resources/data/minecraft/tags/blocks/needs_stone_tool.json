@@ -49,6 +49,23 @@
     "streetparts:roadlines_tallrightt",
     "streetparts:roadlines_leftrightsubarrow",
     "streetparts:roadlines_sharktooth",
-    "streetparts:roadlines_pedestrian_crossing"
+    "streetparts:roadlines_pedestrian_crossing",
+    "streetparts:sign_round_stop",
+    "streetparts:sign_tria_warning",
+    "streetparts:sign_no_entry",
+    "streetparts:sign_rnd_arrow_l",
+    "streetparts:sign_rnd_arrow_f",
+    "streetparts:sign_rnd_arrow_r",
+    "streetparts:sign_rnd_arrow_fl",
+    "streetparts:sign_rnd_arrow_fr",
+    "streetparts:sign_rnd_arrow_rl",
+    "streetparts:sign_sqr_arrow_l",
+    "streetparts:sign_sqr_arrow_f",
+    "streetparts:sign_sqr_arrow_r",
+    "streetparts:sign_sqr_arrow_fl",
+    "streetparts:sign_sqr_arrow_fr",
+    "streetparts:sign_sqr_arrow_rl",
+    "streetparts:sign_roundabout",
+    "streetparts:sign_right_pass"
   ]
 }

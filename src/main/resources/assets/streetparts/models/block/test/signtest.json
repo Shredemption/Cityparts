@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/test/sign_pole_temp",
+    "textures": {
+        "sign": "streetparts:blocks/sign_square_test"
+    }
+}

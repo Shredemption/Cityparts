@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "streetparts:block/signs/sign_sqr_arrow_f" },
+        "facing=south": { "model": "streetparts:block/signs/sign_sqr_arrow_f", "y": 180 },
+        "facing=west":  { "model": "streetparts:block/signs/sign_sqr_arrow_f", "y": 270 },
+        "facing=east":  { "model": "streetparts:block/signs/sign_sqr_arrow_f", "y": 90 }
+    }
+}

@@ -10,5 +10,6 @@ public class ModItemGroup {
 
     public static final ItemGroup MAIN = FabricItemGroupBuilder.build(new Identifier(StreetParts.MOD_ID, "main"), () -> new ItemStack(ModBlocks.STONE_PAVEMENT));
     public static final ItemGroup ROADLINES = FabricItemGroupBuilder.build(new Identifier(StreetParts.MOD_ID, "roadlines"), () -> new ItemStack(ModBlocks.ASPHALT));
+    public static final ItemGroup SIGNS = FabricItemGroupBuilder.build(new Identifier(StreetParts.MOD_ID, "signs"), () -> new ItemStack(ModBlocks.SIGN_ROUND_STOP));
     public static final ItemGroup TEST = FabricItemGroupBuilder.build(new Identifier(StreetParts.MOD_ID, "test"), () -> new ItemStack(ModItems.LINE_PAINTER));
 }

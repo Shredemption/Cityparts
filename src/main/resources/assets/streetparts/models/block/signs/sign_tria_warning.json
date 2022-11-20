@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/signs/sign_tria_temp",
+    "textures": {
+        "sign": "streetparts:blocks/sign_tria_warning"
+    }
+}

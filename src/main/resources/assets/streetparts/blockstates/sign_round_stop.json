@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "streetparts:block/signs/sign_round_stop" },
+        "facing=south": { "model": "streetparts:block/signs/sign_round_stop", "y": 180 },
+        "facing=west":  { "model": "streetparts:block/signs/sign_round_stop", "y": 270 },
+        "facing=east":  { "model": "streetparts:block/signs/sign_round_stop", "y": 90 }
+    }
+}
