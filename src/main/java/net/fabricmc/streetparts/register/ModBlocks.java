@@ -3,10 +3,7 @@ package net.fabricmc.streetparts.register;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.streetparts.StreetParts;
-import net.fabricmc.streetparts.custom.HRotBlock;
-import net.fabricmc.streetparts.custom.ModStairsBlock;
-import net.fabricmc.streetparts.custom.RoadBlock;
-import net.fabricmc.streetparts.custom.SignBlock;
+import net.fabricmc.streetparts.custom.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.SlabBlock;
@@ -165,6 +162,18 @@ public class ModBlocks {
     public static final SignBlock SIGN_right_pass = registerSignBlock("sign_right_pass",
             new SignBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.SIGNS);
 
+    public static final PostBlock BLACK_LIGHT_POST = registerPostBlock("black_light_post",
+            new PostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+
+    public static final PostBlock GRAY_LIGHT_POST = registerPostBlock("gray_light_post",
+            new PostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+
+    public static final PostBlock GREEN_LIGHT_POST = registerPostBlock("green_light_post",
+            new PostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+
+    public static final PostBlock WHITE_LIGHT_POST = registerPostBlock("white_light_post",
+            new PostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+
 
     public static final HRotBlock H_ROT_TEST = registerHRotBlock("h_rot_test",
             new HRotBlock(FabricBlockSettings.of(Material.STONE).strength(-1f).requiresTool()), ModItemGroup.TEST);
@@ -193,6 +202,10 @@ public class ModBlocks {
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
     private static SignBlock registerSignBlock(String name, SignBlock block, ItemGroup group) {
+        registerBlockItem(name, block, group);
+        return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+    }
+    private static PostBlock registerPostBlock(String name, PostBlock block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }

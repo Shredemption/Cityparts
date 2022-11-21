@@ -66,6 +66,10 @@
     "streetparts:sign_sqr_arrow_fr",
     "streetparts:sign_sqr_arrow_rl",
     "streetparts:sign_roundabout",
-    "streetparts:sign_right_pass"
+    "streetparts:sign_right_pass",
+    "streetparts:gray_light_post",
+    "streetparts:green_light_post",
+    "streetparts:black_light_post",
+    "streetparts:white_light_post"
   ]
 }

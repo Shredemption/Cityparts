@@ -106,7 +106,7 @@
 
 	"itemGroup.streetparts.main": "Street Parts",
 	"itemGroup.streetparts.roadlines": "Road Blocks",
-	"itemGroup.streetparts.posts": "Light Post Blocks",
+	"itemGroup.streetparts.lights": "Light Post Blocks",
 	"itemGroup.streetparts.signs": "Sign Blocks",
 	"itemGroup.streetparts.test": "Test Parts"
 }
