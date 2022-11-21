@@ -1,5 +1,6 @@
 package net.fabricmc.streetparts.register;
 
+import com.google.common.util.concurrent.Striped;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.streetparts.StreetParts;
@@ -216,6 +217,8 @@ public class ModBlocks {
 
     public static final TrafficLight TRAFFIC_LIGHT = registerTrafficLight("traffic_light",
             new TrafficLight(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
+    public static final StripedPostBlock STRIPED_POST = registerStripedPostBlock("striped_post",
+            new StripedPostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
@@ -262,6 +265,10 @@ public class ModBlocks {
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
     private static LightBlock registerLightBlock(String name, LightBlock block, ItemGroup group) {
+        registerBlockItem(name, block, group);
+        return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+    }
+    private static StripedPostBlock registerStripedPostBlock(String name, StripedPostBlock block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }

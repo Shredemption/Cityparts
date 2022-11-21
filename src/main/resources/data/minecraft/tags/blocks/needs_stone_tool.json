@@ -91,6 +91,7 @@
     "streetparts:green_light_l_corner",
     "streetparts:green_light_t",
     "streetparts:green_light_light",
-    "streetparts:traffic_light"
+    "streetparts:traffic_light",
+    "streetparts:striped_post"
   ]
 }
