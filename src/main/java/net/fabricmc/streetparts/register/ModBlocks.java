@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
 
 public class ModBlocks {
 
@@ -219,6 +220,8 @@ public class ModBlocks {
             new TrafficLight(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
     public static final StripedPostBlock STRIPED_POST = registerStripedPostBlock("striped_post",
             new StripedPostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+    public static final DirectionSignBlock DIRECTION_SIGN = registerDirectionSignBlock("direction_sign",
+            new DirectionSignBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.SIGNS);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
@@ -269,6 +272,10 @@ public class ModBlocks {
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
     private static StripedPostBlock registerStripedPostBlock(String name, StripedPostBlock block, ItemGroup group) {
+        registerBlockItem(name, block, group);
+        return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+    }
+    private static DirectionSignBlock registerDirectionSignBlock(String name, DirectionSignBlock block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
