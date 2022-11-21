@@ -72,20 +72,24 @@
     "streetparts:black_light_corner",
     "streetparts:black_light_l_corner",
     "streetparts:black_light_t",
+    "streetparts:black_light_light",
     "streetparts:gray_light_post",
     "streetparts:gray_light_arm",
     "streetparts:gray_light_corner",
     "streetparts:gray_light_l_corner",
     "streetparts:gray_light_t",
+    "streetparts:gray_light_light",
     "streetparts:white_light_post",
     "streetparts:white_light_arm",
     "streetparts:white_light_corner",
     "streetparts:white_light_l_corner",
     "streetparts:white_light_t",
+    "streetparts:white_light_light",
     "streetparts:green_light_post",
     "streetparts:green_light_arm",
     "streetparts:green_light_corner",
     "streetparts:green_light_l_corner",
-    "streetparts:green_light_t"
+    "streetparts:green_light_t",
+    "streetparts:green_light_light"
   ]
 }

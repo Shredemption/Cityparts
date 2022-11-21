@@ -100,9 +100,6 @@
 
 
 	"item.streetparts.line_painter": "Line Painter",
-	"block.streetparts.h_rot_test": "Horizontal Rotation Testing Block",
-	"block.streetparts.signtest2": "Sign Experimental Block",
-
 
 	"itemGroup.streetparts.main": "Street Parts",
 	"itemGroup.streetparts.roadlines": "Road Blocks",

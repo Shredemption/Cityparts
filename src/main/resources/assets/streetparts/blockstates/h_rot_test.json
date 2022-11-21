@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "streetparts:block/test/h_rot_test" },
-        "facing=south": { "model": "streetparts:block/test/h_rot_test", "y": 180 },
-        "facing=west":  { "model": "streetparts:block/test/h_rot_test", "y": 270 },
-        "facing=east":  { "model": "streetparts:block/test/h_rot_test", "y": 90 }
-    }
-}

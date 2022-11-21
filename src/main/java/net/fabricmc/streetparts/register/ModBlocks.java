@@ -172,6 +172,8 @@ public class ModBlocks {
             new LCornerBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
     public static final TBlock BLACK_LIGHT_T = registerTBlock("black_light_t",
             new TBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+    public static final LightBlock BLACK_LIGHT_LIGHT = registerLightBlock("black_light_light",
+            new LightBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
 
     public static final PostBlock GRAY_LIGHT_POST = registerPostBlock("gray_light_post",
             new PostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
@@ -183,6 +185,8 @@ public class ModBlocks {
             new LCornerBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
     public static final TBlock GRAY_LIGHT_T = registerTBlock("gray_light_t",
             new TBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+    public static final LightBlock GRAY_LIGHT_LIGHT = registerLightBlock("gray_light_light",
+            new LightBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
 
     public static final PostBlock WHITE_LIGHT_POST = registerPostBlock("white_light_post",
             new PostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
@@ -194,6 +198,8 @@ public class ModBlocks {
             new LCornerBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
     public static final TBlock WHITE_LIGHT_T = registerTBlock("white_light_t",
             new TBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
+    public static final LightBlock WHITE_LIGHT_LIGHT = registerLightBlock("white_light_light",
+            new LightBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
 
     public static final PostBlock GREEN_LIGHT_POST = registerPostBlock("green_light_post",
             new PostBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
@@ -205,12 +211,8 @@ public class ModBlocks {
             new LCornerBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
     public static final TBlock GREEN_LIGHT_T = registerTBlock("green_light_t",
             new TBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.LIGHTS);
-
-
-    public static final HRotBlock H_ROT_TEST = registerHRotBlock("h_rot_test",
-            new HRotBlock(FabricBlockSettings.of(Material.STONE).strength(-1f).requiresTool()), ModItemGroup.TEST);
-    public static final SignBlock SIGNTEST2 = registerSignBlock("signtest2",
-            new SignBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.TEST);
+    public static final LightBlock GREEN_LIGHT_LIGHT = registerLightBlock("green_light_light",
+            new LightBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
 
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
@@ -257,6 +259,11 @@ public class ModBlocks {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
+    private static LightBlock registerLightBlock(String name, LightBlock block, ItemGroup group) {
+        registerBlockItem(name, block, group);
+        return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+    }
+
     private static Item registerBlockItem(String name, Block block, ItemGroup group) {
         return Registry.register(Registry.ITEM, new Identifier(StreetParts.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(group)));
