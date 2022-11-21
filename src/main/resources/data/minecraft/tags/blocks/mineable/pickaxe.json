@@ -33,7 +33,7 @@
     "streetparts:roadlines_outercorner",
     "streetparts:roadlines_tsplitmid",
     "streetparts:roadlines_jcorner",
-    "streetparts:roadlines_lcorner",
+    "streetparts:roadlines_l_corner",
     "streetparts:roadlines_tsplitshort",
     "streetparts:roadlines_leftarrow",
     "streetparts:roadlines_rightarrow",
@@ -67,9 +67,25 @@
     "streetparts:sign_sqr_arrow_rl",
     "streetparts:sign_roundabout",
     "streetparts:sign_right_pass",
-    "streetparts:gray_light_post",
-    "streetparts:green_light_post",
     "streetparts:black_light_post",
-    "streetparts:white_light_post"
+    "streetparts:black_light_arm",
+    "streetparts:black_light_corner",
+    "streetparts:black_light_l_corner",
+    "streetparts:black_light_t",
+    "streetparts:gray_light_post",
+    "streetparts:gray_light_arm",
+    "streetparts:gray_light_corner",
+    "streetparts:gray_light_l_corner",
+    "streetparts:gray_light_t",
+    "streetparts:white_light_post",
+    "streetparts:white_light_arm",
+    "streetparts:white_light_corner",
+    "streetparts:white_light_l_corner",
+    "streetparts:white_light_t",
+    "streetparts:green_light_post",
+    "streetparts:green_light_arm",
+    "streetparts:green_light_corner",
+    "streetparts:green_light_l_corner",
+    "streetparts:green_light_t"
   ]
-  }
+}

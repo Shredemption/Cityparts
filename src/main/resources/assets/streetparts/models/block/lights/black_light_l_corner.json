@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/lights/l_corner_post",
+    "textures": {
+        "0": "streetparts:blocks/black_post"
+    }
+}

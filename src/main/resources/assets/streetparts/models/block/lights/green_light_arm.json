@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/lights/arm_block",
+    "textures": {
+        "0": "streetparts:blocks/green_post"
+    }
+}

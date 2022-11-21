@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "streetparts:block/lights/black_light_l_corner" },
+        "facing=south": { "model": "streetparts:block/lights/black_light_l_corner", "y": 180 },
+        "facing=west":  { "model": "streetparts:block/lights/black_light_l_corner", "y": 270 },
+        "facing=east":  { "model": "streetparts:block/lights/black_light_l_corner", "y": 90 }
+    }
+}
