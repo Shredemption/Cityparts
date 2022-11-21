@@ -33,7 +33,7 @@
     "streetparts:roadlines_outercorner",
     "streetparts:roadlines_tsplitmid",
     "streetparts:roadlines_jcorner",
-    "streetparts:roadlines_l_corner",
+    "streetparts:roadlines_lcorner",
     "streetparts:roadlines_tsplitshort",
     "streetparts:roadlines_leftarrow",
     "streetparts:roadlines_rightarrow",
@@ -90,6 +90,7 @@
     "streetparts:green_light_corner",
     "streetparts:green_light_l_corner",
     "streetparts:green_light_t",
-    "streetparts:green_light_light"
+    "streetparts:green_light_light",
+    "streetparts:traffic_light"
   ]
 }

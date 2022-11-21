@@ -1,8 +1,5 @@
 {
-	"variants": {
-		"facing=north": { "model": "streetparts:block/blocks/asphalt" },
-		"facing=south": { "model": "streetparts:block/blocks/asphalt", "y": 180 },
-		"facing=west":  { "model": "streetparts:block/blocks/asphalt", "y": 270 },
-		"facing=east":  { "model": "streetparts:block/blocks/asphalt", "y": 90 }
+	"variants":{
+		"": {"model": "streetparts:block/blocks/asphalt"}
 	}
 }

@@ -69,12 +69,12 @@ public class ModBlocks {
     public static final SlabBlock SANDSTONE_BRICKS_SLAB = registerSlabBlock("sandstone_bricks_slab",
             new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.MAIN);
 
-    public static final HRotBlock ASPHALT = registerHRotBlock("asphalt",
-            new HRotBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.MAIN);
+    public static final Block ASPHALT = registerBlock("asphalt",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.MAIN);
     public static final SlabBlock ASPHALT_SLAB = registerSlabBlock("asphalt_slab",
             new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.MAIN);
-    public static final HRotBlock RED_ASPHALT = registerHRotBlock("red_asphalt",
-            new HRotBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.MAIN);
+    public static final Block RED_ASPHALT = registerBlock("red_asphalt",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.MAIN);
     public static final SlabBlock RED_ASPHALT_SLAB = registerSlabBlock("red_asphalt_slab",
             new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()), ModItemGroup.MAIN);
 
@@ -214,20 +214,18 @@ public class ModBlocks {
     public static final LightBlock GREEN_LIGHT_LIGHT = registerLightBlock("green_light_light",
             new LightBlock(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
 
+    public static final TrafficLight TRAFFIC_LIGHT = registerTrafficLight("traffic_light",
+            new TrafficLight(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool().luminance(15)), ModItemGroup.LIGHTS);
+
     private static Block registerBlock(String name, Block block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
-
     private static ModStairsBlock registerStairsBlock(String name, ModStairsBlock block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
     private static SlabBlock registerSlabBlock(String name, SlabBlock block, ItemGroup group) {
-        registerBlockItem(name, block, group);
-        return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
-    }
-    private static HRotBlock registerHRotBlock(String name, HRotBlock block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
@@ -256,6 +254,10 @@ public class ModBlocks {
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }
     private static TBlock registerTBlock(String name, TBlock block, ItemGroup group) {
+        registerBlockItem(name, block, group);
+        return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+    }
+    private static TrafficLight registerTrafficLight(String name, TrafficLight block, ItemGroup group) {
         registerBlockItem(name, block, group);
         return Registry.register(Registry.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
     }

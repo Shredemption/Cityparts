@@ -98,6 +98,8 @@
 	"block.streetparts.green_light_l_corner": "Green Post L Corner",
 	"block.streetparts.white_light_l_corner": "White Post L Corner",
 
+	"block.streetparts.traffic_light": "Traffic Light",
+
 
 	"item.streetparts.line_painter": "Line Painter",
 
