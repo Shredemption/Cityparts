@@ -70,7 +70,6 @@
 	"block.streetparts.sign_sqr_arrow_rl": "Left + Right Arrow Sign",
 	"block.streetparts.sign_roundabout": "Roundabout Sign",
 	"block.streetparts.sign_right_pass": "Right Pass Arrow Sign",
-	"block.streetparts.direction_sign": "Direction Sign",
 
 
 	"block.streetparts.gray_light_post": "Gray Post",
@@ -98,10 +97,12 @@
 	"block.streetparts.green_light_l_corner": "Green Post L Corner",
 	"block.streetparts.white_light_l_corner": "White Post L Corner",
 
-	"block.streetparts.traffic_light": "Traffic Light",
-	"block.streetparts.striped_post": "Striped Post",
 
 	"block.streetparts.traffic_cone": "Traffic Cone",
+	"block.streetparts.guard_rail": "Guard Rail",
+	"block.streetparts.traffic_light": "Traffic Light",
+	"block.streetparts.striped_post": "Striped Post",
+	"block.streetparts.direction_sign": "Direction Sign",
 
 	"item.streetparts.line_painter": "Line Painter",
 

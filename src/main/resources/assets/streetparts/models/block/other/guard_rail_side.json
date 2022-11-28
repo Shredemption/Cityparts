@@ -1,0 +1,47 @@
+{
+	"textures": {
+		"particle": "streetparts:blocks/guard_rail",
+		"texture": "streetparts:blocks/guard_rail"
+	},
+	"elements": [
+		{
+			"name": "top bar",
+			"from": [5, 12, 0],
+			"to": [11, 15, 8],
+			"faces": {
+				"north": {"uv": [7, 1, 13, 4], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [0, 1, 8, 4], "texture": "#texture"},
+				"south": {"uv": [7, 11, 13, 14], "texture": "#texture"},
+				"west": {"uv": [0, 1, 8, 4], "texture": "#texture"},
+				"up": {"uv": [7, 0, 13, 8], "texture": "#texture"},
+				"down": {"uv": [7, 0, 13, 8], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "middle bar",
+			"from": [6.25, 9, 0],
+			"to": [9.75, 12, 8],
+			"faces": {
+				"north": {"uv": [7, 1, 9, 4], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [0, 1, 9, 4], "texture": "#texture"},
+				"south": {"uv": [7, 11, 10.5, 14], "texture": "#texture"},
+				"west": {"uv": [0, 1, 9, 4], "texture": "#texture"},
+				"up": {"uv": [7, 0, 9, 9], "texture": "#texture"},
+				"down": {"uv": [7, 0, 9, 9], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "lower bar",
+			"from": [5, 6, 0],
+			"to": [11, 9, 8],
+			"faces": {
+				"north": {"uv": [7, 7, 13, 10], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [0, 7, 8, 10], "texture": "#texture"},
+				"south": {"uv": [7, 11, 13, 14], "texture": "#texture"},
+				"west": {"uv": [0, 7, 8, 10], "texture": "#texture"},
+				"up": {"uv": [7, 0, 13, 8], "texture": "#texture"},
+				"down": {"uv": [7, 0, 13, 8], "texture": "#texture"}
+			}
+		}
+	]
+}
