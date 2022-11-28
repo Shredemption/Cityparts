@@ -1,15 +1,12 @@
 package net.fabricmc.streetparts;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.streetparts.register.ModBlocks;
-import net.fabricmc.streetparts.register.ModItems;
+import net.fabricmc.streetparts.register.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class StreetParts implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final String MOD_ID = "streetparts";
 	public static final Logger LOGGER = LoggerFactory.getLogger("streetparts");
 
@@ -21,6 +18,11 @@ public class StreetParts implements ModInitializer {
 
 		LOGGER.info("StreetParts Initializing");
 		ModItems.registerModItems();
+		ModBuildingBlocks.registerModBuildingBlocks();
+		ModRoadBlocks.registerModRoadBlocks();
+		ModLightBlocks.registerModLightBlocks();
+		ModSignBlocks.registerModSignBlocks();
 		ModBlocks.registerModBlocks();
+
 	}
 }

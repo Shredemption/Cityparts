@@ -101,12 +101,14 @@
 	"block.streetparts.traffic_light": "Traffic Light",
 	"block.streetparts.striped_post": "Striped Post",
 
+	"block.streetparts.traffic_cone": "Traffic Cone",
 
 	"item.streetparts.line_painter": "Line Painter",
 
-	"itemGroup.streetparts.main": "Street Parts",
+	"itemGroup.streetparts.main": "Building Blocks",
 	"itemGroup.streetparts.roadlines": "Road Blocks",
 	"itemGroup.streetparts.lights": "Light Post Blocks",
 	"itemGroup.streetparts.signs": "Sign Blocks",
+	"itemGroup.streetparts.other": "Street Parts",
 	"itemGroup.streetparts.test": "Test Parts"
 }
