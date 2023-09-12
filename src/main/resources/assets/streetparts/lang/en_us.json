@@ -106,10 +106,10 @@
 
 	"item.streetparts.line_painter": "Line Painter",
 
-	"itemGroup.streetparts.main": "Building Blocks",
-	"itemGroup.streetparts.roadlines": "Road Blocks",
-	"itemGroup.streetparts.lights": "Light Post Blocks",
-	"itemGroup.streetparts.signs": "Sign Blocks",
-	"itemGroup.streetparts.other": "Street Parts",
-	"itemGroup.streetparts.test": "Test Parts"
+	"itemgroup.main": "Building Blocks",
+	"itemgroup.roadlines": "Road Blocks",
+	"itemgroup.lights": "Light Post Blocks",
+	"itemgroup.signs": "Sign Blocks",
+	"itemgroup.other": "Street Parts",
+	"itemgroup.test": "Test Parts"
 }

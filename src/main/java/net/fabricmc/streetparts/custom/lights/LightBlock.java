@@ -1,4 +1,4 @@
-package net.fabricmc.streetparts.custom;
+package net.fabricmc.streetparts.custom.lights;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -7,6 +7,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -26,8 +27,8 @@ public class LightBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return (BlockState)this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
+    public BlockState rotate(BlockState state, BlockRotation rotation) {
+        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
     }
 
     @Override

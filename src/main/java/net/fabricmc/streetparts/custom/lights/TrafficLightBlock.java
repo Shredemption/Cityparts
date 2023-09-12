@@ -1,4 +1,4 @@
-package net.fabricmc.streetparts.custom;
+package net.fabricmc.streetparts.custom.lights;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -15,22 +15,19 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class SignBlock extends HorizontalFacingBlock {
-    public SignBlock(Settings settings) {
+public class TrafficLightBlock extends HorizontalFacingBlock {
+    public TrafficLightBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }
-
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         stateManager.add(Properties.HORIZONTAL_FACING);
     }
-
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
     }
-
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         switch (state.get(FACING)){
@@ -46,10 +43,8 @@ public class SignBlock extends HorizontalFacingBlock {
         return null;
     }
 
-    private static final VoxelShape SHAPE_N = VoxelShapes.combineAndSimplify(Block.createCuboidShape(7, 9, 16, 9, 11, 22), Block.createCuboidShape(2, 4, 15, 14, 16, 16), BooleanBiFunction.OR);
-    private static final VoxelShape SHAPE_E = VoxelShapes.combineAndSimplify(Block.createCuboidShape(-6, 9, 7, 0, 11, 9), Block.createCuboidShape(0, 4, 2, 1, 16, 14), BooleanBiFunction.OR);
-    private static final VoxelShape SHAPE_W = VoxelShapes.combineAndSimplify(Block.createCuboidShape(16, 9, 7, 22, 11, 9), Block.createCuboidShape(15, 4, 2, 16, 16, 14), BooleanBiFunction.OR);
-    private static final VoxelShape SHAPE_S = VoxelShapes.combineAndSimplify(Block.createCuboidShape(7, 9, -6, 9, 11, 0), Block.createCuboidShape(2, 4, 0, 14, 16, 1), BooleanBiFunction.OR);
-
+    private static final VoxelShape SHAPE_N = VoxelShapes.combineAndSimplify(Block.createCuboidShape(7, 9, 17, 9, 11, 22), Block.createCuboidShape(3, 0, 14, 13, 16, 17), BooleanBiFunction.OR)     ;
+    private static final VoxelShape SHAPE_E = VoxelShapes.combineAndSimplify(Block.createCuboidShape(-6, 9, 7, -1, 11, 9), Block.createCuboidShape(-1, 0, 3, 2, 16, 13), BooleanBiFunction.OR);
+    private static final VoxelShape SHAPE_W = VoxelShapes.combineAndSimplify(Block.createCuboidShape(17, 9, 7, 22, 11, 9), Block.createCuboidShape(14, 0, 3, 17, 16, 13), BooleanBiFunction.OR);
+    private static final VoxelShape SHAPE_S = VoxelShapes.combineAndSimplify(Block.createCuboidShape(7, 9, -6, 9, 11, -1), Block.createCuboidShape(3, 0, -1, 13, 16, 2), BooleanBiFunction.OR);
 }
-

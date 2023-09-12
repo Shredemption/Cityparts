@@ -1,4 +1,4 @@
-package net.fabricmc.streetparts.custom;
+package net.fabricmc.streetparts.custom.lights;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
