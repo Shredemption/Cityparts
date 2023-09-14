@@ -11,7 +11,7 @@ public class ModItems {
 
     public static final Item LINE_PAINTER = registerItem("line_painter", new Item(new Item.Settings()));
 
-    public static final Item LightGenItem = registerLightGenItem("light_generator", new LightGenItem(new Item.Settings().maxCount(1)));
+    public static final Item LIGHT_GEN_ITEM = registerLightGenItem("light_generator", new LightGenItem(new Item.Settings().maxCount(1)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(StreetParts.MOD_ID, name), item);

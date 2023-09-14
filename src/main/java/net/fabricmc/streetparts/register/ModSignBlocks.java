@@ -46,7 +46,7 @@ public class ModSignBlocks {
             new SignBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(4f).requiresTool()));
     public static final SignBlock SIGN_ROUNDABOUT = registerSignBlock("sign_roundabout",
             new SignBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(4f).requiresTool()));
-    public static final SignBlock SIGN_right_pass = registerSignBlock("sign_right_pass",
+    public static final SignBlock SIGN_RIGHT_PASS = registerSignBlock("sign_right_pass",
             new SignBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(4f).requiresTool()));
 
     private static SignBlock registerSignBlock(String name, SignBlock block) {
