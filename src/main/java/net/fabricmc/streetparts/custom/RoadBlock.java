@@ -20,7 +20,7 @@ public class RoadBlock extends HorizontalFacingBlock {
         stateManager.add(Properties.HORIZONTAL_FACING);
     }
     @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return super.getPlacementState(ctx).with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 }
