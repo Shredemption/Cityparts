@@ -25,21 +25,17 @@ public class TBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return super.getPlacementState(ctx).with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        switch (state.get(FACING)) {
-            case NORTH:
-            case SOUTH:
-                return SHAPE_NS;
-            case EAST:
-            case WEST:
-                return SHAPE_EW;
-        }
-        return null;
+        return switch (state.get(FACING)) {
+            case NORTH, SOUTH -> SHAPE_NS;
+            case EAST, WEST -> SHAPE_EW;
+            default -> null;
+        };
     }
 
     private static final VoxelShape SHAPE_NS = Block.createCuboidShape(6, 0, 0, 10, 12, 16);

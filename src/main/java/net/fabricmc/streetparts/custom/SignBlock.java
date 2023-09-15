@@ -22,28 +22,24 @@ public class SignBlock extends HorizontalFacingBlock {
     }
 
     @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return super.getPlacementState(ctx).with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    }
+
+    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         stateManager.add(Properties.HORIZONTAL_FACING);
     }
 
     @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
-    }
-
-    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        switch (state.get(FACING)){
-            case NORTH:
-                return SHAPE_N;
-            case EAST:
-                return SHAPE_E;
-            case WEST:
-                return SHAPE_W;
-            case SOUTH:
-                return SHAPE_S;
-        }
-        return null;
+        return switch (state.get(FACING)) {
+            case NORTH -> SHAPE_N;
+            case EAST -> SHAPE_E;
+            case WEST -> SHAPE_W;
+            case SOUTH -> SHAPE_S;
+            default -> null;
+        };
     }
 
     private static final VoxelShape SHAPE_N = VoxelShapes.combineAndSimplify(Block.createCuboidShape(7, 9, 16, 9, 11, 22), Block.createCuboidShape(2, 4, 15, 14, 16, 16), BooleanBiFunction.OR);
