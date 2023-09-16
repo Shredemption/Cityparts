@@ -17,7 +17,6 @@ public class StreetParts implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("StreetParts Initializing");
-		ModItems.registerModItems();
 		ModItemGroup.registerItemGroups();
 		ModBuildingBlocks.registerModBuildingBlocks();
 		ModRoadBlocks.registerModRoadBlocks();
