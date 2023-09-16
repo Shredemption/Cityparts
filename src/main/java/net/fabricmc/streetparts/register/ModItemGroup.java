@@ -161,4 +161,7 @@ public class ModItemGroup {
                         entries.add(ModBlocks.DIRECTION_SIGN);
 
                     }).build());
+    public static void registerModItemGroups() {
+        StreetParts.LOGGER.info("Registering Item Groups for " + StreetParts.MOD_ID);
+    }
 }
