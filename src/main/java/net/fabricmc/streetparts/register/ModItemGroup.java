@@ -161,17 +161,4 @@ public class ModItemGroup {
                         entries.add(ModBlocks.DIRECTION_SIGN);
 
                     }).build());
-
-    public static ItemGroup TEST = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(StreetParts.MOD_ID, "test"),
-            FabricItemGroup.builder()
-                    .displayName(Text.translatable("itemgroup.streetparts.test"))
-                    .icon(() -> new ItemStack(ModItems.LINE_PAINTER))
-                    .entries((displayContext, entries) -> {
-                        entries.add(ModItems.LINE_PAINTER);
-                        entries.add(ModItems.LIGHT_GEN_ITEM);
-                    }).build());
-    public static void registerItemGroups() {
-        StreetParts.LOGGER.info("Registering Item Groups for " + StreetParts.MOD_ID);
-    }
 }
