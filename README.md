@@ -1,9 +1,29 @@
-# Fabric Example Mod
+# Streetparts
+Made by Shredemption
 
-## Setup
+## Download
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+[Latest Version](https://github.com/Shredemption/Streetparts/releases/latest)
 
-## License
+## Features
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+- Road Blocks (Including Markings)
+
+![](pics/RoadBlocks.png)
+
+- Building Blocks
+
+![](pics/BuildingBlocks.png)
+
+- Light Posts and Parts
+
+![](pics/LightBlocks.png)
+
+- Traffic Signs
+
+![](pics/Signs.png)
+
+- Other Random Parts
+
+![](pics/Random.png)
+
