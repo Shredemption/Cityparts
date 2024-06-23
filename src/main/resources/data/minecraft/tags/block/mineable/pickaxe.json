@@ -1,5 +1,5 @@
 {
-  "replace": "false",
+  "replace": false,
   "values": [
     "streetparts:stone_pavement",
     "streetparts:stone_pavement_stairs",
@@ -12,6 +12,7 @@
     "streetparts:diorite_pavement_slab",
     "streetparts:granite_pavement",
     "streetparts:granite_pavement_stairs",
+    "streetparts:granite_pavement_slab",
     "streetparts:granite_pavement_slab",
     "streetparts:gray_bricks",
     "streetparts:gray_bricks_stairs",
