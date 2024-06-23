@@ -1,9 +1,12 @@
 package net.fabricmc.streetparts.register;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.streetparts.StreetParts;
-import net.fabricmc.streetparts.custom.*;
+import net.fabricmc.streetparts.custom.DirectionSignBlock;
+import net.fabricmc.streetparts.custom.GuardRailBlock;
+import net.fabricmc.streetparts.custom.StripedPostBlock;
+import net.fabricmc.streetparts.custom.TrafficConeBlock;
 import net.fabricmc.streetparts.custom.lights.TrafficLightBlock;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -15,15 +18,15 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final TrafficConeBlock TRAFFIC_CONE = registerTrafficConeBlock("traffic_cone",
-            new TrafficConeBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(0f)));
+            new TrafficConeBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(0f)));
     public static final GuardRailBlock GUARD_RAIL = registerGuardRailBlock("guard_rail",
-            new GuardRailBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).strength(3f).requiresTool()));
+            new GuardRailBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).strength(3f).requiresTool()));
     public static final TrafficLightBlock TRAFFIC_LIGHT = registerTrafficLight("traffic_light",
-            new TrafficLightBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).strength(5f).requiresTool().luminance(15)));
+            new TrafficLightBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).strength(5f).requiresTool().luminance(value -> 15)));
     public static final StripedPostBlock STRIPED_POST = registerStripedPostBlock("striped_post",
-            new StripedPostBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).strength(5f).requiresTool()));
+            new StripedPostBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).strength(5f).requiresTool()));
     public static final DirectionSignBlock DIRECTION_SIGN = registerDirectionSignBlock("direction_sign",
-            new DirectionSignBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).strength(5f).requiresTool()));
+            new DirectionSignBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).strength(5f).requiresTool()));
 
     private static TrafficConeBlock registerTrafficConeBlock(String name, TrafficConeBlock block) {
         registerBlockItem(name, block);
@@ -46,8 +49,8 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, Identifier.of(StreetParts.MOD_ID, name),
+    private static void registerBlockItem(String name, Block block) {
+        Registry.register(Registries.ITEM, Identifier.of(StreetParts.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
     }
     public static void registerModBlocks() {
