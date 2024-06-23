@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "streetparts:blocks/striped_post",
 		"2": "streetparts:blocks/white_post",
-		"particle": "texture"
+		"particle": "streetparts:blocks/striped_post"
 	},
 	"elements": [
 		{
