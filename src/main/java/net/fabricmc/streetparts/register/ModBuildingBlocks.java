@@ -1,6 +1,5 @@
 package net.fabricmc.streetparts.register;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.streetparts.StreetParts;
 import net.fabricmc.streetparts.custom.ModStairsBlock;
@@ -79,20 +78,20 @@ public class ModBuildingBlocks {
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static ModStairsBlock registerStairsBlock(String name, ModStairsBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static SlabBlock registerSlabBlock(String name, SlabBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(StreetParts.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+        return Registry.register(Registries.ITEM, Identifier.of(StreetParts.MOD_ID, name),
+                new BlockItem(block, new Item.Settings()));
     }
     public static void registerModBuildingBlocks() {
         StreetParts.LOGGER.debug("Registering Building Blocks for " + StreetParts.MOD_ID);

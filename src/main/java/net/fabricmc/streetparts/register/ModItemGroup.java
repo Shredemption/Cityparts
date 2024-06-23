@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroup {
     public static final ItemGroup MAIN = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(StreetParts.MOD_ID, "main"),
+            Identifier.of(StreetParts.MOD_ID, "main"),
             FabricItemGroup.builder()
                     .icon(() -> new ItemStack(ModBuildingBlocks.ANDESITE_PAVEMENT))
                     .displayName(Text.translatable("itemgroup.streetparts.main"))
@@ -45,7 +45,7 @@ public class ModItemGroup {
                     }).build());
 
     public static ItemGroup SIGNS = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(StreetParts.MOD_ID, "signs"),
+            Identifier.of(StreetParts.MOD_ID, "signs"),
             FabricItemGroup.builder()
                     .icon(() -> new ItemStack(ModSignBlocks.SIGN_ROUND_STOP))
                     .displayName(Text.translatable("itemgroup.streetparts.signs"))
@@ -76,7 +76,7 @@ public class ModItemGroup {
                     }).build());
 
     public static ItemGroup ROADLINES = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(StreetParts.MOD_ID, "roadlines"),
+            Identifier.of(StreetParts.MOD_ID, "roadlines"),
             FabricItemGroup.builder()
                     .displayName(Text.translatable("itemgroup.streetparts.roadlines"))
                     .icon(() -> new ItemStack(ModBuildingBlocks.ASPHALT))
@@ -111,7 +111,7 @@ public class ModItemGroup {
                     }).build());
 
     public static ItemGroup LIGHTS = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(StreetParts.MOD_ID, "lights"),
+            Identifier.of(StreetParts.MOD_ID, "lights"),
             FabricItemGroup.builder()
                     .displayName(Text.translatable("itemgroup.streetparts.lights"))
                     .icon(() -> new ItemStack(ModLightBlocks.BLACK_LIGHT_POST))
@@ -149,7 +149,7 @@ public class ModItemGroup {
                     }).build());
 
     public static ItemGroup PARTS = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(StreetParts.MOD_ID, "parts"),
+            Identifier.of(StreetParts.MOD_ID, "parts"),
             FabricItemGroup.builder()
                     .displayName(Text.translatable("itemgroup.streetparts.parts"))
                     .icon(() -> new ItemStack(ModBlocks.TRAFFIC_CONE))

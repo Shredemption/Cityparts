@@ -1,6 +1,5 @@
 package net.fabricmc.streetparts.register;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.streetparts.StreetParts;
 import net.fabricmc.streetparts.custom.RoadBlock;
@@ -65,11 +64,11 @@ public class ModRoadBlocks {
 
     private static RoadBlock registerRoadBlock(String name, RoadBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(StreetParts.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+        return Registry.register(Registries.ITEM, Identifier.of(StreetParts.MOD_ID, name),
+                new BlockItem(block, new Item.Settings()));
     }
     public static void registerModRoadBlocks() {
         StreetParts.LOGGER.debug("Registering Mod Road Blocks for " + StreetParts.MOD_ID);

@@ -1,6 +1,5 @@
 package net.fabricmc.streetparts.register;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.streetparts.StreetParts;
 import net.fabricmc.streetparts.custom.SignBlock;
@@ -51,12 +50,12 @@ public class ModSignBlocks {
 
     private static SignBlock registerSignBlock(String name, SignBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(StreetParts.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+        return Registry.register(Registries.ITEM, Identifier.of(StreetParts.MOD_ID, name),
+                new BlockItem(block, new Item.Settings()));
     }
     public static void registerModSignBlocks() {
         StreetParts.LOGGER.debug("Registering Sign Blocks for " + StreetParts.MOD_ID);

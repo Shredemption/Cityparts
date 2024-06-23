@@ -1,6 +1,5 @@
 package net.fabricmc.streetparts.register;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.streetparts.StreetParts;
 import net.fabricmc.streetparts.custom.lights.*;
@@ -68,32 +67,32 @@ public class ModLightBlocks {
 
     private static PostBlock registerPostBlock(String name, PostBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static ArmBlock registerArmBlock(String name, ArmBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static CornerBlock registerCornerBlock(String name, CornerBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static LCornerBlock registerLCornerBlock(String name, LCornerBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static TBlock registerTBlock(String name, TBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
     private static LightBlock registerLightBlock(String name, LightBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(StreetParts.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+        return Registry.register(Registries.ITEM, Identifier.of(StreetParts.MOD_ID, name),
+                new BlockItem(block, new Item.Settings()));
     }
     public static void registerModLightBlocks() {
         StreetParts.LOGGER.debug("Registering Light Blocks for " + StreetParts.MOD_ID);
