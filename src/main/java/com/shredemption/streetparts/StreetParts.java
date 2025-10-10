@@ -1,30 +1,47 @@
 package com.shredemption.streetparts;
 
-import com.shredemption.streetparts.register.*;
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.streetparts.register.*;
-import net.neoforge.streetparts.register.*;
+import com.mojang.logging.LogUtils;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+// The value here should match an entry in the META-INF/neoforge.mods.toml file
+@Mod(StreetParts.MOD_ID)
+public class StreetParts {
+    // Define mod id in a common place for everything to reference
+    public static final String MOD_ID = "streetparts";
+    // Directly reference a slf4j logger
+    public static final Logger LOGGER = LogUtils.getLogger();
 
-public class StreetParts implements ModInitializer {
-	public static final String MOD_ID = "streetparts";
-	public static final Logger LOGGER = LoggerFactory.getLogger("streetparts");
+    // The constructor for the mod class is the first code that is run when your mod is loaded.
+    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
+    public StreetParts(IEventBus modEventBus, ModContainer modContainer) {
+        // Register the commonSetup method for modloading
+        modEventBus.addListener(this::commonSetup);
 
-	@Override
-	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+        // Register ourselves for server and other game events we are interested in.
+        // Note that this is necessary if and only if we want *this* class (StreetParts) to respond directly to events.
+        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
+        NeoForge.EVENT_BUS.register(this);
 
-		LOGGER.info("StreetParts Initializing");
-		ModItemGroup.registerItemGroups();
-		ModBuildingBlocks.registerModBuildingBlocks();
-		ModRoadBlocks.registerModRoadBlocks();
-		ModLightBlocks.registerModLightBlocks();
-		ModSignBlocks.registerModSignBlocks();
-		ModBlocks.registerModBlocks();
+        StreetPartsRegistry.register(modEventBus);
+    }
 
-	}
+    private void commonSetup(FMLCommonSetupEvent event) {
+        // Some common setup code
+        LOGGER.info("HELLO FROM COMMON SETUP");
+    }
+
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {
+        // Do something when the server starts
+        LOGGER.info("HELLO from server starting");
+    }
 }

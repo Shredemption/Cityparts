@@ -1,29 +1,25 @@
-# Streetparts
-Made by Shredemption
 
-## Download
+Installation information
+=======
 
-[Latest Version](https://github.com/Shredemption/Streetparts/releases/latest)
+This template repository can be directly cloned to get you started with a new
+mod. Simply create a new repository cloned from this one, by following the
+instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
-## Features
+Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
 
-- Road Blocks (Including Markings)
+If at any point you are missing libraries in your IDE, or you've run into problems you can
+run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
+{this does not affect your code} and then start the process again.
 
-![](pics/RoadBlocks.png)
+Mapping Names:
+============
+By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
+in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
+license. For the latest license text, refer to the mapping file itself, or the reference copy here:
+https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
 
-- Building Blocks
-
-![](pics/BuildingBlocks.png)
-
-- Light Posts and Parts
-
-![](pics/LightBlocks.png)
-
-- Traffic Signs
-
-![](pics/Signs.png)
-
-- Other Random Parts
-
-![](pics/Random.png)
-
+Additional Resources: 
+==========
+Community Documentation: https://docs.neoforged.net/  
+NeoForged Discord: https://discord.neoforged.net/
