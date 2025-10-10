@@ -52,6 +52,38 @@ public class RoadBlocksRegistry {
             "roadlines_pedestrian_crossing"
     );
 
+    private static final List<String> ROAD_SLAB_NAMES = List.of(
+            "roadlines_midline_slab",
+            "roadlines_sideline_slab",
+            "roadlines_halfline_slab",
+
+            "roadlines_innercorner_slab",
+            "roadlines_middlecorner_slab",
+            "roadlines_outercorner_slab",
+            "roadlines_cornercross_slab",
+
+            "roadlines_tsplitmid_slab",
+            "roadlines_tsplitshort_slab",
+
+            "roadlines_jcorner_slab",
+            "roadlines_lcorner_slab",
+
+            "roadlines_straightarrow_slab",
+            "roadlines_leftarrow_slab",
+            "roadlines_rightarrow_slab",
+            "roadlines_leftrightarrow_slab",
+            "roadlines_leftsubarrow_slab",
+            "roadlines_rightsubarrow_slab",
+            "roadlines_leftrightsubarrow_slab",
+
+            "roadlines_shortleftt_slab",
+            "roadlines_shortrightt_slab",
+            "roadlines_tallleftt_slab",
+            "roadlines_tallrightt_slab",
+            "roadlines_sharktooth_slab",
+            "roadlines_pedestrian_crossing_slab"
+    );
+
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, StreetParts.MOD_ID);
@@ -87,5 +119,6 @@ public class RoadBlocksRegistry {
         CREATIVE_TABS.register(modEventBus);
 
         registerRoadBlocks(ROAD_BLOCK_NAMES, Shapes.block());
+        registerRoadBlocks(ROAD_SLAB_NAMES, Shapes.box(0, 0, 0, 1, 0.5, 1));
     }
 }
