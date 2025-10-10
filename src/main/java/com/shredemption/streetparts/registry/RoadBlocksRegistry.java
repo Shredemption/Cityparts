@@ -46,7 +46,7 @@ public class RoadBlocksRegistry {
 
             "roadlines_shortleftt",
             "roadlines_shortrightt",
-            "roadlines_talleftt",
+            "roadlines_tallleftt",
             "roadlines_tallrightt",
             "roadlines_sharktooth",
             "roadlines_pedestrian_crossing"
