@@ -1,0 +1,11 @@
+modLoader="javafml"
+loaderVersion="[4,)"  # for NeoForge
+license="MIT"
+[[mods]]
+modId="streetparts"
+version="1.2"
+displayName="Streetparts"
+authors="Shredemptoin"
+description='''
+A simple NeoForge 1.21.1 mod that adds building blocks.
+'''
