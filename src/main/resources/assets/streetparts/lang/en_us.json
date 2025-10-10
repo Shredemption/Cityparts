@@ -22,8 +22,10 @@
   "block.streetparts.sandstone_bricks_stairs": "Sandstone Bricks Stairs",
   "block.streetparts.sandstone_bricks_slab": "Sandstone Bricks Slab",
   "block.streetparts.asphalt": "Asphalt",
+  "block.streetparts.asphalt_stairs" : "Asphalt Stairs",
   "block.streetparts.asphalt_slab": "Asphalt Slab",
   "block.streetparts.red_asphalt": "Red Asphalt",
+  "block.streetparts.red_asphalt_stairs" : "Red Asphalt Stairs",
   "block.streetparts.red_asphalt_slab": "Red Asphalt Slab",
 
 
