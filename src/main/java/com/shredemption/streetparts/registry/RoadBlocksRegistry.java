@@ -15,9 +15,10 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
 public class RoadBlocksRegistry {
 
@@ -28,7 +29,9 @@ public class RoadBlocksRegistry {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ROAD_BLOCKS_TAB =
             CREATIVE_TABS.register("road_blocks", () -> CreativeModeTab.builder()
                     .title(net.minecraft.network.chat.Component.translatable("itemGroup.streetparts.road_blocks"))
-                    .icon(() -> BuildingBlocksRegistry.ASPHALT.get().asItem().getDefaultInstance())
+                    .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
+                            .get(fromNamespaceAndPath(StreetParts.MOD_ID, "asphalt"))
+                            .getDefaultInstance())
                     .displayItems((params, output) -> {
                         BLOCKS.getEntries().forEach(entry -> output.accept(entry.get().asItem()));
                     })
@@ -78,6 +81,8 @@ public class RoadBlocksRegistry {
         for (String name : fullBlocks) {
             ROAD_BLOCKS_ORDERED.add(new RoadBlockEntry(name, Shapes.block()));
         }
+
+        ROAD_BLOCKS_ORDERED.add(new RoadBlockEntry("asphalt_slab", Shapes.block()));
 
         List<String> slabBlocks = List.of(
                 "roadlines_midline_slab",
