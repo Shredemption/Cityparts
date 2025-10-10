@@ -32,7 +32,7 @@ public class StreetParts {
         NeoForge.EVENT_BUS.register(this);
 
         BuildingBlocksRegistry.register(modEventBus);
-        RoadBlocksRegistry.register(modEventBus);
+        RoadBlocksRegistry.registerRoadBlocks(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
