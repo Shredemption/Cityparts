@@ -104,9 +104,9 @@
   "block.streetparts.striped_post": "Striped Post",
   "block.streetparts.direction_sign": "Direction Sign",
 
-  "itemgroup.streetparts.main": "Building Blocks",
-  "itemgroup.streetparts.roadlines": "Road Blocks",
-  "itemgroup.streetparts.lights": "Light Post Blocks",
-  "itemgroup.streetparts.signs": "Sign Blocks",
-  "itemgroup.streetparts.parts": "Street Parts"
+  "itemGroup.streetparts.building_blocks": "Building Blocks",
+  "itemGroup.streetparts.road_blocks": "Road Blocks",
+  "itemGroup.streetparts.lights": "Light Post Blocks",
+  "itemGroup.streetparts.signs": "Sign Blocks",
+  "itemGroup.streetparts.parts": "Street Parts"
 }

@@ -1,13 +1,14 @@
 package com.shredemption.streetparts;
 
 import com.mojang.logging.LogUtils;
+import com.shredemption.streetparts.registry.BuildingBlocksRegistry;
+import com.shredemption.streetparts.registry.RoadBlocksRegistry;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
@@ -30,7 +31,8 @@ public class StreetParts {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        StreetPartsRegistry.register(modEventBus);
+        BuildingBlocksRegistry.register(modEventBus);
+        RoadBlocksRegistry.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
