@@ -1,6 +1,5 @@
 package com.shredemption.streetparts.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -12,6 +11,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import javax.annotation.Nonnull;
+
+import com.mojang.serialization.MapCodec;
 
 public class RoadBlock extends HorizontalDirectionalBlock {
     private final VoxelShape shape;
@@ -19,30 +21,30 @@ public class RoadBlock extends HorizontalDirectionalBlock {
     public RoadBlock(BlockBehaviour.Properties properties, VoxelShape shape) {
         super(properties);
         this.shape = shape;
-
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, net.minecraft.core.Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
-    {
+    protected void createBlockStateDefinition(@Nonnull StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
+    public BlockState getStateForPlacement(@Nonnull BlockPlaceContext context) {
         // Make the block face the player when placed
         Direction playerFacing = context.getHorizontalDirection().getOpposite();
         return this.defaultBlockState().setValue(FACING, playerFacing);
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(@Nonnull BlockState state, @Nonnull BlockGetter world, @Nonnull BlockPos pos,
+            @Nonnull CollisionContext context) {
         return shape;
     }
 
     @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return null;
+    public MapCodec<? extends RoadBlock> codec() {
+        // This block cannot be deserialized via codec due to custom shape.
+        throw new UnsupportedOperationException("RoadBlock does not support codec deserialization.");
     }
 }
