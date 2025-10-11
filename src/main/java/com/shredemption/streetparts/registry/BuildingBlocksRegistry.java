@@ -18,9 +18,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
@@ -81,13 +79,13 @@ public class BuildingBlocksRegistry {
         ITEMS.register(modEventBus);
         CREATIVE_TABS.register(modEventBus);
 
-        registerBuildingSet("asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.0f), BlockSetType.SLAB);
-        registerBuildingSet("red_asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.0f), BlockSetType.SLAB);
+        registerBuildingSet("asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(2.0f), BlockSetType.SLAB);
+        registerBuildingSet("red_asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(2.0f), BlockSetType.SLAB);
 
         registerBuildingSet("stone_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
         registerBuildingSet("andesite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
-        registerBuildingSet("diorite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
-        registerBuildingSet("granite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
+        registerBuildingSet("diorite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).strength(1.8f), BlockSetType.FULL);
+        registerBuildingSet("granite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).strength(1.8f), BlockSetType.FULL);
 
         registerBuildingSet("gray_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(2.0f), BlockSetType.FULL);
         registerBuildingSet("brown_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.0f), BlockSetType.FULL);
