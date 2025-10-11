@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -28,38 +29,40 @@ public class BuildingBlocksRegistry {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, StreetParts.MOD_ID);
 
-    private static final Map<String, BlockBehaviour.Properties> BUILDING_BLOCKS = new LinkedHashMap<>();
-
-    static {
-        BUILDING_BLOCKS.put("asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.0f));
-        BUILDING_BLOCKS.put("red_asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.0f));
-        BUILDING_BLOCKS.put("stone_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f));
-        BUILDING_BLOCKS.put("andesite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f));
-        BUILDING_BLOCKS.put("diorite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f));
-        BUILDING_BLOCKS.put("granite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f));
-        BUILDING_BLOCKS.put("gray_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(2.0f));
-        BUILDING_BLOCKS.put("brown_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.0f));
-        BUILDING_BLOCKS.put("sandstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f));
+    public enum BlockSetType {
+        FULL,       // block + slab + stairs + wall
+        SLAB        // block + slab
     }
 
     private static final List<DeferredBlock<? extends Block>> REGISTERED_BLOCKS = new ArrayList<>();
 
-    private static void registerBuildingSet(String name, BlockBehaviour.Properties props) {
+    private static void registerBuildingSet(String name, BlockBehaviour.Properties props, BlockSetType type) {
         // Base block
         DeferredBlock<Block> base = BLOCKS.register(name, () -> new Block(props));
         ITEMS.register(name, () -> new BlockItem(base.get(), new Item.Properties()));
         REGISTERED_BLOCKS.add(base);
 
         // Stairs
-        DeferredBlock<StairBlock> stairs = BLOCKS.register(name + "_stairs",
-                () -> new StairBlock(base.get().defaultBlockState(), props));
-        ITEMS.register(name + "_stairs", () -> new BlockItem(stairs.get(), new Item.Properties()));
-        REGISTERED_BLOCKS.add(stairs);
+        if (type == BlockSetType.FULL) {
+            DeferredBlock<StairBlock> stairs = BLOCKS.register(name + "_stairs",
+                    () -> new StairBlock(base.get().defaultBlockState(), props));
+            ITEMS.register(name + "_stairs", () -> new BlockItem(stairs.get(), new Item.Properties()));
+            REGISTERED_BLOCKS.add(stairs);
+        }
 
         // Slab
-        DeferredBlock<SlabBlock> slab = BLOCKS.register(name + "_slab", () -> new SlabBlock(props));
-        ITEMS.register(name + "_slab", () -> new BlockItem(slab.get(), new Item.Properties()));
-        REGISTERED_BLOCKS.add(slab);
+        if (type == BlockSetType.FULL || type == BlockSetType.SLAB) {
+            DeferredBlock<SlabBlock> slab = BLOCKS.register(name + "_slab", () -> new SlabBlock(props));
+            ITEMS.register(name + "_slab", () -> new BlockItem(slab.get(), new Item.Properties()));
+            REGISTERED_BLOCKS.add(slab);
+        }
+
+        // Wall
+        if (type == BlockSetType.FULL) {
+            DeferredBlock<WallBlock> wall = BLOCKS.register(name + "_wall", () -> new WallBlock(props));
+            ITEMS.register(name + "_wall", () -> new BlockItem(wall.get(), new Item.Properties()));
+            REGISTERED_BLOCKS.add(wall);
+        }
     }
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BUILDING_BLOCKS_TAB =
@@ -78,7 +81,17 @@ public class BuildingBlocksRegistry {
         ITEMS.register(modEventBus);
         CREATIVE_TABS.register(modEventBus);
 
-        // Register each defined building block with slab + stairs
-        BUILDING_BLOCKS.forEach(BuildingBlocksRegistry::registerBuildingSet);
+        registerBuildingSet("asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.0f), BlockSetType.SLAB);
+        registerBuildingSet("red_asphalt", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.0f), BlockSetType.SLAB);
+
+        registerBuildingSet("stone_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
+        registerBuildingSet("andesite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
+        registerBuildingSet("diorite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
+        registerBuildingSet("granite_pavement", BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.8f), BlockSetType.FULL);
+
+        registerBuildingSet("gray_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(2.0f), BlockSetType.FULL);
+        registerBuildingSet("brown_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.0f), BlockSetType.FULL);
+        registerBuildingSet("sandstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f), BlockSetType.FULL);
+
     }
 }
