@@ -73,6 +73,7 @@ public class RoadBlocksRegistry {
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
                                                         .get(fromNamespaceAndPath(StreetParts.MOD_ID, "asphalt"))
                                                         .getDefaultInstance())
+                                        .withTabsBefore(BuildingBlocksRegistry.BUILDING_BLOCKS_TAB.getKey())
                                         .displayItems((params, output) -> {
 
                                                 output.accept(net.minecraft.core.registries.BuiltInRegistries.ITEM
