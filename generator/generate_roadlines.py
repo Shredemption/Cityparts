@@ -90,14 +90,14 @@ def blockstate_slab_json(name):
 
 def block_model_json(name):
     return {
-        "parent": f"{MOD_ID}:block/roadlines",
+        "parent": f"{MOD_ID}:block/template/roadlines",
         "textures": {"top": f"{MOD_ID}:block/roadlines_{name}"},
     }
 
 
 def block_model_slab_json(name):
     return {
-        "parent": f"{MOD_ID}:block/roadlines_slab",
+        "parent": f"{MOD_ID}:block/template/roadlines_slab",
         "textures": {"top": f"{MOD_ID}:block/roadlines_{name}"},
     }
 
