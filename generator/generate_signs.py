@@ -8,6 +8,8 @@ ROUND = [
     "stop",
     "no_entry",
     "roundabout",
+    "left_pass",
+    "left_right_pass",
     "right_pass",
     "arrow_left",
     "arrow_forward",
@@ -24,6 +26,7 @@ ROUND = [
     "100",
     "120",
     "130",
+    "oncoming_yield",
 ]
 
 SQUARE = [
@@ -33,10 +36,19 @@ SQUARE = [
     "arrow_forward_left",
     "arrow_left_right",
     "arrow_forward_right",
+    "oncoming_priority",
+    "parking",
 ]
 
 TRIANGLE = [
     "warning",
+    "danger",
+    "danger_cross",
+    "crossing_left",
+    "crossing_left_right",
+    "crossing_right",
+    "sharp_left",
+    "sharp_right",
 ]
 
 BASE_PATH = r"./src/main/resources/assets/" + MOD_ID

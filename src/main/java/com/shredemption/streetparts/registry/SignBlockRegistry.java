@@ -26,6 +26,8 @@ public class SignBlockRegistry {
                         "stop",
                         "no_entry",
                         "roundabout",
+                        "left_pass",
+                        "left_right_pass",
                         "right_pass",
                         "arrow_left",
                         "arrow_forward",
@@ -41,7 +43,8 @@ public class SignBlockRegistry {
                         "90",
                         "100",
                         "120",
-                        "130");
+                        "130",
+                        "oncoming_yield");
 
         private static final List<String> squareSigns = List.of(
                         "arrow_left",
@@ -49,10 +52,19 @@ public class SignBlockRegistry {
                         "arrow_right",
                         "arrow_forward_left",
                         "arrow_left_right",
-                        "arrow_forward_right");
+                        "arrow_forward_right",
+                        "oncoming_priority",
+                        "parking");
 
         private static final List<String> triangleSigns = List.of(
-                        "warning");
+                        "warning",
+                        "danger",
+                        "danger_cross",
+                        "crossing_left",
+                        "crossing_left_right",
+                        "crossing_right",
+                        "sharp_left",
+                        "sharp_right");
 
         public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);

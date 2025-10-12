@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/template/sign_triangle",
+    "textures": {
+        "sign": "streetparts:block/sign_triangle_danger_cross"
+    }
+}

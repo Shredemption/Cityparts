@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "streetparts:block/sign_square_oncoming_priority"
+        },
+        "facing=south": {
+            "model": "streetparts:block/sign_square_oncoming_priority",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "streetparts:block/sign_square_oncoming_priority",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "streetparts:block/sign_square_oncoming_priority",
+            "y": 90
+        }
+    }
+}
