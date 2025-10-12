@@ -1,7 +1,8 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.RoadBlock;
+import com.shredemption.streetparts.custom.SignBlock;
+
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -58,16 +59,17 @@ public class SignBlockRegistry {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
                         .create(Registries.CREATIVE_MODE_TAB, StreetParts.MOD_ID);
 
-        private static final List<DeferredBlock<RoadBlock>> REGISTERED_ROUND_SIGNS = new ArrayList<>();
-        private static final List<DeferredBlock<RoadBlock>> REGISTERED_SQUARE_SIGNS = new ArrayList<>();
-        private static final List<DeferredBlock<RoadBlock>> REGISTERED_TRIANGLE_SIGNS = new ArrayList<>();
+        private static final List<DeferredBlock<SignBlock>> REGISTERED_ROUND_SIGNS = new ArrayList<>();
+        private static final List<DeferredBlock<SignBlock>> REGISTERED_SQUARE_SIGNS = new ArrayList<>();
+        private static final List<DeferredBlock<SignBlock>> REGISTERED_TRIANGLE_SIGNS = new ArrayList<>();
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SIGNS_TAB = CREATIVE_TABS
                         .register("signs", () -> CreativeModeTab.builder()
                                         .title(net.minecraft.network.chat.Component
                                                         .translatable("itemGroup.streetparts.signs"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
-                                                        .get(fromNamespaceAndPath(StreetParts.MOD_ID, "sign_round_stop"))
+                                                        .get(fromNamespaceAndPath(StreetParts.MOD_ID,
+                                                                        "sign_round_stop"))
                                                         .getDefaultInstance())
                                         .withTabsBefore(RoadBlocksRegistry.ROAD_BLOCKS_TAB.getKey())
                                         .displayItems((params, output) -> {
@@ -84,8 +86,8 @@ public class SignBlockRegistry {
 
                 for (String type : roundSigns) {
                         String fullName = "sign_round_" + type;
-                        DeferredBlock<RoadBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new RoadBlock(BlockBehaviour.Properties.of()
+                        DeferredBlock<SignBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new SignBlock(BlockBehaviour.Properties.of()
                                                         .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
                                                         Shapes.block()));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
@@ -94,8 +96,8 @@ public class SignBlockRegistry {
 
                 for (String type : squareSigns) {
                         String fullName = "sign_square_" + type;
-                        DeferredBlock<RoadBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new RoadBlock(BlockBehaviour.Properties.of()
+                        DeferredBlock<SignBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new SignBlock(BlockBehaviour.Properties.of()
                                                         .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
                                                         Shapes.block()));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
@@ -104,8 +106,8 @@ public class SignBlockRegistry {
 
                 for (String type : triangleSigns) {
                         String fullName = "sign_triangle_" + type;
-                        DeferredBlock<RoadBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new RoadBlock(BlockBehaviour.Properties.of()
+                        DeferredBlock<SignBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new SignBlock(BlockBehaviour.Properties.of()
                                                         .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
                                                         Shapes.block()));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
