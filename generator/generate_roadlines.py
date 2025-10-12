@@ -36,7 +36,7 @@ VARIANTS = [
 
 BASE_PATH = r"./src/main/resources/assets/" + MOD_ID
 BLOCKSTATE_DIR = os.path.join(BASE_PATH, "blockstates")
-BLOCK_MODEL_DIR = os.path.join(BASE_PATH, "models/block/roadlines")
+BLOCK_MODEL_DIR = os.path.join(BASE_PATH, "models/block")
 ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
 
 # === Ensure directories exist ===
@@ -49,17 +49,17 @@ for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
 def blockstate_json(name):
     return {
         "variants": {
-            "facing=north": {"model": f"{MOD_ID}:block/roadlines/roadlines_{name}"},
+            "facing=north": {"model": f"{MOD_ID}:block/roadlines_{name}"},
             "facing=south": {
-                "model": f"{MOD_ID}:block/roadlines/roadlines_{name}",
+                "model": f"{MOD_ID}:block/roadlines_{name}",
                 "y": 180,
             },
             "facing=west": {
-                "model": f"{MOD_ID}:block/roadlines/roadlines_{name}",
+                "model": f"{MOD_ID}:block/roadlines_{name}",
                 "y": 270,
             },
             "facing=east": {
-                "model": f"{MOD_ID}:block/roadlines/roadlines_{name}",
+                "model": f"{MOD_ID}:block/roadlines_{name}",
                 "y": 90,
             },
         }
@@ -70,18 +70,18 @@ def blockstate_slab_json(name):
     return {
         "variants": {
             "facing=north": {
-                "model": f"{MOD_ID}:block/roadlines/roadlines_{name}_slab"
+                "model": f"{MOD_ID}:block/roadlines_{name}_slab"
             },
             "facing=south": {
-                "model": f"{MOD_ID}:block/roadlines/roadlines_{name}_slab",
+                "model": f"{MOD_ID}:block/roadlines_{name}_slab",
                 "y": 180,
             },
             "facing=west": {
-                "model": f"{MOD_ID}:block/roadlines/roadlines_{name}_slab",
+                "model": f"{MOD_ID}:block/roadlines_{name}_slab",
                 "y": 270,
             },
             "facing=east": {
-                "model": f"{MOD_ID}:block/roadlines/roadlines_{name}_slab",
+                "model": f"{MOD_ID}:block/roadlines_{name}_slab",
                 "y": 90,
             },
         }
@@ -90,24 +90,24 @@ def blockstate_slab_json(name):
 
 def block_model_json(name):
     return {
-        "parent": f"{MOD_ID}:block/roadlines/roadlines",
-        "textures": {"top": f"{MOD_ID}:blocks/roadlines_{name}"},
+        "parent": f"{MOD_ID}:block/roadlines",
+        "textures": {"top": f"{MOD_ID}:block/roadlines_{name}"},
     }
 
 
 def block_model_slab_json(name):
     return {
-        "parent": f"{MOD_ID}:block/roadlines/roadlines_slab",
-        "textures": {"top": f"{MOD_ID}:blocks/roadlines_{name}"},
+        "parent": f"{MOD_ID}:block/roadlines_slab",
+        "textures": {"top": f"{MOD_ID}:block/roadlines_{name}"},
     }
 
 
 def item_model_json(name):
-    return {"parent": f"{MOD_ID}:block/roadlines/roadlines_{name}"}
+    return {"parent": f"{MOD_ID}:block/roadlines_{name}"}
 
 
 def item_model_slab_json(name):
-    return {"parent": f"{MOD_ID}:block/roadlines/roadlines_{name}_slab"}
+    return {"parent": f"{MOD_ID}:block/roadlines_{name}_slab"}
 
 
 # === Generate files ===
