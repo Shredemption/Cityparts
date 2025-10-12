@@ -76,7 +76,7 @@ public class SignBlockRegistry {
         private static final List<DeferredBlock<SignBlock>> REGISTERED_TRIANGLE_SIGNS = new ArrayList<>();
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SIGNS_TAB = CREATIVE_TABS
-                        .register("signs", () -> CreativeModeTab.builder()
+                        .register("streetparts_signs", () -> CreativeModeTab.builder()
                                         .title(net.minecraft.network.chat.Component
                                                         .translatable("itemGroup.streetparts.signs"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM

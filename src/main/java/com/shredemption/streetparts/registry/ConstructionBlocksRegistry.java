@@ -65,11 +65,12 @@ public class ConstructionBlocksRegistry {
         }
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CONSTRUCTION_BLOCKS_TAB = CREATIVE_TABS
-                        .register("construction_blocks", () -> CreativeModeTab.builder()
+                        .register("streetparts_construction_blocks", () -> CreativeModeTab.builder()
                                         .title(Component.translatable("itemGroup.streetparts.construction_blocks"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
                                                         .get(fromNamespaceAndPath(StreetParts.MOD_ID, "stone_pavement"))
                                                         .getDefaultInstance())
+                                        .withTabsBefore(net.minecraft.world.item.CreativeModeTabs.SPAWN_EGGS)
                                         .withTabsAfter(RoadBlocksRegistry.ROAD_BLOCKS_TAB.getKey())
                                         .displayItems((params, output) -> {
                                                 REGISTERED_BLOCKS.forEach(entry -> output.accept(entry.get().asItem()));
