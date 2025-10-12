@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/template/sign_round",
+    "textures": {
+        "sign": "streetparts:block/sign_round_roundabout"
+    }
+}
