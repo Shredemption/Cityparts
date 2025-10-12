@@ -1,5 +1,5 @@
 {
-    "parent": "streetparts:block/roadlines_slab",
+    "parent": "streetparts:block/template/roadlines_slab",
     "textures": {
         "top": "streetparts:block/roadlines_rightsubarrow"
     }

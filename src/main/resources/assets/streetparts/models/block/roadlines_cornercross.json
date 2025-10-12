@@ -1,5 +1,5 @@
 {
-    "parent": "streetparts:block/roadlines",
+    "parent": "streetparts:block/template/roadlines",
     "textures": {
         "top": "streetparts:block/roadlines_cornercross"
     }
