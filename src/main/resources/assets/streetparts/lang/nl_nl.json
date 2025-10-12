@@ -78,6 +78,10 @@
   "block.streetparts.roadlines_leftrightsubarrow": "Links + rechts subpijl blok",
   "block.streetparts.roadlines_sharktooth": "Haaientanden blok",
   "block.streetparts.roadlines_pedestrian_crossing": "Zebrapad blok",
+  "block.streetparts.roadlines_cross": "Kruis blok",
+  "block.streetparts.roadlines_tsplittall": "Hoge T-splitsing blok",
+  "block.streetparts.roadlines_middleleftt": "Midden linker T-splitsing blok",
+  "block.streetparts.roadlines_middlerightt": "Midden rechter T-splitsing blok",
 
   "block.streetparts.roadlines_midline_slab": "Middellijn plaat",
   "block.streetparts.roadlines_sideline_slab": "Zijlijn plaat",
@@ -103,6 +107,10 @@
   "block.streetparts.roadlines_leftrightsubarrow_slab": "Links + rechts subpijl plaat",
   "block.streetparts.roadlines_sharktooth_slab": "Haaientanden plaat",
   "block.streetparts.roadlines_pedestrian_crossing_slab": "Zebrapad plaat",
+  "block.streetparts.roadlines_cross_slab": "Kruis plaat",
+  "block.streetparts.roadlines_tsplittall_slab": "Hoge T-splitsing plaat",
+  "block.streetparts.roadlines_middleleftt_slab": "Midden linker T-splitsing plaat",
+  "block.streetparts.roadlines_middlerightt_slab": "Midden rechter T-splitsing plaat",
 
   "block.streetparts.sign_round_stop": "Stopbord",
   "block.streetparts.sign_round_no_entry": "Verboden toegang bord",

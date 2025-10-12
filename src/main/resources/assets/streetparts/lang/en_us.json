@@ -78,6 +78,10 @@
   "block.streetparts.roadlines_leftrightsubarrow": "Left + Right Sub Arrow Block",
   "block.streetparts.roadlines_sharktooth": "Sharktooth Block",
   "block.streetparts.roadlines_pedestrian_crossing": "Pedestrian Crossing Block",
+  "block.streetparts.roadlines_cross": "Cross Block",
+  "block.streetparts.roadlines_tsplittall": "Tall T-Split Block",
+  "block.streetparts.roadlines_middleleftt": "Middle Left T-Split Block",
+  "block.streetparts.roadlines_middlerightt": "Middle Right T-Split Block",
 
   "block.streetparts.roadlines_midline_slab": "Middle Line Slab",
   "block.streetparts.roadlines_sideline_slab": "Side Line Slab",
@@ -103,6 +107,10 @@
   "block.streetparts.roadlines_leftrightsubarrow_slab": "Left + Right Sub Arrow Slab",
   "block.streetparts.roadlines_sharktooth_slab": "Sharktooth Slab",
   "block.streetparts.roadlines_pedestrian_crossing_slab": "Pedestrian Crossing Slab",
+  "block.streetparts.roadlines_cross_slab": "Cross Slab",
+  "block.streetparts.roadlines_tsplittall_slab": "Tall T-Split Slab",
+  "block.streetparts.roadlines_middleleftt_slab": "Middle Left T-Split Slab",
+  "block.streetparts.roadlines_middlerightt_slab": "Middle Right T-Split Slab",
 
   "block.streetparts.sign_round_stop": "Stop Sign",
   "block.streetparts.sign_round_no_entry": "No Entry Sign",
