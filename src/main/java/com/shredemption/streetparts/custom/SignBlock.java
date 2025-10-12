@@ -22,18 +22,20 @@ public class SignBlock extends HorizontalDirectionalBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     private static final VoxelShape SHAPE_N = Shapes.or(
-            Shapes.box(7, 9, 16, 9, 11, 22),
-            Shapes.box(2, 4, 15, 14, 16, 16));
+            Shapes.box(7 / 16f, 9 / 16f, 1.0f, 9 / 16f, 11 / 16f, 1.375f),
+            Shapes.box(2 / 16f, 4 / 16f, 15 / 16f, 14 / 16f, 1.0f, 1.0f));
 
     private static final VoxelShape SHAPE_E = Shapes.or(
-            Shapes.box(-6, 9, 7, 0, 11, 9),
-            Shapes.box(0, 4, 2, 1, 16, 14));
+            Shapes.box(-6 / 16f, 9 / 16f, 7 / 16f, 0.0f, 11 / 16f, 9 / 16f),
+            Shapes.box(0.0f, 4 / 16f, 2 / 16f, 1 / 16f, 1.0f, 14 / 16f));
+
     private static final VoxelShape SHAPE_S = Shapes.or(
-            Shapes.box(7, 9, -6, 9, 11, 0),
-            Shapes.box(2, 4, 0, 14, 16, 1));
+            Shapes.box(7 / 16f, 9 / 16f, -6 / 16f, 9 / 16f, 11 / 16f, 0.0f),
+            Shapes.box(2 / 16f, 4 / 16f, 0.0f, 14 / 16f, 1.0f, 1 / 16f));
+
     private static final VoxelShape SHAPE_W = Shapes.or(
-            Shapes.box(16, 9, 7, 22, 11, 9),
-            Shapes.box(15, 4, 2, 16, 16, 14));
+            Shapes.box(1.0f, 9 / 16f, 7 / 16f, 1.375f, 11 / 16f, 9 / 16f),
+            Shapes.box(15 / 16f, 4 / 16f, 2 / 16f, 1.0f, 1.0f, 14 / 16f));
 
     public SignBlock(BlockBehaviour.Properties properties, VoxelShape shape) {
         super(properties);
