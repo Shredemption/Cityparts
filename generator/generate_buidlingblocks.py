@@ -12,6 +12,7 @@ MATERIALS = [
     "white_bricks",
     "gray_bricks",
     "black_bricks",
+    "beige_bricks",
 ]
 
 BASE_PATH = r"./src/main/resources/assets/" + MOD_ID

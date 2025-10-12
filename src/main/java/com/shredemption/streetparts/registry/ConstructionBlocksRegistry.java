@@ -103,7 +103,7 @@ public class ConstructionBlocksRegistry {
                                 BlockSetType.FULL);
 
                 registerBuildingSet("sandstone_bricks",
-                                BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f),
+                                BlockBehaviour.Properties.of().mapColor(MapColor.SAND).strength(2.0f),
                                 BlockSetType.FULL);
                 registerBuildingSet("brown_bricks",
                                 BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.0f),
@@ -125,6 +125,9 @@ public class ConstructionBlocksRegistry {
                                 BlockSetType.FULL);
                 registerBuildingSet("black_bricks",
                                 BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(2.0f),
+                                BlockSetType.FULL);
+                registerBuildingSet("beige_bricks",
+                                BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(2.0f),
                                 BlockSetType.FULL);
 
         }
