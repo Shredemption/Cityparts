@@ -102,7 +102,7 @@ public class RoadBlocksRegistry {
                         String fullName = "roadlines_" + suffix;
                         DeferredBlock<RoadBlock> fullBlock = BLOCKS.register(fullName,
                                         () -> new RoadBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_BLACK).strength(2.0f),
+                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
                                                         Shapes.block()));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_FULL_BLOCKS.add(fullBlock);
@@ -112,7 +112,7 @@ public class RoadBlocksRegistry {
                         DeferredBlock<RoadBlock> slabBlock = BLOCKS
                                         .register(slabName,
                                                         () -> new RoadBlock(BlockBehaviour.Properties.of()
-                                                                        .mapColor(MapColor.COLOR_BLACK).strength(2.0f),
+                                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
                                                                         Shapes.box(0, 0, 0, 1, 0.5, 1)));
                         ITEMS.register(slabName, () -> new BlockItem(slabBlock.get(), new Item.Properties()));
                         REGISTERED_SLAB_BLOCKS.add(slabBlock);
