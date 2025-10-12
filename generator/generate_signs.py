@@ -13,7 +13,7 @@ ROUND = [
     "arrow_forward",
     "arrow_right",
     "arrow_forward_left",
-    "arrow_right_left",
+    "arrow_left_right",
     "arrow_forward_right",
     "30",
     "45",
@@ -31,7 +31,7 @@ SQUARE = [
     "arrow_forward",
     "arrow_right",
     "arrow_forward_left",
-    "arrow_right_left",
+    "arrow_left_right",
     "arrow_forward_right",
 ]
 

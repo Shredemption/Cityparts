@@ -31,7 +31,7 @@ public class SignBlockRegistry {
                         "arrow_forward",
                         "arrow_right",
                         "arrow_forward_left",
-                        "arrow_right_left",
+                        "arrow_left_right",
                         "arrow_forward_right",
                         "30",
                         "45",
@@ -48,7 +48,7 @@ public class SignBlockRegistry {
                         "arrow_forward",
                         "arrow_right",
                         "arrow_forward_left",
-                        "arrow_right_left",
+                        "arrow_left_right",
                         "arrow_forward_right");
 
         private static final List<String> triangleSigns = List.of(
