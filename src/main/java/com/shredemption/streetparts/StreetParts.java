@@ -1,7 +1,7 @@
 package com.shredemption.streetparts;
 
 import com.mojang.logging.LogUtils;
-import com.shredemption.streetparts.registry.BuildingBlocksRegistry;
+import com.shredemption.streetparts.registry.ConstructionBlocksRegistry;
 import com.shredemption.streetparts.registry.RoadBlocksRegistry;
 import com.shredemption.streetparts.registry.SignBlockRegistry;
 
@@ -37,7 +37,7 @@ public class StreetParts {
         // this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        BuildingBlocksRegistry.register(modEventBus);
+        ConstructionBlocksRegistry.register(modEventBus);
         RoadBlocksRegistry.registerRoadBlocks(modEventBus);
         SignBlockRegistry.registerSignBlocks(modEventBus);
     }
