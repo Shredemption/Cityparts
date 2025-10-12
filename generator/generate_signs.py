@@ -15,6 +15,15 @@ ROUND = [
     "arrow_forward_left",
     "arrow_right_left",
     "arrow_forward_right",
+    "30",
+    "45",
+    "50",
+    "60",
+    "80",
+    "90",
+    "100",
+    "120",
+    "130",
 ]
 
 SQUARE = [

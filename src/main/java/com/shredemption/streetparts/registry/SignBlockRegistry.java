@@ -31,7 +31,16 @@ public class SignBlockRegistry {
                         "arrow_right",
                         "arrow_forward_left",
                         "arrow_right_left",
-                        "arrow_forward_right");
+                        "arrow_forward_right",
+                        "30",
+                        "45",
+                        "50",
+                        "60",
+                        "80",
+                        "90",
+                        "100",
+                        "120",
+                        "130");
 
         private static final List<String> squareSigns = List.of(
                         "arrow_left",
