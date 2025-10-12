@@ -89,7 +89,8 @@ public class BuildingBlocksRegistry {
 
         registerBuildingSet("gray_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(2.0f), BlockSetType.FULL);
         registerBuildingSet("brown_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.0f), BlockSetType.FULL);
+        registerBuildingSet("maroon_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).strength(2.0f), BlockSetType.FULL);
+        registerBuildingSet("white_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.SNOW).strength(2.0f), BlockSetType.FULL);
         registerBuildingSet("sandstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f), BlockSetType.FULL);
-
     }
 }

@@ -10,6 +10,8 @@ MATERIALS = [
     "granite_pavement",
     "gray_bricks",
     "brown_bricks",
+    "maroon_bricks",
+    "white_bricks",
     "sandstone_bricks",
 ]
 
@@ -381,7 +383,8 @@ def model_slab_json(name):
             "side": f"{MOD_ID}:block/{name}",
         },
     }
-    
+
+
 def model_slab_top_json(name):
     return {
         "parent": "block/slab_top",
@@ -461,4 +464,4 @@ for mat in MATERIALS:
             json.dump(data, f, indent=4)
         print(f"✅ Created {path}")
 
-print("\n✨ All wall model + blockstate files generated successfully!")
+print("\n✨ All building block models + blockstate files generated successfully!")
