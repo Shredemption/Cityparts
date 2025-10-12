@@ -101,6 +101,9 @@ public class ConstructionBlocksRegistry {
                 registerBuildingSet("granite_pavement",
                                 BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).strength(1.8f),
                                 BlockSetType.FULL);
+                registerBuildingSet("deepslate_pavement",
+                                BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).strength(2.0f),
+                                BlockSetType.FULL);
 
                 registerBuildingSet("sandstone_bricks",
                                 BlockBehaviour.Properties.of().mapColor(MapColor.SAND).strength(2.0f),

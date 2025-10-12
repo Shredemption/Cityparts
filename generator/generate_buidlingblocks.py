@@ -4,6 +4,11 @@ import json
 # === CONFIG ===
 MOD_ID = "streetparts"
 MATERIALS = [
+    "stone_pavement",
+    "andesite_pavement",
+    "diorite_pavement",
+    "granite_pavement",
+    "deepslate_pavement",
     "sandstone_bricks",
     "brown_bricks",
     "maroon_bricks",
