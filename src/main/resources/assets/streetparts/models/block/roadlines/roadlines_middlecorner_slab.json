@@ -1,6 +1,0 @@
-{
-    "parent": "streetparts:block/roadlines/roadlines_slab",
-    "textures": {
-        "top": "streetparts:blocks/roadlines_middlecorner"
-    }
-}

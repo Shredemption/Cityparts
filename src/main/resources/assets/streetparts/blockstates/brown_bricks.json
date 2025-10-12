@@ -1,5 +1,7 @@
 {
-	"variants":{
-		"": {"model": "streetparts:block/blocks/brown_bricks"}
-	}
+    "variants": {
+        "": {
+            "model": "streetparts:block/brown_bricks"
+        }
+    }
 }

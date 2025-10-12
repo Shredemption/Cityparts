@@ -1,0 +1,30 @@
+{
+  "parent": "streetparts:block/test/horizontalrotatingblock",
+  "textures": {
+    "bottom": "streetparts:block/asphalt",
+    "side1": "streetparts:block/asphalt",
+    "side2": "streetparts:block/asphalt",
+    "side3": "streetparts:block/asphalt",
+    "side4": "streetparts:block/asphalt"
+  },
+  "gui_light": "front",
+  "display": {
+    "gui": {
+      "rotation": [
+        50,
+        -135,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.58,
+        0.58,
+        0.58
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "streetparts:block/andesite_pavement",
+        "top": "streetparts:block/andesite_pavement",
+        "side": "streetparts:block/andesite_pavement"
+    }
+}

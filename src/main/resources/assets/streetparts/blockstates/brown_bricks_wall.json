@@ -2,7 +2,7 @@
     "multipart": [
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_post"
+                "model": "streetparts:block/brown_bricks_wall_post"
             },
             "when": {
                 "up": "true"
@@ -10,8 +10,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side",
-                "uvlock": true
+                "model": "streetparts:block/brown_bricks_wall_side",
+                "uvlock": "true"
             },
             "when": {
                 "north": "low"
@@ -19,8 +19,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side",
-                "uvlock": true,
+                "model": "streetparts:block/brown_bricks_wall_side",
+                "uvlock": "true",
                 "y": 90
             },
             "when": {
@@ -29,8 +29,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side",
-                "uvlock": true,
+                "model": "streetparts:block/brown_bricks_wall_side",
+                "uvlock": "true",
                 "y": 180
             },
             "when": {
@@ -39,8 +39,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side",
-                "uvlock": true,
+                "model": "streetparts:block/brown_bricks_wall_side",
+                "uvlock": "true",
                 "y": 270
             },
             "when": {
@@ -49,8 +49,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side_tall",
-                "uvlock": true
+                "model": "streetparts:block/brown_bricks_wall_side_tall",
+                "uvlock": "true"
             },
             "when": {
                 "north": "tall"
@@ -58,8 +58,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side_tall",
-                "uvlock": true,
+                "model": "streetparts:block/brown_bricks_wall_side_tall",
+                "uvlock": "true",
                 "y": 90
             },
             "when": {
@@ -68,8 +68,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side_tall",
-                "uvlock": true,
+                "model": "streetparts:block/brown_bricks_wall_side_tall",
+                "uvlock": "true",
                 "y": 180
             },
             "when": {
@@ -78,8 +78,8 @@
         },
         {
             "apply": {
-                "model": "streetparts:block/blocks/brown_bricks_wall_side_tall",
-                "uvlock": true,
+                "model": "streetparts:block/brown_bricks_wall_side_tall",
+                "uvlock": "true",
                 "y": 270
             },
             "when": {

@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "streetparts:blocks/stone_pavement",
-        "top": "streetparts:blocks/stone_pavement",
-        "side": "streetparts:blocks/stone_pavement"
-    }
-}

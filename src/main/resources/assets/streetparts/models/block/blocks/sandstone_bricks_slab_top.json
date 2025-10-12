@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "streetparts:blocks/sandstone_bricks",
-        "top": "streetparts:blocks/sandstone_bricks",
-        "side": "streetparts:blocks/sandstone_bricks"
-    }
-}

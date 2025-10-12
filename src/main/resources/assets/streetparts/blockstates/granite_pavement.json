@@ -1,5 +1,7 @@
 {
-	"variants":{
-		"": {"model": "streetparts:block/blocks/granite_pavement"}
-	}
+    "variants": {
+        "": {
+            "model": "streetparts:block/granite_pavement"
+        }
+    }
 }

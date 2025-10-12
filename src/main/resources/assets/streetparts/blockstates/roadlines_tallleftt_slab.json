@@ -1,18 +1,18 @@
 {
     "variants": {
         "facing=north": {
-            "model": "streetparts:block/roadlines/roadlines_tallleftt_slab"
+            "model": "streetparts:block/roadlines_tallleftt_slab"
         },
         "facing=south": {
-            "model": "streetparts:block/roadlines/roadlines_tallleftt_slab",
+            "model": "streetparts:block/roadlines_tallleftt_slab",
             "y": 180
         },
         "facing=west": {
-            "model": "streetparts:block/roadlines/roadlines_tallleftt_slab",
+            "model": "streetparts:block/roadlines_tallleftt_slab",
             "y": 270
         },
         "facing=east": {
-            "model": "streetparts:block/roadlines/roadlines_tallleftt_slab",
+            "model": "streetparts:block/roadlines_tallleftt_slab",
             "y": 90
         }
     }

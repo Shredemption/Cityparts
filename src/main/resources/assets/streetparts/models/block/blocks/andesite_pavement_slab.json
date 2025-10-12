@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "streetparts:blocks/andesite_pavement",
-        "top": "streetparts:blocks/andesite_pavement",
-        "side": "streetparts:blocks/andesite_pavement"
-    }
-}

@@ -1,5 +1,7 @@
 {
-	"variants":{
-		"": {"model": "streetparts:block/blocks/andesite_pavement"}
-	}
+    "variants": {
+        "": {
+            "model": "streetparts:block/andesite_pavement"
+        }
+    }
 }

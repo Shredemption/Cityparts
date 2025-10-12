@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "streetparts:block/granite_pavement",
+        "top": "streetparts:block/granite_pavement",
+        "side": "streetparts:block/granite_pavement"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "streetparts:block/red_asphalt",
+        "top": "streetparts:block/red_asphalt",
+        "side": "streetparts:block/red_asphalt"
+    }
+}

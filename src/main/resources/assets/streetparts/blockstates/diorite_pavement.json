@@ -1,5 +1,7 @@
 {
-	"variants":{
-		"": {"model": "streetparts:block/blocks/diorite_pavement"}
-	}
+    "variants": {
+        "": {
+            "model": "streetparts:block/diorite_pavement"
+        }
+    }
 }
