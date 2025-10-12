@@ -19,7 +19,7 @@ import java.util.List;
 
 import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
-public class SignRegistry {
+public class SignBlockRegistry {
 
         private static final List<String> roundSigns = List.of(
                         "stop",
@@ -68,7 +68,7 @@ public class SignRegistry {
                                         })
                                         .build());
 
-        public static void registerRoadBlocks(IEventBus modEventBus) {
+        public static void registerSignBlocks(IEventBus modEventBus) {
                 BLOCKS.register(modEventBus);
                 ITEMS.register(modEventBus);
                 CREATIVE_TABS.register(modEventBus);
