@@ -9,6 +9,9 @@
     "streetparts:brown_bricks_wall",
     "streetparts:maroon_bricks_wall",
     "streetparts:white_bricks_wall",
-    "streetparts:sandstone_bricks_wall"
+    "streetparts:sandstone_bricks_wall",
+    "streetparts:green_bricks_wall",
+    "streetparts:blue_bricks_wall",
+    "streetparts:black_bricks_wall"
   ]
 }

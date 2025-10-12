@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "streetparts:block/black_bricks",
+        "top": "streetparts:block/black_bricks",
+        "side": "streetparts:block/black_bricks"
+    }
+}
