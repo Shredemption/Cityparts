@@ -64,7 +64,7 @@ public class LightBlocksRegistry {
                                         BlockBehaviour.Properties.of().strength(2.0f),
                                         Shapes.box(6 / 16f, 0, 0, 16 / 16f, 12 / 16f, 10 / 16f)),
                         "light", new BlockTypeInfo(
-                                        BlockBehaviour.Properties.of().strength(2.0f),
+                                        BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 15),
                                         Shapes.or(Shapes.box(5.5 / 16f, 7.5 / 16f, 2 / 16f, 10.5 / 16f, 12.5 / 16f,
                                                         10 / 16f),
                                                         Shapes.box(6 / 16f, 8 / 16f, 9 / 16f, 10 / 16f, 12 / 16f,
