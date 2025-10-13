@@ -56,16 +56,19 @@ public class LightBlocksRegistry {
                                         Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 16 / 16f)),
                         "arm", new BlockTypeInfo(
                                         BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
+                                        Shapes.box(6 / 16f, 8 / 16f, 0, 10 / 16f, 12 / 16f, 16 / 16f)),
                         "post", new BlockTypeInfo(
                                         BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
+                                        Shapes.box(6 / 16f, 0, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f)),
                         "l_corner", new BlockTypeInfo(
                                         BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
+                                        Shapes.box(6 / 16f, 0, 0, 16 / 16f, 12 / 16f, 10 / 16f)),
                         "light", new BlockTypeInfo(
                                         BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)));
+                                        Shapes.or(Shapes.box(5.5 / 16f, 7.5 / 16f, 2 / 16f, 10.5 / 16f, 12.5 / 16f,
+                                                        10 / 16f),
+                                                        Shapes.box(6 / 16f, 8 / 16f, 9 / 16f, 10 / 16f, 12 / 16f,
+                                                                        16 / 16f))));
 
         public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);
