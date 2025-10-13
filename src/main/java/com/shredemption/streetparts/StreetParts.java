@@ -37,7 +37,7 @@ public class StreetParts {
         // this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        ConstructionBlocksRegistry.register(modEventBus);
+        ConstructionBlocksRegistry.registerConstructionBlocks(modEventBus);
         RoadBlocksRegistry.registerRoadBlocks(modEventBus);
         SignBlockRegistry.registerSignBlocks(modEventBus);
     }

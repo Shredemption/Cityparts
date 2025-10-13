@@ -77,7 +77,7 @@ public class ConstructionBlocksRegistry {
                                         })
                                         .build());
 
-        public static void register(IEventBus modEventBus) {
+        public static void registerConstructionBlocks(IEventBus modEventBus) {
                 BLOCKS.register(modEventBus);
                 ITEMS.register(modEventBus);
                 CREATIVE_TABS.register(modEventBus);
