@@ -1,6 +1,0 @@
-{
-    "parent": "streetparts:block/lights/post_block",
-    "textures": {
-        "0": "streetparts:blocks/black_post"
-    }
-}
