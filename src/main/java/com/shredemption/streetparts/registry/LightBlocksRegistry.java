@@ -83,7 +83,7 @@ public class LightBlocksRegistry {
                                                         .translatable("itemGroup.streetparts.lights"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
                                                         .get(fromNamespaceAndPath(StreetParts.MOD_ID,
-                                                                        "gray_light"))
+                                                                        "light_gray_light"))
                                                         .getDefaultInstance())
                                         .displayItems((params, output) -> {
                                                 REGISTERED_LIGHT_BLOCKS.forEach(b -> output.accept(b.get().asItem()));
