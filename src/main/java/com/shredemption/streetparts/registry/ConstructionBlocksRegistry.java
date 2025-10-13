@@ -70,8 +70,6 @@ public class ConstructionBlocksRegistry {
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
                                                         .get(fromNamespaceAndPath(StreetParts.MOD_ID, "stone_pavement"))
                                                         .getDefaultInstance())
-                                        .withTabsBefore(net.minecraft.world.item.CreativeModeTabs.SPAWN_EGGS)
-                                        .withTabsAfter(RoadBlocksRegistry.ROAD_BLOCKS_TAB.getKey())
                                         .displayItems((params, output) -> {
                                                 REGISTERED_BLOCKS.forEach(entry -> output.accept(entry.get().asItem()));
                                         })

@@ -84,7 +84,6 @@ public class SignBlockRegistry {
                                                         .get(fromNamespaceAndPath(StreetParts.MOD_ID,
                                                                         "sign_round_stop"))
                                                         .getDefaultInstance())
-                                        .withTabsBefore(RoadBlocksRegistry.ROAD_BLOCKS_TAB.getKey())
                                         .displayItems((params, output) -> {
                                                 REGISTERED_ROUND_SIGNS.forEach(b -> output.accept(b.get().asItem()));
                                                 REGISTERED_SQUARE_SIGNS.forEach(b -> output.accept(b.get().asItem()));
