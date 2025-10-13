@@ -1,7 +1,8 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.RoadBlock;
+import com.shredemption.streetparts.custom.RotatableHorizontalBlock;
+
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -63,8 +64,8 @@ public class RoadBlocksRegistry {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
                         .create(Registries.CREATIVE_MODE_TAB, StreetParts.MOD_ID);
 
-        private static final List<DeferredBlock<RoadBlock>> REGISTERED_FULL_BLOCKS = new ArrayList<>();
-        private static final List<DeferredBlock<RoadBlock>> REGISTERED_SLAB_BLOCKS = new ArrayList<>();
+        private static final List<DeferredBlock<RotatableHorizontalBlock>> REGISTERED_FULL_BLOCKS = new ArrayList<>();
+        private static final List<DeferredBlock<RotatableHorizontalBlock>> REGISTERED_SLAB_BLOCKS = new ArrayList<>();
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ROAD_BLOCKS_TAB = CREATIVE_TABS
                         .register("streetparts_road_blocks", () -> CreativeModeTab.builder()
@@ -101,8 +102,8 @@ public class RoadBlocksRegistry {
                 for (String suffix : blockSuffixes) {
                         // Register full block
                         String fullName = "roadlines_" + suffix;
-                        DeferredBlock<RoadBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new RoadBlock(BlockBehaviour.Properties.of()
+                        DeferredBlock<RotatableHorizontalBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new RotatableHorizontalBlock(BlockBehaviour.Properties.of()
                                                         .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
                                                         Shapes.block()));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
@@ -110,9 +111,9 @@ public class RoadBlocksRegistry {
 
                         // Register slab block
                         String slabName = "roadlines_" + suffix + "_slab";
-                        DeferredBlock<RoadBlock> slabBlock = BLOCKS
+                        DeferredBlock<RotatableHorizontalBlock> slabBlock = BLOCKS
                                         .register(slabName,
-                                                        () -> new RoadBlock(BlockBehaviour.Properties.of()
+                                                        () -> new RotatableHorizontalBlock(BlockBehaviour.Properties.of()
                                                                         .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
                                                                         Shapes.box(0, 0, 0, 1, 0.5, 1)));
                         ITEMS.register(slabName, () -> new BlockItem(slabBlock.get(), new Item.Properties()));
