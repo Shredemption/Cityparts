@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "streetparts:block/light_green_post"
+        },
+        "facing=south": {
+            "model": "streetparts:block/light_green_post",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "streetparts:block/light_green_post",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "streetparts:block/light_green_post",
+            "y": 90
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/template/light_light",
+    "textures": {
+        "0": "streetparts:block/white_post"
+    }
+}

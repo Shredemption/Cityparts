@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/template/light_corner",
+    "textures": {
+        "0": "streetparts:block/gray_post"
+    }
+}
