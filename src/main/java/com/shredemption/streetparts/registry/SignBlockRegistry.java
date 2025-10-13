@@ -1,7 +1,7 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.SignBlock;
+import com.shredemption.streetparts.custom.RotatableHorizontalBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -71,9 +72,9 @@ public class SignBlockRegistry {
         public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
                         .create(Registries.CREATIVE_MODE_TAB, StreetParts.MOD_ID);
 
-        private static final List<DeferredBlock<SignBlock>> REGISTERED_ROUND_SIGNS = new ArrayList<>();
-        private static final List<DeferredBlock<SignBlock>> REGISTERED_SQUARE_SIGNS = new ArrayList<>();
-        private static final List<DeferredBlock<SignBlock>> REGISTERED_TRIANGLE_SIGNS = new ArrayList<>();
+        private static final List<DeferredBlock<RotatableHorizontalBlock>> REGISTERED_ROUND_SIGNS = new ArrayList<>();
+        private static final List<DeferredBlock<RotatableHorizontalBlock>> REGISTERED_SQUARE_SIGNS = new ArrayList<>();
+        private static final List<DeferredBlock<RotatableHorizontalBlock>> REGISTERED_TRIANGLE_SIGNS = new ArrayList<>();
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SIGNS_TAB = CREATIVE_TABS
                         .register("streetparts_signs", () -> CreativeModeTab.builder()
@@ -91,6 +92,10 @@ public class SignBlockRegistry {
                                         })
                                         .build());
 
+        private static final VoxelShape SignShape = Shapes.or(
+                        Shapes.box(7 / 16f, 9 / 16f, 1.0f, 9 / 16f, 11 / 16f, 1.375f),
+                        Shapes.box(2 / 16f, 4 / 16f, 15 / 16f, 14 / 16f, 1.0f, 1.0f));
+
         public static void registerSignBlocks(IEventBus modEventBus) {
                 BLOCKS.register(modEventBus);
                 ITEMS.register(modEventBus);
@@ -98,30 +103,27 @@ public class SignBlockRegistry {
 
                 for (String type : roundSigns) {
                         String fullName = "sign_round_" + type;
-                        DeferredBlock<SignBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new SignBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
-                                                        Shapes.block()));
+                        DeferredBlock<RotatableHorizontalBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new RotatableHorizontalBlock(BlockBehaviour.Properties.of()
+                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f), SignShape));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_ROUND_SIGNS.add(fullBlock);
                 }
 
                 for (String type : squareSigns) {
                         String fullName = "sign_square_" + type;
-                        DeferredBlock<SignBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new SignBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
-                                                        Shapes.block()));
+                        DeferredBlock<RotatableHorizontalBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new RotatableHorizontalBlock(BlockBehaviour.Properties.of()
+                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f), SignShape));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_SQUARE_SIGNS.add(fullBlock);
                 }
 
                 for (String type : triangleSigns) {
                         String fullName = "sign_triangle_" + type;
-                        DeferredBlock<SignBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new SignBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
-                                                        Shapes.block()));
+                        DeferredBlock<RotatableHorizontalBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new RotatableHorizontalBlock(BlockBehaviour.Properties.of()
+                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f), SignShape));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_TRIANGLE_SIGNS.add(fullBlock);
                 }
