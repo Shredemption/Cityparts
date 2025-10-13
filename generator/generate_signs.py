@@ -1,6 +1,8 @@
 import os
 import json
 
+import blockstates
+
 # === CONFIG ===
 MOD_ID = "streetparts"
 
@@ -63,17 +65,6 @@ for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
 # === JSON templates ===
 
 
-def blockstate_json(name):
-    return {
-        "variants": {
-            "facing=north": {"model": f"{MOD_ID}:block/{name}"},
-            "facing=south": {"model": f"{MOD_ID}:block/{name}", "y": 180},
-            "facing=west": {"model": f"{MOD_ID}:block/{name}", "y": 270},
-            "facing=east": {"model": f"{MOD_ID}:block/{name}", "y": 90},
-        }
-    }
-
-
 def model_round_json(name):
     return {
         "parent": f"{MOD_ID}:block/template/sign_round",
@@ -104,7 +95,7 @@ for sign in ROUND:
     sign_name = f"sign_round_{sign}"
 
     files = {
-        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstate_json(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_round_json(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): item_json(sign_name),
     }
@@ -118,7 +109,7 @@ for sign in SQUARE:
     sign_name = f"sign_square_{sign}"
 
     files = {
-        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstate_json(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_square_json(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): item_json(sign_name),
     }
@@ -132,7 +123,7 @@ for sign in TRIANGLE:
     sign_name = f"sign_triangle_{sign}"
 
     files = {
-        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstate_json(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_triangle_json(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): item_json(sign_name),
     }

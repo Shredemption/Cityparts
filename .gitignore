@@ -8,6 +8,7 @@ bin
 
 # vscode
 .vscode
+generator/__pycache__
 
 # idea
 out

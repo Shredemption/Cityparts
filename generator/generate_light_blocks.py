@@ -1,6 +1,8 @@
 import os
 import json
 
+import blockstates
+
 # === CONFIG ===
 MOD_ID = "streetparts"
 COLORS = ["gray", "white", "black", "green"]
@@ -16,17 +18,6 @@ for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
 
 # === JSON templates ===
-
-
-def blockstate(color, type):
-    return {
-        "variants": {
-            "facing=north": {"model": f"{MOD_ID}:block/light_{color}_{type}"},
-            "facing=south": {"model": f"{MOD_ID}:block/light_{color}_{type}", "y": 180},
-            "facing=west": {"model": f"{MOD_ID}:block/light_{color}_{type}", "y": 270},
-            "facing=east": {"model": f"{MOD_ID}:block/light_{color}_{type}", "y": 90},
-        }
-    }
 
 
 def blockmodel(color, type):
@@ -46,7 +37,7 @@ for color in COLORS:
         fullName = f"light_{color}_{type}"
 
         files = {
-            os.path.join(BLOCKSTATE_DIR, f"{fullName}.json"): blockstate(color, type),
+            os.path.join(BLOCKSTATE_DIR, f"{fullName}.json"): blockstates.light(color, type),
             os.path.join(BLOCK_MODEL_DIR, f"{fullName}.json"): blockmodel(color, type),
             os.path.join(ITEM_MODEL_DIR, f"{fullName}.json"): itemmodel(color, type),
         }

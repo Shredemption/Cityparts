@@ -1,6 +1,8 @@
 import os
 import json
 
+import blockstates
+
 # === CONFIG ===
 MOD_ID = "streetparts"
 MATERIALS = ["asphalt", "red_asphalt"]
@@ -13,23 +15,6 @@ ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
 # === Ensure directories exist ===
 for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
-
-# === JSON templates ===
-
-
-# blockstates
-def blockstate_block_json(name):
-    return {"variants": {"": {"model": f"{MOD_ID}:block/{name}"}}}
-
-
-def blockstate_slab_json(name):
-    return {
-        "variants": {
-            "type=bottom": {"model": f"{MOD_ID}:block/{name}_slab"},
-            "type=top": {"model": f"{MOD_ID}:block/{name}_slab_top"},
-            "type=double": {"model": f"{MOD_ID}:block/{name}"},
-        }
-    }
 
 
 # item models
@@ -78,8 +63,8 @@ for mat in MATERIALS:
 
     files = {
         # blockstates
-        os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstate_block_json(mat),
-        os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstate_slab_json(mat),
+        os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstates.block(block_name),
+        os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.slab(block_name),
         # item models
         os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): item_block_model_json(mat),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): item_slab_model_json(mat),
