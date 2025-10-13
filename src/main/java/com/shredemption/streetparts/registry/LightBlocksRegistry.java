@@ -24,6 +24,12 @@ import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
 public class LightBlocksRegistry {
 
+        private static final List<String> COLOR_ORDER = List.of(
+                        "gray",
+                        "white",
+                        "black",
+                        "green");
+
         private static final Map<String, MapColor> COLOR_INFOS = Map.of(
                         "green", MapColor.COLOR_GREEN,
                         "black", MapColor.COLOR_BLACK,
@@ -33,13 +39,33 @@ public class LightBlocksRegistry {
         public record BlockTypeInfo(BlockBehaviour.Properties properties, VoxelShape shape) {
         }
 
+        private static final List<String> TYPE_ORDER = List.of(
+                        "light",
+                        "post",
+                        "arm",
+                        "corner",
+                        "l_corner",
+                        "t_corner");
+
         private static final Map<String, BlockTypeInfo> TYPE_INFOS = Map.of(
                         "corner", new BlockTypeInfo(
                                         BlockBehaviour.Properties.of().strength(2.0f),
                                         Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
-                        "t_block", new BlockTypeInfo(
+                        "t_corner", new BlockTypeInfo(
                                         BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 16 / 16f)));
+                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 16 / 16f)),
+                        "arm", new BlockTypeInfo(
+                                        BlockBehaviour.Properties.of().strength(2.0f),
+                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
+                        "post", new BlockTypeInfo(
+                                        BlockBehaviour.Properties.of().strength(2.0f),
+                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
+                        "l_corner", new BlockTypeInfo(
+                                        BlockBehaviour.Properties.of().strength(2.0f),
+                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
+                        "light", new BlockTypeInfo(
+                                        BlockBehaviour.Properties.of().strength(2.0f),
+                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)));
 
         public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);
@@ -54,7 +80,7 @@ public class LightBlocksRegistry {
                                                         .translatable("itemGroup.streetparts.lights"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
                                                         .get(fromNamespaceAndPath(StreetParts.MOD_ID,
-                                                                        "sign_round_stop"))
+                                                                        "gray_light"))
                                                         .getDefaultInstance())
                                         .displayItems((params, output) -> {
                                                 REGISTERED_LIGHT_BLOCKS.forEach(b -> output.accept(b.get().asItem()));
@@ -66,13 +92,14 @@ public class LightBlocksRegistry {
                 ITEMS.register(modEventBus);
                 CREATIVE_TABS.register(modEventBus);
 
-                for (String color : COLOR_INFOS.keySet()) {
-                        for (String type : TYPE_INFOS.keySet()) {
+                for (String color : COLOR_ORDER) {
+                        for (String type : TYPE_ORDER) {
                                 BlockTypeInfo info = TYPE_INFOS.get(type);
                                 MapColor mapColor = COLOR_INFOS.get(color);
-                                String fullName = color + "_light_" + type;
+                                String fullName = "lights_" + color + "_" + type;
                                 DeferredBlock<RotatableHorizontalBlock> block = BLOCKS.register(fullName,
-                                                () -> new RotatableHorizontalBlock(info.properties.mapColor(mapColor), info.shape));
+                                                () -> new RotatableHorizontalBlock(info.properties.mapColor(mapColor),
+                                                                info.shape));
                                 ITEMS.register(fullName, () -> new BlockItem(block.get(), new Item.Properties()));
                                 REGISTERED_LIGHT_BLOCKS.add(block);
                         }
