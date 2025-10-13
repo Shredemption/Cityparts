@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates
+import blockstates, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -22,19 +22,6 @@ ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
 # === Ensure directories exist ===
 for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
-
-
-# item models
-def item_block_model_json(name):
-    return {"parent": f"{MOD_ID}:block/{name}"}
-
-
-def item_stairs_model_json(name):
-    return {"parent": f"{MOD_ID}:block/{name}_stairs"}
-
-
-def item_slab_model_json(name):
-    return {"parent": f"{MOD_ID}:block/{name}_slab"}
 
 
 # block model
@@ -133,13 +120,13 @@ for var in VARIANTS:
         os.path.join(BLOCKSTATE_DIR, f"{stairs_name}.json"): blockstates.stairs(var),
         os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.slab(var),
         # item models
-        os.path.join(ITEM_MODEL_DIR, f"{log_name}.json"): item_block_model_json(log_name),
-        os.path.join(ITEM_MODEL_DIR, f"{wood_name}.json"): item_block_model_json(wood_name),
-        os.path.join(ITEM_MODEL_DIR, f"{stripped_log_name}.json"): item_block_model_json(stripped_log_name),
-        os.path.join(ITEM_MODEL_DIR, f"{stripped_wood_name}.json"): item_block_model_json(stripped_wood_name),
-        os.path.join(ITEM_MODEL_DIR, f"{planks_name}.json"): item_block_model_json(planks_name),
-        os.path.join(ITEM_MODEL_DIR, f"{stairs_name}.json"): item_stairs_model_json(var),
-        os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): item_slab_model_json(var),
+        os.path.join(ITEM_MODEL_DIR, f"{log_name}.json"): items.block(log_name),
+        os.path.join(ITEM_MODEL_DIR, f"{wood_name}.json"): items.block(wood_name),
+        os.path.join(ITEM_MODEL_DIR, f"{stripped_log_name}.json"): items.block(stripped_log_name),
+        os.path.join(ITEM_MODEL_DIR, f"{stripped_wood_name}.json"): items.block(stripped_wood_name),
+        os.path.join(ITEM_MODEL_DIR, f"{planks_name}.json"): items.block(planks_name),
+        os.path.join(ITEM_MODEL_DIR, f"{stairs_name}.json"): items.block(stairs_name),
+        os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
         # block model
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}.json"): model_pillar(log_name),
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}_horizontal.json"): model_pillar_horizontal(log_name),

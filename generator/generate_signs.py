@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates
+import blockstates, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -86,10 +86,6 @@ def model_triangle_json(name):
     }
 
 
-def item_json(name):
-    return {"parent": "item/generated", "textures": {"layer0": f"{MOD_ID}:block/{name}"}}
-
-
 # === Generate files ===
 for sign in ROUND:
     sign_name = f"sign_round_{sign}"
@@ -97,7 +93,7 @@ for sign in ROUND:
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_round_json(sign_name),
-        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): item_json(sign_name),
+        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
     }
 
     for path, data in files.items():
@@ -111,7 +107,7 @@ for sign in SQUARE:
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_square_json(sign_name),
-        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): item_json(sign_name),
+        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
     }
 
     for path, data in files.items():
@@ -125,7 +121,7 @@ for sign in TRIANGLE:
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_triangle_json(sign_name),
-        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): item_json(sign_name),
+        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
     }
 
     for path, data in files.items():

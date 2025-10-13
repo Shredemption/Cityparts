@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates
+import blockstates, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -62,14 +62,6 @@ def block_model_slab_json(name):
     }
 
 
-def item_model_json(name):
-    return {"parent": f"{MOD_ID}:block/roadlines_{name}"}
-
-
-def item_model_slab_json(name):
-    return {"parent": f"{MOD_ID}:block/roadlines_{name}_slab"}
-
-
 # === Generate files ===
 for var in VARIANTS:
     block_name = f"roadlines_{var}"
@@ -78,10 +70,10 @@ for var in VARIANTS:
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstates.horizontalRotating(block_name),
         os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): block_model_json(var),
-        os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): item_model_json(var),
+        os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.block(block_name),
         os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.horizontalRotating(slab_name),
         os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): block_model_slab_json(var),
-        os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): item_model_slab_json(var),
+        os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
     }
 
     for path, data in files.items():
