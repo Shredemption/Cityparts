@@ -5,6 +5,7 @@ import com.shredemption.streetparts.registry.ConstructionBlocksRegistry;
 import com.shredemption.streetparts.registry.LightBlocksRegistry;
 import com.shredemption.streetparts.registry.RoadBlocksRegistry;
 import com.shredemption.streetparts.registry.SignBlockRegistry;
+import com.shredemption.streetparts.registry.WoodBlocksRegistry;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -42,6 +43,7 @@ public class StreetParts {
         RoadBlocksRegistry.registerRoadBlocks(modEventBus);
         SignBlockRegistry.registerSignBlocks(modEventBus);
         LightBlocksRegistry.registerLightBlocks(modEventBus);
+        WoodBlocksRegistry.registerWoodBlocks(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
