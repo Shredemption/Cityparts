@@ -99,7 +99,7 @@ public class LightBlocksRegistry {
                         for (String type : TYPE_ORDER) {
                                 BlockTypeInfo info = TYPE_INFOS.get(type);
                                 MapColor mapColor = COLOR_INFOS.get(color);
-                                String fullName = "lights_" + color + "_" + type;
+                                String fullName = "light_" + color + "_" + type;
                                 DeferredBlock<RotatableHorizontalBlock> block = BLOCKS.register(fullName,
                                                 () -> new RotatableHorizontalBlock(info.properties.mapColor(mapColor),
                                                                 info.shape));
