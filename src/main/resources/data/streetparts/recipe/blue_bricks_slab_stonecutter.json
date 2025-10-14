@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "streetparts:blue_bricks"
+    },
+    "result": {
+        "count": 2,
+        "id": "streetparts:blue_bricks_slab"
+    }
+}

@@ -1,90 +1,21 @@
 {
-    "multipart": [
+    "type": "minecraft:block",
+    "pools": [
         {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_post"
-            },
-            "when": {
-                "up": "true"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side",
-                "uvlock": "true"
-            },
-            "when": {
-                "north": "low"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side",
-                "uvlock": "true",
-                "y": 90
-            },
-            "when": {
-                "east": "low"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side",
-                "uvlock": "true",
-                "y": 180
-            },
-            "when": {
-                "south": "low"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side",
-                "uvlock": "true",
-                "y": 270
-            },
-            "when": {
-                "west": "low"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side_tall",
-                "uvlock": "true"
-            },
-            "when": {
-                "north": "tall"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side_tall",
-                "uvlock": "true",
-                "y": 90
-            },
-            "when": {
-                "east": "tall"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side_tall",
-                "uvlock": "true",
-                "y": 180
-            },
-            "when": {
-                "south": "tall"
-            }
-        },
-        {
-            "apply": {
-                "model": "streetparts:block/sandstone_bricks_wall_wall_side_tall",
-                "uvlock": "true",
-                "y": 270
-            },
-            "when": {
-                "west": "tall"
-            }
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "streetparts:sandstone_bricks_wall"
+                }
+            ],
+            "rolls": 1.0
         }
-    ]
+    ],
+    "random_sequence": "streetparts:blocks/sandstone_bricks_wall"
 }

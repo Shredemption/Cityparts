@@ -1,7 +1,21 @@
 {
-    "variants": {
-        "": {
-            "model": "streetparts:block/andesite_pavement"
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "streetparts:andesite_pavement"
+                }
+            ],
+            "rolls": 1.0
         }
-    }
+    ],
+    "random_sequence": "streetparts:blocks/andesite_pavement"
 }

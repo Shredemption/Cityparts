@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "streetparts:sandstone_bricks"
+    },
+    "result": {
+        "count": 1,
+        "id": "streetparts:sandstone_bricks_wall"
+    }
+}

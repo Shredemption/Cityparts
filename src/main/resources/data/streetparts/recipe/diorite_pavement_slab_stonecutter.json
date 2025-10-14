@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "streetparts:diorite_pavement"
+    },
+    "result": {
+        "count": 2,
+        "id": "streetparts:diorite_pavement_slab"
+    }
+}

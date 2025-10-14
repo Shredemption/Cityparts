@@ -149,3 +149,60 @@ def building_slab_stonecutter(block, slab):
         "ingredient": {"item": f"{MOD_ID}:{block}"},
         "result": {"count": 2, "id": f"{MOD_ID}:{slab}"},
     }
+
+
+def building_stairs(block, stairs):
+    return {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {"#": {"item": f"{MOD_ID}:{block}"}},
+        "pattern": ["#  ", "## ", "###"],
+        "result": {"count": 4, "id": f"{MOD_ID}:{stairs}"},
+    }
+
+
+def building_stairs_stonecutter(block, stairs):
+    return {
+        "type": "minecraft:stonecutting",
+        "ingredient": {"item": f"{MOD_ID}:{block}"},
+        "result": {"count": 1, "id": f"{MOD_ID}:{stairs}"},
+    }
+
+
+def building_wall(block, wall):
+    return {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {"#": {"item": f"{MOD_ID}:{block}"}},
+        "pattern": ["###", "###"],
+        "result": {"count": 6, "id": f"{MOD_ID}:{wall}"},
+    }
+
+
+def building_wall_stonecutter(block, wall):
+    return {
+        "type": "minecraft:stonecutting",
+        "ingredient": {"item": f"{MOD_ID}:{block}"},
+        "result": {"count": 1, "id": f"{MOD_ID}:{wall}"},
+    }
+
+
+def pavement(block, result):
+    return {
+        "type": "minecraft:crafting_shaped",
+        "group": "pavement",
+        "category": "building",
+        "pattern": ["xxx", "xxx", "xxx"],
+        "key": {"x": {"item": f"{block}"}},
+        "result": {"id": f"{MOD_ID}:{result}", "count": 9},
+    }
+
+
+def brick_variant(additive, result):
+    return {
+        "type": "minecraft:crafting_shapeless",
+        "group": "pavement",
+        "category": "building",
+        "ingredients": [{"item": "minecraft:bricks"}, {"item": f"{additive}"}],
+        "result": {"id": f"{MOD_ID}:{result}", "count": 1},
+    }

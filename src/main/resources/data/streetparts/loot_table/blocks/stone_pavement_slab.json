@@ -1,13 +1,21 @@
 {
-    "variants": {
-        "type=bottom": {
-            "model": "streetparts:block/stone_pavement_slab_slab"
-        },
-        "type=top": {
-            "model": "streetparts:block/stone_pavement_slab_slab_top"
-        },
-        "type=double": {
-            "model": "streetparts:block/stone_pavement_slab"
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "streetparts:stone_pavement_slab"
+                }
+            ],
+            "rolls": 1.0
         }
-    }
+    ],
+    "random_sequence": "streetparts:blocks/stone_pavement_slab"
 }

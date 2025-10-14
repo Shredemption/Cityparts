@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "pavement",
+    "category": "building",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {
+        "x": {
+            "item": "minecraft:deepslate"
+        }
+    },
+    "result": {
+        "id": "streetparts:deepslate_pavement",
+        "count": 9
+    }
+}

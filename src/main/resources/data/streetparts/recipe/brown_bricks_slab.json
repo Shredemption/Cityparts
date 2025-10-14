@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+        "#": {
+            "item": "streetparts:brown_bricks"
+        }
+    },
+    "pattern": [
+        "###"
+    ],
+    "result": {
+        "count": 6,
+        "id": "streetparts:brown_bricks_slab"
+    }
+}
