@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "streetparts:olive_door",
+    "streetparts:verdant_door",
+    "streetparts:moon_door",
+    "streetparts:sky_door",
+    "streetparts:wisteria_door",
+    "streetparts:ebony_door"
+  ]
+}

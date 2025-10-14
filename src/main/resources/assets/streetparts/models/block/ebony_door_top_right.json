@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/door_top_right",
+    "textures": {
+        "bottom": "streetparts:block/ebony_door_bottom",
+        "top": "streetparts:block/ebony_door_top"
+    }
+}

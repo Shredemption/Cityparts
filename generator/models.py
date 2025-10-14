@@ -213,3 +213,59 @@ def fence_gate_wall_open(name):
         "parent": "minecraft:block/template_fence_gate_wall_open",
         "textures": {"texture": f"{MOD_ID}:block/{name}"},
     }
+
+
+def door_bottom_left(name):
+    return {
+        "parent": "minecraft:block/door_bottom_left",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }
+
+
+def door_bottom_left_open(name):
+    return {
+        "parent": "minecraft:block/door_bottom_left_open",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }
+
+
+def door_bottom_right(name):
+    return {
+        "parent": "minecraft:block/door_bottom_right",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }
+
+
+def door_bottom_right_open(name):
+    return {
+        "parent": "minecraft:block/door_bottom_right_open",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }
+
+
+def door_top_left(name):
+    return {
+        "parent": "minecraft:block/door_top_left",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }
+
+
+def door_top_left_open(name):
+    return {
+        "parent": "minecraft:block/door_top_left_open",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }
+
+
+def door_top_right(name):
+    return {
+        "parent": "minecraft:block/door_top_right",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }
+
+
+def door_top_right_open(name):
+    return {
+        "parent": "minecraft:block/door_top_right_open",
+        "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
+    }

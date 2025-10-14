@@ -15,3 +15,7 @@ def light(color, type):
 
 def block_texture(name):
     return {"parent": "item/generated", "textures": {"layer0": f"{MOD_ID}:block/{name}"}}
+
+
+def item_texture(name):
+    return {"parent": "item/generated", "textures": {"layer0": f"{MOD_ID}:item/{name}"}}
