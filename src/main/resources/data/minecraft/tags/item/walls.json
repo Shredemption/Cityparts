@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "streetparts:stone_pavement_wall",
+    "streetparts:andesite_pavement_wall",
+    "streetparts:diorite_pavement_wall",
+    "streetparts:granite_pavement_wall",
+    "streetparts:deepslate_pavement_wall",
+    "streetparts:gray_bricks_wall",
+    "streetparts:brown_bricks_wall",
+    "streetparts:maroon_bricks_wall",
+    "streetparts:white_bricks_wall",
+    "streetparts:sandstone_bricks_wall",
+    "streetparts:green_bricks_wall",
+    "streetparts:blue_bricks_wall",
+    "streetparts:black_bricks_wall",
+    "streetparts:beige_bricks_wall"
+  ]
+}
