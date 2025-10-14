@@ -1,7 +1,7 @@
 {
     "parent": "minecraft:block/cube_column",
     "textures": {
-        "end": "streetparts:block/olive_wood_top",
-        "side": "streetparts:block/olive_wood"
+        "end": "streetparts:block/olive_log",
+        "side": "streetparts:block/olive_log"
     }
 }

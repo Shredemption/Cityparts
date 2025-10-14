@@ -94,11 +94,23 @@ def pillar(name):
         "textures": {"end": f"{MOD_ID}:block/{name}_top", "side": f"{MOD_ID}:block/{name}"},
     }
 
+def pillar_one_texture(name):
+    return {
+        "parent": "minecraft:block/cube_column",
+        "textures": {"end": f"{MOD_ID}:block/{name}", "side": f"{MOD_ID}:block/{name}"},
+    }
+
 
 def pillar_horizontal(name):
     return {
         "parent": "minecraft:block/cube_column_horizontal",
         "textures": {"end": f"{MOD_ID}:block/{name}_top", "side": f"{MOD_ID}:block/{name}"},
+    }
+    
+def pillar_horizontal_one_texture(name):
+    return {
+        "parent": "minecraft:block/cube_column_horizontal",
+        "textures": {"end": f"{MOD_ID}:block/{name}", "side": f"{MOD_ID}:block/{name}"},
     }
 
 

@@ -1,7 +1,7 @@
 {
     "parent": "minecraft:block/cube_column_horizontal",
     "textures": {
-        "end": "streetparts:block/moon_wood_top",
-        "side": "streetparts:block/moon_wood"
+        "end": "streetparts:block/moon_log",
+        "side": "streetparts:block/moon_log"
     }
 }

@@ -46,15 +46,15 @@ for var in VARIANTS:
         # block model
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}.json"): models.pillar(log_name),
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}_horizontal.json"): models.pillar_horizontal(log_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}.json"): models.pillar(wood_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}_horizontal.json"): models.pillar_horizontal(wood_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}.json"): models.pillar_one_texture(log_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}_horizontal.json"): models.pillar_horizontal_one_texture(log_name),
         os.path.join(BLOCK_MODEL_DIR, f"{stripped_log_name}.json"): models.pillar(stripped_log_name),
         os.path.join(BLOCK_MODEL_DIR, f"{stripped_log_name}_horizontal.json"): models.pillar_horizontal(
             stripped_log_name
         ),
-        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}.json"): models.pillar(stripped_wood_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}_horizontal.json"): models.pillar_horizontal(
-            stripped_wood_name
+        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}.json"): models.pillar_one_texture(stripped_log_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}_horizontal.json"): models.pillar_horizontal_one_texture(
+            stripped_log_name
         ),
         os.path.join(BLOCK_MODEL_DIR, f"{planks_name}.json"): models.block(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{stairs_name}.json"): models.stairs(planks_name),
