@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "building",
+    "group": "planks",
+    "ingredients": [
+        {
+            "tag": "streetparts:verdant_logs"
+        }
+    ],
+    "result": {
+        "count": 4,
+        "id": "streetparts:verdant_planks"
+    }
+}

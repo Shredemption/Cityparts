@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, models, items, loottables
+import blockstates, models, items, loottables, recipes
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -19,9 +19,10 @@ BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
 BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
 ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
 LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
+RECIPE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/recipe")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR, RECIPE_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -126,6 +127,20 @@ for var in VARIANTS:
         os.path.join(LOOT_TABLE_DIR, f"{trapdoor_name}.json"): loottables.block_drops(trapdoor_name),
         os.path.join(LOOT_TABLE_DIR, f"{pressure_plate_name}.json"): loottables.block_drops(pressure_plate_name),
         os.path.join(LOOT_TABLE_DIR, f"{button_name}.json"): loottables.block_drops(button_name),
+        # recipes
+        os.path.join(RECIPE_DIR, f"{wood_name}.json"): recipes.wood(log_name, wood_name),
+        os.path.join(RECIPE_DIR, f"{stripped_wood_name}.json"): recipes.wood(stripped_log_name, stripped_wood_name),
+        os.path.join(RECIPE_DIR, f"{planks_name}.json"): recipes.planks(log_name + "s", planks_name),
+        os.path.join(RECIPE_DIR, f"{stairs_name}.json"): recipes.wooden_stairs(planks_name, stairs_name),
+        os.path.join(RECIPE_DIR, f"{slab_name}.json"): recipes.wooden_slab(planks_name, slab_name),
+        os.path.join(RECIPE_DIR, f"{fence_name}.json"): recipes.fence(planks_name, fence_name),
+        os.path.join(RECIPE_DIR, f"{fence_gate_name}.json"): recipes.fence_gate(planks_name, fence_gate_name),
+        os.path.join(RECIPE_DIR, f"{door_name}.json"): recipes.wooden_door(planks_name, door_name),
+        os.path.join(RECIPE_DIR, f"{trapdoor_name}.json"): recipes.wooden_trapdoor(planks_name, trapdoor_name),
+        os.path.join(RECIPE_DIR, f"{pressure_plate_name}.json"): recipes.wooden_pressure_plate(
+            planks_name, pressure_plate_name
+        ),
+        os.path.join(RECIPE_DIR, f"{button_name}.json"): recipes.wooden_button(planks_name, button_name),
     }
 
     for path, data in files.items():

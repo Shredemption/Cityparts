@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "redstone",
+    "group": "wooden_button",
+    "ingredients": [
+        {
+            "item": "streetparts:wisteria_planks"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "streetparts:wisteria_button"
+    }
+}

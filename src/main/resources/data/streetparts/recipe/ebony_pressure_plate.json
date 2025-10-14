@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "redstone",
+    "group": "wooden_pressure_plate",
+    "key": {
+        "#": {
+            "item": "streetparts:ebony_planks"
+        }
+    },
+    "pattern": [
+        "##"
+    ],
+    "result": {
+        "count": 1,
+        "id": "streetparts:ebony_pressure_plate"
+    }
+}
