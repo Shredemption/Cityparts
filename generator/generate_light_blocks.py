@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, items
+import blockstates, models, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -29,15 +29,6 @@ ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
 for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
 
-# === JSON templates ===
-
-
-def blockmodel(color, type):
-    return {
-        "parent": f"{MOD_ID}:block/template/light_{type}",
-        "textures": {"0": f"{MOD_ID}:block/{color}_post"},
-    }
-
 
 # === Generate files ===
 for color in COLORS:
@@ -46,7 +37,7 @@ for color in COLORS:
 
         files = {
             os.path.join(BLOCKSTATE_DIR, f"{fullName}.json"): blockstates.light(color, type),
-            os.path.join(BLOCK_MODEL_DIR, f"{fullName}.json"): blockmodel(color, type),
+            os.path.join(BLOCK_MODEL_DIR, f"{fullName}.json"): models.light(color, type),
             os.path.join(ITEM_MODEL_DIR, f"{fullName}.json"): items.light(color, type),
         }
 

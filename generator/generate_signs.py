@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, items
+import blockstates, models, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -62,29 +62,6 @@ ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
 for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
 
-# === JSON templates ===
-
-
-def model_round_json(name):
-    return {
-        "parent": f"{MOD_ID}:block/template/sign_round",
-        "textures": {"sign": f"{MOD_ID}:block/{name}"},
-    }
-
-
-def model_square_json(name):
-    return {
-        "parent": f"{MOD_ID}:block/template/sign_square",
-        "textures": {"sign": f"{MOD_ID}:block/{name}"},
-    }
-
-
-def model_triangle_json(name):
-    return {
-        "parent": f"{MOD_ID}:block/template/sign_triangle",
-        "textures": {"sign": f"{MOD_ID}:block/{name}"},
-    }
-
 
 # === Generate files ===
 for sign in ROUND:
@@ -92,7 +69,7 @@ for sign in ROUND:
 
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_round_json(sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_round(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
     }
 
@@ -106,7 +83,7 @@ for sign in SQUARE:
 
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_square_json(sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_square(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
     }
 
@@ -120,7 +97,7 @@ for sign in TRIANGLE:
 
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): model_triangle_json(sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_triangle(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
     }
 

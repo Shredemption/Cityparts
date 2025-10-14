@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, items
+import blockstates, models, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -45,22 +45,6 @@ ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
 for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
 
-# === JSON templates ===
-
-
-def block_model_json(name):
-    return {
-        "parent": f"{MOD_ID}:block/template/roadlines",
-        "textures": {"top": f"{MOD_ID}:block/roadlines_{name}"},
-    }
-
-
-def block_model_slab_json(name):
-    return {
-        "parent": f"{MOD_ID}:block/template/roadlines_slab",
-        "textures": {"top": f"{MOD_ID}:block/roadlines_{name}"},
-    }
-
 
 # === Generate files ===
 for var in VARIANTS:
@@ -69,10 +53,10 @@ for var in VARIANTS:
 
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstates.horizontalRotating(block_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): block_model_json(var),
+        os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): models.road_block(block_name),
         os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.block(block_name),
         os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.horizontalRotating(slab_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): block_model_slab_json(var),
+        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): models.road_slab(block_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
     }
 

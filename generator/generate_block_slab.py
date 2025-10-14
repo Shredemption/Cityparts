@@ -1,11 +1,14 @@
 import os
 import json
 
-import blockstates, items
+import blockstates, models, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
-MATERIALS = ["asphalt", "red_asphalt"]
+MATERIALS = [
+    "asphalt",
+    "red_asphalt",
+]
 
 BASE_PATH = r"./src/main/resources/assets/" + MOD_ID
 BLOCKSTATE_DIR = os.path.join(BASE_PATH, "blockstates")
@@ -15,35 +18,6 @@ ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
 # === Ensure directories exist ===
 for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
-
-
-# block model
-def model_block_json(name):
-    return {"parent": "block/cube_all", "textures": {"all": f"{MOD_ID}:block/{name}"}}
-
-
-# slab models
-def model_slab_json(name):
-    return {
-        "parent": "block/slab",
-        "textures": {
-            "bottom": f"{MOD_ID}:block/{name}",
-            "top": f"{MOD_ID}:block/{name}",
-            "side": f"{MOD_ID}:block/{name}",
-        },
-    }
-
-
-def model_slab_top_json(name):
-    return {
-        "parent": "block/slab_top",
-        "textures": {
-            "bottom": f"{MOD_ID}:block/{name}",
-            "top": f"{MOD_ID}:block/{name}",
-            "side": f"{MOD_ID}:block/{name}",
-        },
-    }
-
 
 # === Generate files ===
 for mat in MATERIALS:
@@ -56,14 +30,13 @@ for mat in MATERIALS:
         # blockstates
         os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstates.block(block_name),
         os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.slab(block_name),
+        # block model
+        os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): models.block(block_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): models.slab(block_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}_top.json"): models.slab_top(block_name),
         # item models
         os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.block(block_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
-        # block model
-        os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): model_block_json(mat),
-        # slab models
-        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): model_slab_json(mat),
-        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}_top.json"): model_slab_top_json(mat),
     }
 
     for path, data in files.items():

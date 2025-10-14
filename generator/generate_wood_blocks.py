@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, items
+import blockstates, models, items
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -24,82 +24,6 @@ for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
-# block model
-def model_pillar(name):
-    return {
-        "parent": "minecraft:block/cube_column",
-        "textures": {"end": f"{MOD_ID}:block/{name}_top", "side": f"{MOD_ID}:block/{name}"},
-    }
-
-
-def model_pillar_horizontal(name):
-    return {
-        "parent": "minecraft:block/cube_column_horizontal",
-        "textures": {"end": f"{MOD_ID}:block/{name}_top", "side": f"{MOD_ID}:block/{name}"},
-    }
-
-
-def model_block_json(name):
-    return {"parent": "block/cube_all", "textures": {"all": f"{MOD_ID}:block/{name}"}}
-
-
-# stairs models
-def model_stairs_json(name):
-    return {
-        "parent": "block/stairs",
-        "textures": {
-            "bottom": f"{MOD_ID}:block/{name}",
-            "top": f"{MOD_ID}:block/{name}",
-            "side": f"{MOD_ID}:block/{name}",
-        },
-    }
-
-
-def model_stairs_inner_json(name):
-    return {
-        "parent": "block/inner_stairs",
-        "textures": {
-            "bottom": f"{MOD_ID}:block/{name}",
-            "top": f"{MOD_ID}:block/{name}",
-            "side": f"{MOD_ID}:block/{name}",
-        },
-    }
-
-
-def model_stairs_outer_json(name):
-    return {
-        "parent": "block/outer_stairs",
-        "textures": {
-            "bottom": f"{MOD_ID}:block/{name}",
-            "top": f"{MOD_ID}:block/{name}",
-            "side": f"{MOD_ID}:block/{name}",
-        },
-    }
-
-
-# slab models
-def model_slab_json(name):
-    return {
-        "parent": "block/slab",
-        "textures": {
-            "bottom": f"{MOD_ID}:block/{name}",
-            "top": f"{MOD_ID}:block/{name}",
-            "side": f"{MOD_ID}:block/{name}",
-        },
-    }
-
-
-def model_slab_top_json(name):
-    return {
-        "parent": "block/slab_top",
-        "textures": {
-            "bottom": f"{MOD_ID}:block/{name}",
-            "top": f"{MOD_ID}:block/{name}",
-            "side": f"{MOD_ID}:block/{name}",
-        },
-    }
-
-
 # === Generate files ===
 for var in VARIANTS:
     log_name = f"{var}_log"
@@ -119,6 +43,25 @@ for var in VARIANTS:
         os.path.join(BLOCKSTATE_DIR, f"{planks_name}.json"): blockstates.block(planks_name),
         os.path.join(BLOCKSTATE_DIR, f"{stairs_name}.json"): blockstates.stairs(var),
         os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.slab(var),
+        # block model
+        os.path.join(BLOCK_MODEL_DIR, f"{log_name}.json"): models.pillar(log_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{log_name}_horizontal.json"): models.pillar_horizontal(log_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}.json"): models.pillar(wood_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}_horizontal.json"): models.pillar_horizontal(wood_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{stripped_log_name}.json"): models.pillar(stripped_log_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{stripped_log_name}_horizontal.json"): models.pillar_horizontal(
+            stripped_log_name
+        ),
+        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}.json"): models.pillar(stripped_wood_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}_horizontal.json"): models.pillar_horizontal(
+            stripped_wood_name
+        ),
+        os.path.join(BLOCK_MODEL_DIR, f"{planks_name}.json"): models.block(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{stairs_name}.json"): models.stairs(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{stairs_name}_inner.json"): models.stairs_inner(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{stairs_name}_outer.json"): models.stairs_outer(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): models.slab(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}_top.json"): models.slab_top(planks_name),
         # item models
         os.path.join(ITEM_MODEL_DIR, f"{log_name}.json"): items.block(log_name),
         os.path.join(ITEM_MODEL_DIR, f"{wood_name}.json"): items.block(wood_name),
@@ -127,27 +70,6 @@ for var in VARIANTS:
         os.path.join(ITEM_MODEL_DIR, f"{planks_name}.json"): items.block(planks_name),
         os.path.join(ITEM_MODEL_DIR, f"{stairs_name}.json"): items.block(stairs_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
-        # block model
-        os.path.join(BLOCK_MODEL_DIR, f"{log_name}.json"): model_pillar(log_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{log_name}_horizontal.json"): model_pillar_horizontal(log_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}.json"): model_pillar(wood_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{wood_name}_horizontal.json"): model_pillar_horizontal(wood_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{stripped_log_name}.json"): model_pillar(stripped_log_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{stripped_log_name}_horizontal.json"): model_pillar_horizontal(
-            stripped_log_name
-        ),
-        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}.json"): model_pillar(stripped_wood_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{stripped_wood_name}_horizontal.json"): model_pillar_horizontal(
-            stripped_wood_name
-        ),
-        os.path.join(BLOCK_MODEL_DIR, f"{planks_name}.json"): model_block_json(planks_name),
-        # stairs models
-        os.path.join(BLOCK_MODEL_DIR, f"{stairs_name}.json"): model_stairs_json(var),
-        os.path.join(BLOCK_MODEL_DIR, f"{stairs_name}_inner.json"): model_stairs_inner_json(var),
-        os.path.join(BLOCK_MODEL_DIR, f"{stairs_name}_outer.json"): model_stairs_outer_json(var),
-        # slab models
-        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): model_slab_json(var),
-        os.path.join(BLOCK_MODEL_DIR, f"{slab_name}_top.json"): model_slab_top_json(var),
     }
 
     for path, data in files.items():
