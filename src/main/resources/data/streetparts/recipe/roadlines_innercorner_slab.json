@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "tag": "streetparts:roadlines_slab"
+    },
+    "result": {
+        "count": 1,
+        "id": "streetparts:roadlines_innercorner_slab"
+    }
+}

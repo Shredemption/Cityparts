@@ -107,3 +107,19 @@ def wooden_button(planks, button):
         "ingredients": [{"item": f"{MOD_ID}:{planks}"}],
         "result": {"count": 1, "id": f"{MOD_ID}:{button}"},
     }
+
+
+def one_from_tag_stonecutter(tag, result):
+    return {
+        "type": "minecraft:stonecutting",
+        "ingredient": {"tag": f"{MOD_ID}:{tag}"},
+        "result": {"count": 1, "id": f"{MOD_ID}:{result}"},
+    }
+
+
+def two_from_tag_stonecutter(tag, result):
+    return {
+        "type": "minecraft:stonecutting",
+        "ingredient": {"tag": f"{MOD_ID}:{tag}"},
+        "result": {"count": 2, "id": f"{MOD_ID}:{result}"},
+    }

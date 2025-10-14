@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, models, items, loottables
+import blockstates, models, items, loottables, recipes
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -41,9 +41,10 @@ BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
 BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
 ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
 LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
+RECIPE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/recipe")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR, RECIPE_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -51,6 +52,9 @@ for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR]:
 for var in VARIANTS:
     block_name = f"roadlines_{var}"
     slab_name = f"roadlines_{var}_slab"
+
+    block_tag = "roadlines"
+    slab_tab = "roadlines_slab"
 
     files = {
         # blockstate
@@ -65,6 +69,10 @@ for var in VARIANTS:
         # loottable
         os.path.join(LOOT_TABLE_DIR, f"{block_name}.json"): loottables.block_drops(block_name),
         os.path.join(LOOT_TABLE_DIR, f"{slab_name}.json"): loottables.block_drops(slab_name),
+        # recipes
+        os.path.join(RECIPE_DIR, f"{block_name}.json"): recipes.one_from_tag_stonecutter(block_tag, block_name),
+        os.path.join(RECIPE_DIR, f"{slab_name}.json"): recipes.one_from_tag_stonecutter(slab_tab, slab_name),
+        os.path.join(RECIPE_DIR, f"{slab_name}_from_block.json"): recipes.two_from_tag_stonecutter(block_tag, slab_name),
     }
 
     for path, data in files.items():
