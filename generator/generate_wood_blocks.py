@@ -49,7 +49,7 @@ for var in VARIANTS:
         os.path.join(BLOCKSTATE_DIR, f"{stripped_wood_name}.json"): blockstates.pillar(stripped_wood_name),
         os.path.join(BLOCKSTATE_DIR, f"{planks_name}.json"): blockstates.block(planks_name),
         os.path.join(BLOCKSTATE_DIR, f"{stairs_name}.json"): blockstates.stairs(var),
-        os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.slab(var),
+        os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.slab_planks(var),
         os.path.join(BLOCKSTATE_DIR, f"{fence_name}.json"): blockstates.fence(fence_name),
         os.path.join(BLOCKSTATE_DIR, f"{fence_gate_name}.json"): blockstates.fence_gate(fence_gate_name),
         os.path.join(BLOCKSTATE_DIR, f"{door_name}.json"): blockstates.door(door_name),

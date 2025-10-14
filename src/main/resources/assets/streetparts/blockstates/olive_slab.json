@@ -7,7 +7,7 @@
             "model": "streetparts:block/olive_slab_top"
         },
         "type=double": {
-            "model": "streetparts:block/olive"
+            "model": "streetparts:block/olive_planks"
         }
     }
 }

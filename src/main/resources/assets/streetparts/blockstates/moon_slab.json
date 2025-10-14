@@ -7,7 +7,7 @@
             "model": "streetparts:block/moon_slab_top"
         },
         "type=double": {
-            "model": "streetparts:block/moon"
+            "model": "streetparts:block/moon_planks"
         }
     }
 }

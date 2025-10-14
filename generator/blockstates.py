@@ -217,6 +217,16 @@ def slab(name):
     }
 
 
+def slab_planks(name):
+    return {
+        "variants": {
+            "type=bottom": {"model": f"{MOD_ID}:block/{name}_slab"},
+            "type=top": {"model": f"{MOD_ID}:block/{name}_slab_top"},
+            "type=double": {"model": f"{MOD_ID}:block/{name}_planks"},
+        }
+    }
+
+
 def wall(name):
     return {
         "multipart": [

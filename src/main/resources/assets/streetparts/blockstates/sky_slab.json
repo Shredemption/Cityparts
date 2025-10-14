@@ -7,7 +7,7 @@
             "model": "streetparts:block/sky_slab_top"
         },
         "type=double": {
-            "model": "streetparts:block/sky"
+            "model": "streetparts:block/sky_planks"
         }
     }
 }
