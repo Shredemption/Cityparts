@@ -131,3 +131,21 @@ def two_from_tag_stonecutter(tag, result):
         "ingredient": {"tag": f"{MOD_ID}:{tag}"},
         "result": {"count": 2, "id": f"{MOD_ID}:{result}"},
     }
+
+
+def building_slab(block, slab):
+    return {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {"#": {"item": f"{MOD_ID}:{block}"}},
+        "pattern": ["###"],
+        "result": {"count": 6, "id": f"{MOD_ID}:{slab}"},
+    }
+
+
+def building_slab_stonecutter(block, slab):
+    return {
+        "type": "minecraft:stonecutting",
+        "ingredient": {"item": f"{MOD_ID}:{block}"},
+        "result": {"count": 2, "id": f"{MOD_ID}:{slab}"},
+    }
