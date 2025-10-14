@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "streetparts:block/moon_wood_top",
+        "side": "streetparts:block/moon_wood"
+    }
+}

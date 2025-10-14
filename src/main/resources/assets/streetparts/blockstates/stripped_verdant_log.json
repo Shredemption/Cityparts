@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=x": {
+            "model": "streetparts:block/stripped_verdant_log_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "streetparts:block/stripped_verdant_log"
+        },
+        "axis=z": {
+            "model": "streetparts:block/stripped_verdant_log_horizontal",
+            "x": 90
+        }
+    }
+}

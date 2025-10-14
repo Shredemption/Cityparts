@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "streetparts:block/ebony_wood_top",
+        "side": "streetparts:block/ebony_wood"
+    }
+}

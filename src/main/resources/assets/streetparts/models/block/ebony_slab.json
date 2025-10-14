@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "streetparts:block/ebony_planks",
+        "top": "streetparts:block/ebony_planks",
+        "side": "streetparts:block/ebony_planks"
+    }
+}

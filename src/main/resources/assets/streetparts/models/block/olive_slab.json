@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "streetparts:block/olive_planks",
+        "top": "streetparts:block/olive_planks",
+        "side": "streetparts:block/olive_planks"
+    }
+}
