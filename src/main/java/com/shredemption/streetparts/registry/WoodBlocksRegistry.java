@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -153,8 +154,8 @@ public class WoodBlocksRegistry {
             REGISTERED_BLOCKS.add(doorBlock);
 
             String trapdoorName = type + "_trapdoor";
-            DeferredBlock<DoorBlock> trapdoorBlock = BLOCKS.register(trapdoorName,
-                    () -> new DoorBlock(BLOCK_SET_TYPES.get(type), BlockBehaviour.Properties.of()
+            DeferredBlock<TrapDoorBlock> trapdoorBlock = BLOCKS.register(trapdoorName,
+                    () -> new TrapDoorBlock(BLOCK_SET_TYPES.get(type), BlockBehaviour.Properties.of()
                             .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
             ITEMS.register(trapdoorName, () -> new BlockItem(trapdoorBlock.get(), new Item.Properties()));
             REGISTERED_BLOCKS.add(trapdoorBlock);
