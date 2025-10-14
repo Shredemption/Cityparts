@@ -410,3 +410,24 @@ def pressure_plate(name):
             "powered=true": {"model": f"{MOD_ID}:block/{name}_down"},
         }
     }
+
+
+def fence(name):
+    return {
+        "multipart": [
+            {"apply": {"model": f"{MOD_ID}:block/{name}_post"}},
+            {"apply": {"model": f"{MOD_ID}:block/{name}_side", "uvlock": "true"}, "when": {"north": "true"}},
+            {
+                "apply": {"model": f"{MOD_ID}:block/{name}_side", "uvlock": "true", "y": 90},
+                "when": {"east": "true"},
+            },
+            {
+                "apply": {"model": f"{MOD_ID}:block/{name}_side", "uvlock": "true", "y": 180},
+                "when": {"south": "true"},
+            },
+            {
+                "apply": {"model": f"{MOD_ID}:block/{name}_side", "uvlock": "true", "y": 270},
+                "when": {"west": "true"},
+            },
+        ]
+    }

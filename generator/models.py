@@ -176,3 +176,15 @@ def pressure_plate(name):
 
 def pressure_plate_down(name):
     return {"parent": "minecraft:block/pressure_plate_down", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def fence_inventory(name):
+    return {"parent": "minecraft:block/fence_inventory", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def fence_post(name):
+    return {"parent": "minecraft:block/fence_post", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def fence_side(name):
+    return {"parent": "minecraft:block/fence_side", "textures": {"texture": f"{MOD_ID}:block/{name}"}}

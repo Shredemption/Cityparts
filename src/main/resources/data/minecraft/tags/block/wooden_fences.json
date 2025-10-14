@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "streetparts:olive_fence",
+    "streetparts:verdant_fence",
+    "streetparts:moon_fence",
+    "streetparts:sky_fence",
+    "streetparts:wisteria_fence",
+    "streetparts:ebony_fence"
+  ]
+}
