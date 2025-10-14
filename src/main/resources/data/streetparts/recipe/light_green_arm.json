@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "tag": "streetparts:lights"
+    },
+    "result": {
+        "count": 1,
+        "id": "streetparts:light_green_arm"
+    }
+}
