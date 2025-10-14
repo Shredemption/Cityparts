@@ -13,6 +13,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
@@ -25,7 +26,6 @@ import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -104,30 +104,30 @@ public class WoodBlocksRegistry {
 
                         String logName = type + "_log";
                         DeferredBlock<StrippableRotatedPillarBlock> logBlock = BLOCKS.register(logName,
-                                        () -> new StrippableRotatedPillarBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new StrippableRotatedPillarBlock(
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
                         ITEMS.register(logName, () -> new BlockItem(logBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(logBlock);
 
                         String woodName = type + "_wood";
                         DeferredBlock<StrippableRotatedPillarBlock> woodBlock = BLOCKS.register(woodName,
-                                        () -> new StrippableRotatedPillarBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new StrippableRotatedPillarBlock(
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
                         ITEMS.register(woodName, () -> new BlockItem(woodBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(woodBlock);
 
                         String strippeLogName = "stripped_" + type + "_log";
                         DeferredBlock<RotatedPillarBlock> strippedLogBlock = BLOCKS.register(strippeLogName,
-                                        () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new RotatedPillarBlock(
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
                         ITEMS.register(strippeLogName,
                                         () -> new BlockItem(strippedLogBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(strippedLogBlock);
 
                         String strippedWoodName = "stripped_" + type + "_wood";
                         DeferredBlock<RotatedPillarBlock> strippedWoodBlock = BLOCKS.register(strippedWoodName,
-                                        () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                                                        .ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
                         ITEMS.register(strippedWoodName,
                                         () -> new BlockItem(strippedWoodBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(strippedWoodBlock);
@@ -137,60 +137,55 @@ public class WoodBlocksRegistry {
 
                         String planksName = type + "_planks";
                         DeferredBlock<Block> planksBlock = BLOCKS.register(planksName,
-                                        () -> new Block(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
                         ITEMS.register(planksName, () -> new BlockItem(planksBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(planksBlock);
 
                         String stairsName = type + "_stairs";
                         DeferredBlock<StairBlock> stairsBlock = BLOCKS.register(stairsName,
                                         () -> new StairBlock(planksBlock.get().defaultBlockState(),
-                                                        BlockBehaviour.Properties.of()
-                                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
                         ITEMS.register(stairsName, () -> new BlockItem(stairsBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(stairsBlock);
 
                         String slabName = type + "_slab";
                         DeferredBlock<SlabBlock> slabBlock = BLOCKS.register(slabName,
-                                        () -> new SlabBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
                         ITEMS.register(slabName, () -> new BlockItem(slabBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(slabBlock);
 
                         String fenceName = type + "_fence";
                         DeferredBlock<FenceBlock> fenceBlock = BLOCKS.register(fenceName,
-                                        () -> new FenceBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
                         ITEMS.register(fenceName, () -> new BlockItem(fenceBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(fenceBlock);
 
                         String fenceGateName = type + "_fence_gate";
                         DeferredBlock<FenceGateBlock> fenceGateBlock = BLOCKS.register(fenceGateName,
-                                        () -> new FenceGateBlock(WOOD_TYPES.get(type), BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new FenceGateBlock(WOOD_TYPES.get(type),
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
                         ITEMS.register(fenceGateName, () -> new BlockItem(fenceGateBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(fenceGateBlock);
 
                         String doorName = type + "_door";
                         DeferredBlock<DoorBlock> doorBlock = BLOCKS.register(doorName,
-                                        () -> new DoorBlock(BLOCK_SET_TYPES.get(type), BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new DoorBlock(BLOCK_SET_TYPES.get(type),
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
                         ITEMS.register(doorName, () -> new BlockItem(doorBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(doorBlock);
 
                         String trapdoorName = type + "_trapdoor";
                         DeferredBlock<TrapDoorBlock> trapdoorBlock = BLOCKS.register(trapdoorName,
                                         () -> new TrapDoorBlock(BLOCK_SET_TYPES.get(type),
-                                                        BlockBehaviour.Properties.of()
-                                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
                         ITEMS.register(trapdoorName, () -> new BlockItem(trapdoorBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(trapdoorBlock);
 
                         String pressurePlateName = type + "_pressure_plate";
                         DeferredBlock<PressurePlateBlock> pressurePlateBlock = BLOCKS.register(pressurePlateName,
                                         () -> new PressurePlateBlock(BLOCK_SET_TYPES.get(type),
-                                                        BlockBehaviour.Properties.of()
-                                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                                        BlockBehaviour.Properties
+                                                                        .ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
                         ITEMS.register(pressurePlateName,
                                         () -> new BlockItem(pressurePlateBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(pressurePlateBlock);
@@ -198,8 +193,7 @@ public class WoodBlocksRegistry {
                         String buttonName = type + "_button";
                         DeferredBlock<ButtonBlock> buttonBlock = BLOCKS.register(buttonName,
                                         () -> new ButtonBlock(BLOCK_SET_TYPES.get(type), 30,
-                                                        BlockBehaviour.Properties.of()
-                                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
                         ITEMS.register(buttonName, () -> new BlockItem(buttonBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(buttonBlock);
 
@@ -213,8 +207,8 @@ public class WoodBlocksRegistry {
 
                         // String leavesName = type + "_leaves";
                         // DeferredBlock<LeavesBlock> leavesBlock = BLOCKS.register(leavesName,
-                        // () -> new LeavesBlock(BlockBehaviour.Properties.of()
-                        // .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                        // () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.XXX)
+                        // ));
                         // ITEMS.register(leavesName, () -> new BlockItem(leavesBlock.get(), new
                         // Item.Properties()));
                         // REGISTERED_BLOCKS.add(leavesBlock);
