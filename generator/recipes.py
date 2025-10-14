@@ -109,6 +109,14 @@ def wooden_button(planks, button):
     }
 
 
+def sign(result):
+    return {
+        "type": "minecraft:stonecutting",
+        "ingredient": {"item": "minecraft:iron_ingot"},
+        "result": {"count": 1, "id": f"{MOD_ID}:{result}"},
+    }
+
+
 def one_from_tag_stonecutter(tag, result):
     return {
         "type": "minecraft:stonecutting",
