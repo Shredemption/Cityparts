@@ -188,3 +188,28 @@ def fence_post(name):
 
 def fence_side(name):
     return {"parent": "minecraft:block/fence_side", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def fence_gate(name):
+    return {"parent": "minecraft:block/template_fence_gate", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def fence_gate_open(name):
+    return {
+        "parent": "minecraft:block/template_fence_gate_open",
+        "textures": {"texture": f"{MOD_ID}:block/{name}"},
+    }
+
+
+def fence_gate_wall(name):
+    return {
+        "parent": "minecraft:block/template_fence_gate_wall",
+        "textures": {"texture": f"{MOD_ID}:block/{name}"},
+    }
+
+
+def fence_gate_wall_open(name):
+    return {
+        "parent": "minecraft:block/template_fence_gate_wall_open",
+        "textures": {"texture": f"{MOD_ID}:block/{name}"},
+    }
