@@ -5,7 +5,7 @@ def block(name):
     return {"parent": f"{MOD_ID}:block/{name}"}
 
 
-def wall(name):
+def block_inventory(name):
     return {"parent": f"{MOD_ID}:block/{name}_inventory"}
 
 

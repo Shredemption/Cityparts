@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "streetparts:olive_button",
+    "streetparts:verdant_button",
+    "streetparts:moon_button",
+    "streetparts:sky_button",
+    "streetparts:wisteria_button",
+    "streetparts:ebony_button"
+  ]
+}

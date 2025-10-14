@@ -61,7 +61,7 @@ for mat in MATERIALS:
         os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.block(block_name),
         os.path.join(ITEM_MODEL_DIR, f"{stairs_name}.json"): items.block(stairs_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
-        os.path.join(ITEM_MODEL_DIR, f"{wall_name}.json"): items.wall(wall_name),
+        os.path.join(ITEM_MODEL_DIR, f"{wall_name}.json"): items.block_inventory(wall_name),
         # loottables
         os.path.join(LOOT_TABLE_DIR, f"{block_name}.json"): blockstates.block(block_name),
         os.path.join(LOOT_TABLE_DIR, f"{stairs_name}.json"): blockstates.stairs(stairs_name),

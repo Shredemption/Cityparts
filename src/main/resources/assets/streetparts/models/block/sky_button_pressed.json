@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/button_pressed",
+    "textures": {
+        "texture": "streetparts:block/sky_planks"
+    }
+}

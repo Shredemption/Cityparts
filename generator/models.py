@@ -94,6 +94,7 @@ def pillar(name):
         "textures": {"end": f"{MOD_ID}:block/{name}_top", "side": f"{MOD_ID}:block/{name}"},
     }
 
+
 def pillar_one_texture(name):
     return {
         "parent": "minecraft:block/cube_column",
@@ -106,7 +107,8 @@ def pillar_horizontal(name):
         "parent": "minecraft:block/cube_column_horizontal",
         "textures": {"end": f"{MOD_ID}:block/{name}_top", "side": f"{MOD_ID}:block/{name}"},
     }
-    
+
+
 def pillar_horizontal_one_texture(name):
     return {
         "parent": "minecraft:block/cube_column_horizontal",
@@ -154,3 +156,15 @@ def sign_triangle(name):
         "parent": f"{MOD_ID}:block/template/sign_triangle",
         "textures": {"sign": f"{MOD_ID}:block/{name}"},
     }
+
+
+def button(name):
+    return {"parent": "minecraft:block/button", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def button_inventory(name):
+    return {"parent": "minecraft:block/button_inventory", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def button_pressed(name):
+    return {"parent": "minecraft:block/button_pressed", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
