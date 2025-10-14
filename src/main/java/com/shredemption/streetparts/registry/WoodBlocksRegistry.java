@@ -1,10 +1,12 @@
 package com.shredemption.streetparts.registry;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.shredemption.streetparts.StreetParts;
+import com.shredemption.streetparts.custom.StrippableRotatedPillarBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -50,6 +52,24 @@ public class WoodBlocksRegistry {
 
         private static final List<DeferredBlock<? extends Block>> REGISTERED_BLOCKS = new ArrayList<>();
 
+        private static final Map<DeferredBlock<? extends Block>, DeferredBlock<? extends Block>> DEFERRED_STRIPPABLES = new HashMap<>();
+        private static final Map<Block, Block> STRIPPABLES = new HashMap<>();
+
+        public static void populateStrippables() {
+                STRIPPABLES.clear();
+                DEFERRED_STRIPPABLES.forEach((deferredUnstripped, deferredStripped) -> {
+                        Block unstripped = deferredUnstripped.get();
+                        Block stripped = deferredStripped.get();
+                        if (unstripped != null && stripped != null) {
+                                STRIPPABLES.put(unstripped, stripped);
+                        }
+                });
+        }
+
+        public static Map<Block, Block> getStrippables() {
+                return STRIPPABLES;
+        }
+
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WOOD_TAB = CREATIVE_TABS
                         .register("streetpartswood_blocks", () -> CreativeModeTab.builder()
                                         .title(net.minecraft.network.chat.Component
@@ -83,15 +103,15 @@ public class WoodBlocksRegistry {
                 for (String type : TYPES) {
 
                         String logName = type + "_log";
-                        DeferredBlock<RotatedPillarBlock> logBlock = BLOCKS.register(logName,
-                                        () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                        DeferredBlock<StrippableRotatedPillarBlock> logBlock = BLOCKS.register(logName,
+                                        () -> new StrippableRotatedPillarBlock(BlockBehaviour.Properties.of()
                                                         .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
                         ITEMS.register(logName, () -> new BlockItem(logBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(logBlock);
 
                         String woodName = type + "_wood";
-                        DeferredBlock<RotatedPillarBlock> woodBlock = BLOCKS.register(woodName,
-                                        () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                        DeferredBlock<StrippableRotatedPillarBlock> woodBlock = BLOCKS.register(woodName,
+                                        () -> new StrippableRotatedPillarBlock(BlockBehaviour.Properties.of()
                                                         .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
                         ITEMS.register(woodName, () -> new BlockItem(woodBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(woodBlock);
@@ -111,6 +131,9 @@ public class WoodBlocksRegistry {
                         ITEMS.register(strippedWoodName,
                                         () -> new BlockItem(strippedWoodBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(strippedWoodBlock);
+
+                        DEFERRED_STRIPPABLES.put(logBlock, strippedLogBlock);
+                        DEFERRED_STRIPPABLES.put(woodBlock, strippedWoodBlock);
 
                         String planksName = type + "_planks";
                         DeferredBlock<Block> planksBlock = BLOCKS.register(planksName,
