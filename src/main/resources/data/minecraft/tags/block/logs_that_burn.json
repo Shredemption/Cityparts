@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#streetparts:olive_logs",
+    "#streetparts:verdant_logs",
+    "#streetparts:moon_logs",
+    "#streetparts:sky_logs",
+    "#streetparts:wisteria_logs",
+    "#streetparts:ebony_logs"
+  ]
+}
