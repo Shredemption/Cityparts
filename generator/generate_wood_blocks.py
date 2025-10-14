@@ -35,6 +35,7 @@ for var in VARIANTS:
     stairs_name = f"{var}_stairs"
     slab_name = f"{var}_slab"
     button_name = f"{var}_button"
+    pressure_plate_name = f"{var}_pressure_plate"
 
     files = {
         # blockstates
@@ -46,6 +47,7 @@ for var in VARIANTS:
         os.path.join(BLOCKSTATE_DIR, f"{stairs_name}.json"): blockstates.stairs(var),
         os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.slab(var),
         os.path.join(BLOCKSTATE_DIR, f"{button_name}.json"): blockstates.button(button_name),
+        os.path.join(BLOCKSTATE_DIR, f"{pressure_plate_name}.json"): blockstates.pressure_plate(pressure_plate_name),
         # block model
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}.json"): models.pillar(log_name),
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}_horizontal.json"): models.pillar_horizontal(log_name),
@@ -68,6 +70,8 @@ for var in VARIANTS:
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}.json"): models.button(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}_pressed.json"): models.button_pressed(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}_inventory.json"): models.button_inventory(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{pressure_plate_name}.json"): models.pressure_plate(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{pressure_plate_name}_down.json"): models.pressure_plate_down(planks_name),
         # item models
         os.path.join(ITEM_MODEL_DIR, f"{log_name}.json"): items.block(log_name),
         os.path.join(ITEM_MODEL_DIR, f"{wood_name}.json"): items.block(wood_name),
@@ -77,6 +81,7 @@ for var in VARIANTS:
         os.path.join(ITEM_MODEL_DIR, f"{stairs_name}.json"): items.block(stairs_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
         os.path.join(ITEM_MODEL_DIR, f"{button_name}.json"): items.block_inventory(button_name),
+        os.path.join(ITEM_MODEL_DIR, f"{pressure_plate_name}.json"): items.block(pressure_plate_name),
         # loot tables
         os.path.join(LOOT_TABLE_DIR, f"{log_name}.json"): loottables.block_drops(log_name),
         os.path.join(LOOT_TABLE_DIR, f"{wood_name}.json"): loottables.block_drops(wood_name),
@@ -86,6 +91,7 @@ for var in VARIANTS:
         os.path.join(LOOT_TABLE_DIR, f"{stairs_name}.json"): loottables.block_drops(stairs_name),
         os.path.join(LOOT_TABLE_DIR, f"{slab_name}.json"): loottables.block_drops(slab_name),
         os.path.join(LOOT_TABLE_DIR, f"{button_name}.json"): loottables.block_drops(button_name),
+        os.path.join(LOOT_TABLE_DIR, f"{pressure_plate_name}.json"): loottables.block_drops(pressure_plate_name),
     }
 
     for path, data in files.items():

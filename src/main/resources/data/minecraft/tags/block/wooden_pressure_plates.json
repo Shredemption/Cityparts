@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "streetparts:olive_pressure_plate",
+    "streetparts:verdant_pressure_plate",
+    "streetparts:moon_pressure_plate",
+    "streetparts:sky_pressure_plate",
+    "streetparts:wisteria_pressure_plate",
+    "streetparts:ebony_pressure_plate"
+  ]
+}

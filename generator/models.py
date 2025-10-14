@@ -168,3 +168,11 @@ def button_inventory(name):
 
 def button_pressed(name):
     return {"parent": "minecraft:block/button_pressed", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def pressure_plate(name):
+    return {"parent": "minecraft:block/pressure_plate_up", "textures": {"texture": f"{MOD_ID}:block/{name}"}}
+
+
+def pressure_plate_down(name):
+    return {"parent": "minecraft:block/pressure_plate_down", "textures": {"texture": f"{MOD_ID}:block/{name}"}}

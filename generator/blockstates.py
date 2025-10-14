@@ -401,3 +401,12 @@ def button(name):
             },
         }
     }
+
+
+def pressure_plate(name):
+    return {
+        "variants": {
+            "powered=false": {"model": f"{MOD_ID}:block/{name}"},
+            "powered=true": {"model": f"{MOD_ID}:block/{name}_down"},
+        }
+    }
