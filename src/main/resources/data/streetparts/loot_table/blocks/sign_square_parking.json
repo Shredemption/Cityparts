@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "streetparts:sign_square_parking"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "streetparts:blocks/sign_square_parking"
+}

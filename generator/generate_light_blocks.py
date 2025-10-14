@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, models, items
+import blockstates, models, items, loottables
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -20,13 +20,14 @@ TYPES = [
     "t_corner",
 ]
 
-BASE_PATH = r"./src/main/resources/assets/" + MOD_ID
-BLOCKSTATE_DIR = os.path.join(BASE_PATH, "blockstates")
-BLOCK_MODEL_DIR = os.path.join(BASE_PATH, "models/block")
-ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
+BASE_PATH = r"./src/main/resources/"
+BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
+BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
+ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
+LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -39,6 +40,7 @@ for color in COLORS:
             os.path.join(BLOCKSTATE_DIR, f"{fullName}.json"): blockstates.light(color, type),
             os.path.join(BLOCK_MODEL_DIR, f"{fullName}.json"): models.light(color, type),
             os.path.join(ITEM_MODEL_DIR, f"{fullName}.json"): items.light(color, type),
+            os.path.join(LOOT_TABLE_DIR, f"{fullName}.json"): loottables.block_drops(fullName),
         }
 
         for path, data in files.items():

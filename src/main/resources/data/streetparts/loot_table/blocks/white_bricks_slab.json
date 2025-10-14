@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "streetparts:block/white_bricks_slab_slab"
+        },
+        "type=top": {
+            "model": "streetparts:block/white_bricks_slab_slab_top"
+        },
+        "type=double": {
+            "model": "streetparts:block/white_bricks_slab"
+        }
+    }
+}

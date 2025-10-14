@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, models, items
+import blockstates, models, items, loottables
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -14,13 +14,14 @@ VARIANTS = [
     "ebony",
 ]
 
-BASE_PATH = r"./src/main/resources/assets/" + MOD_ID
-BLOCKSTATE_DIR = os.path.join(BASE_PATH, "blockstates")
-BLOCK_MODEL_DIR = os.path.join(BASE_PATH, "models/block")
-ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
+BASE_PATH = r"./src/main/resources/"
+BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
+BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
+ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
+LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -70,6 +71,14 @@ for var in VARIANTS:
         os.path.join(ITEM_MODEL_DIR, f"{planks_name}.json"): items.block(planks_name),
         os.path.join(ITEM_MODEL_DIR, f"{stairs_name}.json"): items.block(stairs_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
+        # loot tables
+        os.path.join(LOOT_TABLE_DIR, f"{log_name}.json"): loottables.block_drops(log_name),
+        os.path.join(LOOT_TABLE_DIR, f"{wood_name}.json"): loottables.block_drops(wood_name),
+        os.path.join(LOOT_TABLE_DIR, f"{stripped_log_name}.json"): loottables.block_drops(stripped_log_name),
+        os.path.join(LOOT_TABLE_DIR, f"{stripped_wood_name}.json"): loottables.block_drops(stripped_wood_name),
+        os.path.join(LOOT_TABLE_DIR, f"{planks_name}.json"): loottables.block_drops(planks_name),
+        os.path.join(LOOT_TABLE_DIR, f"{stairs_name}.json"): loottables.block_drops(stairs_name),
+        os.path.join(LOOT_TABLE_DIR, f"{slab_name}.json"): loottables.block_drops(slab_name),
     }
 
     for path, data in files.items():

@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, models, items
+import blockstates, models, items, loottables
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -36,13 +36,14 @@ VARIANTS = [
     "pedestrian_crossing",
 ]
 
-BASE_PATH = r"./src/main/resources/assets/" + MOD_ID
-BLOCKSTATE_DIR = os.path.join(BASE_PATH, "blockstates")
-BLOCK_MODEL_DIR = os.path.join(BASE_PATH, "models/block")
-ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
+BASE_PATH = r"./src/main/resources/"
+BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
+BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
+ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
+LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -52,12 +53,18 @@ for var in VARIANTS:
     slab_name = f"roadlines_{var}_slab"
 
     files = {
+        # blockstate
         os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstates.horizontalRotating(block_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): models.road_block(block_name),
-        os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.block(block_name),
         os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.horizontalRotating(slab_name),
+        # model
+        os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): models.road_block(block_name),
         os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): models.road_slab(block_name),
+        # item
+        os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.block(block_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
+        # loottable
+        os.path.join(LOOT_TABLE_DIR, f"{block_name}.json"): loottables.block_drops(block_name),
+        os.path.join(LOOT_TABLE_DIR, f"{slab_name}.json"): loottables.block_drops(slab_name),
     }
 
     for path, data in files.items():

@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "streetparts:block/deepslate_pavement_slab_slab"
+        },
+        "type=top": {
+            "model": "streetparts:block/deepslate_pavement_slab_slab_top"
+        },
+        "type=double": {
+            "model": "streetparts:block/deepslate_pavement_slab"
+        }
+    }
+}

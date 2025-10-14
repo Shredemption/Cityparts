@@ -1,7 +1,7 @@
 import os
 import json
 
-import blockstates, models, items
+import blockstates, models, items, loottables
 
 # === CONFIG ===
 MOD_ID = "streetparts"
@@ -22,13 +22,14 @@ MATERIALS = [
     "beige_bricks",
 ]
 
-BASE_PATH = r"./src/main/resources/assets/" + MOD_ID
-BLOCKSTATE_DIR = os.path.join(BASE_PATH, "blockstates")
-BLOCK_MODEL_DIR = os.path.join(BASE_PATH, "models/block")
-ITEM_MODEL_DIR = os.path.join(BASE_PATH, "models/item")
+BASE_PATH = r"./src/main/resources/"
+BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
+BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
+ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
+LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -61,6 +62,11 @@ for mat in MATERIALS:
         os.path.join(ITEM_MODEL_DIR, f"{stairs_name}.json"): items.block(stairs_name),
         os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
         os.path.join(ITEM_MODEL_DIR, f"{wall_name}.json"): items.wall(wall_name),
+        # loottables
+        os.path.join(LOOT_TABLE_DIR, f"{block_name}.json"): blockstates.block(block_name),
+        os.path.join(LOOT_TABLE_DIR, f"{stairs_name}.json"): blockstates.stairs(stairs_name),
+        os.path.join(LOOT_TABLE_DIR, f"{slab_name}.json"): blockstates.slab(slab_name),
+        os.path.join(LOOT_TABLE_DIR, f"{wall_name}.json"): blockstates.wall(wall_name),
     }
 
     for path, data in files.items():
