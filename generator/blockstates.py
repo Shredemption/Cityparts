@@ -622,3 +622,26 @@ def door(name):
             },
         }
     }
+
+
+def trapdoor(name):
+    return {
+        "variants": {
+            "facing=east,half=bottom,open=false": {"model": f"{MOD_ID}:block/{name}_bottom", "y": 90},
+            "facing=east,half=bottom,open=true": {"model": f"{MOD_ID}:block/{name}_open", "y": 90},
+            "facing=east,half=top,open=false": {"model": f"{MOD_ID}:block/{name}_top", "y": 90},
+            "facing=east,half=top,open=true": {"model": f"{MOD_ID}:block/{name}_open", "x": 180, "y": 270},
+            "facing=north,half=bottom,open=false": {"model": f"{MOD_ID}:block/{name}_bottom"},
+            "facing=north,half=bottom,open=true": {"model": f"{MOD_ID}:block/{name}_open"},
+            "facing=north,half=top,open=false": {"model": f"{MOD_ID}:block/{name}_top"},
+            "facing=north,half=top,open=true": {"model": f"{MOD_ID}:block/{name}_open", "x": 180, "y": 180},
+            "facing=south,half=bottom,open=false": {"model": f"{MOD_ID}:block/{name}_bottom", "y": 180},
+            "facing=south,half=bottom,open=true": {"model": f"{MOD_ID}:block/{name}_open", "y": 180},
+            "facing=south,half=top,open=false": {"model": f"{MOD_ID}:block/{name}_top", "y": 180},
+            "facing=south,half=top,open=true": {"model": f"{MOD_ID}:block/{name}_open", "x": 180, "y": 0},
+            "facing=west,half=bottom,open=false": {"model": f"{MOD_ID}:block/{name}_bottom", "y": 270},
+            "facing=west,half=bottom,open=true": {"model": f"{MOD_ID}:block/{name}_open", "y": 270},
+            "facing=west,half=top,open=false": {"model": f"{MOD_ID}:block/{name}_top", "y": 270},
+            "facing=west,half=top,open=true": {"model": f"{MOD_ID}:block/{name}_open", "x": 180, "y": 90},
+        }
+    }

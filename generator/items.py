@@ -9,6 +9,10 @@ def block_inventory(name):
     return {"parent": f"{MOD_ID}:block/{name}_inventory"}
 
 
+def block_bottom(name):
+    return {"parent": f"{MOD_ID}:block/{name}_bottom"}
+
+
 def light(color, type):
     return {"parent": f"{MOD_ID}:block/light_{color}_{type}"}
 

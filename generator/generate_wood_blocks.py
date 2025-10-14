@@ -37,6 +37,7 @@ for var in VARIANTS:
     fence_name = f"{var}_fence"
     fence_gate_name = f"{var}_fence_gate"
     door_name = f"{var}_door"
+    trapdoor_name = f"{var}_trapdoor"
     pressure_plate_name = f"{var}_pressure_plate"
     button_name = f"{var}_button"
 
@@ -52,6 +53,7 @@ for var in VARIANTS:
         os.path.join(BLOCKSTATE_DIR, f"{fence_name}.json"): blockstates.fence(fence_name),
         os.path.join(BLOCKSTATE_DIR, f"{fence_gate_name}.json"): blockstates.fence_gate(fence_gate_name),
         os.path.join(BLOCKSTATE_DIR, f"{door_name}.json"): blockstates.door(door_name),
+        os.path.join(BLOCKSTATE_DIR, f"{trapdoor_name}.json"): blockstates.trapdoor(trapdoor_name),
         os.path.join(BLOCKSTATE_DIR, f"{pressure_plate_name}.json"): blockstates.pressure_plate(pressure_plate_name),
         os.path.join(BLOCKSTATE_DIR, f"{button_name}.json"): blockstates.button(button_name),
         # block model
@@ -88,6 +90,9 @@ for var in VARIANTS:
         os.path.join(BLOCK_MODEL_DIR, f"{door_name}_top_left_open.json"): models.door_top_left_open(door_name),
         os.path.join(BLOCK_MODEL_DIR, f"{door_name}_top_right.json"): models.door_top_right(door_name),
         os.path.join(BLOCK_MODEL_DIR, f"{door_name}_top_right_open.json"): models.door_top_right_open(door_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{trapdoor_name}_open.json"): models.trapdoor_open(trapdoor_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{trapdoor_name}_bottom.json"): models.trapdoor_bottom(trapdoor_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{trapdoor_name}_top.json"): models.trapdoor_top(trapdoor_name),
         os.path.join(BLOCK_MODEL_DIR, f"{pressure_plate_name}.json"): models.pressure_plate(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{pressure_plate_name}_down.json"): models.pressure_plate_down(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}.json"): models.button(planks_name),
@@ -104,6 +109,7 @@ for var in VARIANTS:
         os.path.join(ITEM_MODEL_DIR, f"{fence_name}.json"): items.block_inventory(fence_name),
         os.path.join(ITEM_MODEL_DIR, f"{fence_gate_name}.json"): items.block(fence_gate_name),
         os.path.join(ITEM_MODEL_DIR, f"{door_name}.json"): items.item_texture(door_name),
+        os.path.join(ITEM_MODEL_DIR, f"{trapdoor_name}.json"): items.block_bottom(trapdoor_name),
         os.path.join(ITEM_MODEL_DIR, f"{pressure_plate_name}.json"): items.block(pressure_plate_name),
         os.path.join(ITEM_MODEL_DIR, f"{button_name}.json"): items.block_inventory(button_name),
         # loot tables
@@ -117,6 +123,7 @@ for var in VARIANTS:
         os.path.join(LOOT_TABLE_DIR, f"{fence_name}.json"): loottables.block_drops(fence_name),
         os.path.join(LOOT_TABLE_DIR, f"{fence_gate_name}.json"): loottables.block_drops(fence_gate_name),
         os.path.join(LOOT_TABLE_DIR, f"{door_name}.json"): loottables.door(door_name),
+        os.path.join(LOOT_TABLE_DIR, f"{trapdoor_name}.json"): loottables.block_drops(trapdoor_name),
         os.path.join(LOOT_TABLE_DIR, f"{pressure_plate_name}.json"): loottables.block_drops(pressure_plate_name),
         os.path.join(LOOT_TABLE_DIR, f"{button_name}.json"): loottables.block_drops(button_name),
     }

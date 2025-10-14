@@ -269,3 +269,24 @@ def door_top_right_open(name):
         "parent": "minecraft:block/door_top_right_open",
         "textures": {"bottom": f"{MOD_ID}:block/{name}_bottom", "top": f"{MOD_ID}:block/{name}_top"},
     }
+
+
+def trapdoor_open(name):
+    return {
+        "parent": "minecraft:block/template_orientable_trapdoor_open",
+        "textures": {"texture": f"{MOD_ID}:block/{name}"},
+    }
+
+
+def trapdoor_top(name):
+    return {
+        "parent": "minecraft:block/template_orientable_trapdoor_top",
+        "textures": {"texture": f"{MOD_ID}:block/{name}"},
+    }
+
+
+def trapdoor_bottom(name):
+    return {
+        "parent": "minecraft:block/template_orientable_trapdoor_bottom",
+        "textures": {"texture": f"{MOD_ID}:block/{name}"},
+    }
