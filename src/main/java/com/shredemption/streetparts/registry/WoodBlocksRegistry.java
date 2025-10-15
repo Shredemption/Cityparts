@@ -11,10 +11,13 @@ import com.shredemption.streetparts.custom.StrippableRotatedPillarBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -22,7 +25,10 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallHangingSignBlock;
+import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -75,7 +81,7 @@ public class WoodBlocksRegistry {
                                         .title(net.minecraft.network.chat.Component
                                                         .translatable("itemGroup.streetparts.wood_blocks"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
-                                                        .get(fromNamespaceAndPath(StreetParts.MOD_ID, "olive_planks"))
+                                                        .get(fromNamespaceAndPath(StreetParts.MOD_ID, "olive_log"))
                                                         .getDefaultInstance())
                                         .displayItems((params, output) -> {
                                                 REGISTERED_BLOCKS.forEach(b -> output.accept(b.get().asItem()));
@@ -197,9 +203,37 @@ public class WoodBlocksRegistry {
                         ITEMS.register(buttonName, () -> new BlockItem(buttonBlock.get(), new Item.Properties()));
                         REGISTERED_BLOCKS.add(buttonBlock);
 
-                        // sign
+                        String signName = type + "_sign";
+                        DeferredBlock<StandingSignBlock> signBlock = BLOCKS.register(signName,
+                                        () -> new StandingSignBlock(WOOD_TYPES.get(type),
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
+                        REGISTERED_BLOCKS.add(signBlock);
 
-                        // hanging sign
+                        String wallSignName = type + "_wall_sign";
+                        DeferredBlock<WallSignBlock> wallSignBlock = BLOCKS.register(wallSignName,
+                                        () -> new WallSignBlock(WOOD_TYPES.get(type),
+                                                        BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
+
+                        ITEMS.register(signName, () -> new SignItem(new Item.Properties().stacksTo(16), signBlock.get(),
+                                        wallSignBlock.get()));
+
+                        String ceilingHangingSignName = type + "_hanging_sign";
+                        DeferredBlock<CeilingHangingSignBlock> ceilingHangingSignBlock = BLOCKS
+                                        .register(ceilingHangingSignName,
+                                                        () -> new CeilingHangingSignBlock(WOOD_TYPES.get(type),
+                                                                        BlockBehaviour.Properties.ofFullCopy(
+                                                                                        Blocks.OAK_HANGING_SIGN)));
+                        REGISTERED_BLOCKS.add(ceilingHangingSignBlock);
+
+                        String wallHangingSignName = type + "_wall_hanging_sign";
+                        DeferredBlock<WallHangingSignBlock> wallHangingSignBlock = BLOCKS.register(
+                                        wallHangingSignName,
+                                        () -> new WallHangingSignBlock(WOOD_TYPES.get(type),
+                                                        BlockBehaviour.Properties
+                                                                        .ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+
+                        ITEMS.register(ceilingHangingSignName, () -> new HangingSignItem(ceilingHangingSignBlock.get(),
+                                        wallHangingSignBlock.get(), new Item.Properties().stacksTo(16)));
 
                         // chest boat
 
