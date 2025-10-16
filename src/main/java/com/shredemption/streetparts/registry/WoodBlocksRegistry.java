@@ -7,6 +7,10 @@ import java.util.Map;
 
 import com.shredemption.streetparts.StreetParts;
 import com.shredemption.streetparts.custom.StrippableRotatedPillarBlock;
+import com.shredemption.streetparts.custom.sign.CustomCeilingHangingSignBlock;
+import com.shredemption.streetparts.custom.sign.CustomStandingSignBlock;
+import com.shredemption.streetparts.custom.sign.CustomWallHangingSignBlock;
+import com.shredemption.streetparts.custom.sign.CustomWallSignBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -17,7 +21,6 @@ import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.CeilingHangingSignBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -25,10 +28,7 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.WallHangingSignBlock;
-import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -60,6 +60,17 @@ public class WoodBlocksRegistry {
 
         private static final Map<DeferredBlock<? extends Block>, DeferredBlock<? extends Block>> DEFERRED_STRIPPABLES = new HashMap<>();
         private static final Map<Block, Block> STRIPPABLES = new HashMap<>();
+
+        public static final List<DeferredBlock<? extends Block>> SIGN_BLOCKS = new ArrayList<>();
+        public static final List<DeferredBlock<? extends Block>> HANGING_SIGN_BLOCKS = new ArrayList<>();
+
+        public static List<? extends Block> getAllSignBlocks() {
+                return SIGN_BLOCKS.stream().map(DeferredBlock::get).toList();
+        }
+
+        public static List<? extends Block> getAllHangingSignBlocks() {
+                return HANGING_SIGN_BLOCKS.stream().map(DeferredBlock::get).toList();
+        }
 
         public static void populateStrippables() {
                 STRIPPABLES.clear();
@@ -204,36 +215,42 @@ public class WoodBlocksRegistry {
                         REGISTERED_BLOCKS.add(buttonBlock);
 
                         String signName = type + "_sign";
-                        DeferredBlock<StandingSignBlock> signBlock = BLOCKS.register(signName,
-                                        () -> new StandingSignBlock(WOOD_TYPES.get(type),
+                        DeferredBlock<CustomStandingSignBlock> signBlock = BLOCKS.register(signName,
+                                        () -> new CustomStandingSignBlock(WOOD_TYPES.get(type),
                                                         BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
                         REGISTERED_BLOCKS.add(signBlock);
 
                         String wallSignName = type + "_wall_sign";
-                        DeferredBlock<WallSignBlock> wallSignBlock = BLOCKS.register(wallSignName,
-                                        () -> new WallSignBlock(WOOD_TYPES.get(type),
+                        DeferredBlock<CustomWallSignBlock> wallSignBlock = BLOCKS.register(wallSignName,
+                                        () -> new CustomWallSignBlock(WOOD_TYPES.get(type),
                                                         BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
 
                         ITEMS.register(signName, () -> new SignItem(new Item.Properties().stacksTo(16), signBlock.get(),
                                         wallSignBlock.get()));
 
+                        SIGN_BLOCKS.add(signBlock);
+                        SIGN_BLOCKS.add(wallSignBlock);
+
                         String ceilingHangingSignName = type + "_hanging_sign";
-                        DeferredBlock<CeilingHangingSignBlock> ceilingHangingSignBlock = BLOCKS
+                        DeferredBlock<CustomCeilingHangingSignBlock> ceilingHangingSignBlock = BLOCKS
                                         .register(ceilingHangingSignName,
-                                                        () -> new CeilingHangingSignBlock(WOOD_TYPES.get(type),
+                                                        () -> new CustomCeilingHangingSignBlock(WOOD_TYPES.get(type),
                                                                         BlockBehaviour.Properties.ofFullCopy(
                                                                                         Blocks.OAK_HANGING_SIGN)));
                         REGISTERED_BLOCKS.add(ceilingHangingSignBlock);
 
                         String wallHangingSignName = type + "_wall_hanging_sign";
-                        DeferredBlock<WallHangingSignBlock> wallHangingSignBlock = BLOCKS.register(
+                        DeferredBlock<CustomWallHangingSignBlock> wallHangingSignBlock = BLOCKS.register(
                                         wallHangingSignName,
-                                        () -> new WallHangingSignBlock(WOOD_TYPES.get(type),
+                                        () -> new CustomWallHangingSignBlock(WOOD_TYPES.get(type),
                                                         BlockBehaviour.Properties
                                                                         .ofFullCopy(Blocks.OAK_HANGING_SIGN)));
 
                         ITEMS.register(ceilingHangingSignName, () -> new HangingSignItem(ceilingHangingSignBlock.get(),
                                         wallHangingSignBlock.get(), new Item.Properties().stacksTo(16)));
+
+                        HANGING_SIGN_BLOCKS.add(ceilingHangingSignBlock);
+                        HANGING_SIGN_BLOCKS.add(wallHangingSignBlock);
 
                         // chest boat
 

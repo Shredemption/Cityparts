@@ -1,6 +1,7 @@
 package com.shredemption.streetparts;
 
 import com.mojang.logging.LogUtils;
+import com.shredemption.streetparts.registry.BlockEntities;
 import com.shredemption.streetparts.registry.ConstructionBlocksRegistry;
 import com.shredemption.streetparts.registry.LightBlocksRegistry;
 import com.shredemption.streetparts.registry.RoadBlocksRegistry;
@@ -44,6 +45,7 @@ public class StreetParts {
         SignBlockRegistry.registerSignBlocks(modEventBus);
         LightBlocksRegistry.registerLightBlocks(modEventBus);
         WoodBlocksRegistry.registerWoodBlocks(modEventBus);
+        BlockEntities.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
