@@ -46,6 +46,8 @@ public class StreetParts {
         LightBlocksRegistry.registerLightBlocks(modEventBus);
         WoodBlocksRegistry.registerWoodBlocks(modEventBus);
         BlockEntities.register(modEventBus);
+
+        ClientSetup.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

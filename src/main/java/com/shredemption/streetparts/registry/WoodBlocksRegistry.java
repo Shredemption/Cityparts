@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.shredemption.streetparts.StreetParts;
+import com.shredemption.streetparts.custom.block.CustomCeilingHangingSignBlock;
+import com.shredemption.streetparts.custom.block.CustomStandingSignBlock;
+import com.shredemption.streetparts.custom.block.CustomWallHangingSignBlock;
+import com.shredemption.streetparts.custom.block.CustomWallSignBlock;
 import com.shredemption.streetparts.custom.block.StrippableRotatedPillarBlock;
-import com.shredemption.streetparts.custom.sign.CustomCeilingHangingSignBlock;
-import com.shredemption.streetparts.custom.sign.CustomStandingSignBlock;
-import com.shredemption.streetparts.custom.sign.CustomWallHangingSignBlock;
-import com.shredemption.streetparts.custom.sign.CustomWallSignBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -49,7 +49,7 @@ public class WoodBlocksRegistry {
                         "ebony");
 
         private static final Map<String, BlockSetType> BLOCK_SET_TYPES = new java.util.HashMap<>();
-        private static final Map<String, WoodType> WOOD_TYPES = new java.util.HashMap<>();
+        public static final Map<String, WoodType> WOOD_TYPES = new java.util.HashMap<>();
 
         public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);

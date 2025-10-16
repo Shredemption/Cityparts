@@ -1,8 +1,8 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.sign.CustomHangingSignBlockEntity;
-import com.shredemption.streetparts.custom.sign.CustomSignBlockEntity;
+import com.shredemption.streetparts.custom.block.entity.CustomHangingSignBlockEntity;
+import com.shredemption.streetparts.custom.block.entity.CustomSignBlockEntity;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
