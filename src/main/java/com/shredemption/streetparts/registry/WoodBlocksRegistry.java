@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.StrippableRotatedPillarBlock;
+import com.shredemption.streetparts.custom.block.StrippableRotatedPillarBlock;
 import com.shredemption.streetparts.custom.sign.CustomCeilingHangingSignBlock;
 import com.shredemption.streetparts.custom.sign.CustomStandingSignBlock;
 import com.shredemption.streetparts.custom.sign.CustomWallHangingSignBlock;

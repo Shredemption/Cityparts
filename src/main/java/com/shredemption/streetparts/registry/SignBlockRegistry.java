@@ -1,7 +1,7 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.RotatableHorizontalBlock;
+import com.shredemption.streetparts.custom.block.RotatableHorizontalBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
