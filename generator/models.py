@@ -290,3 +290,11 @@ def trapdoor_bottom(name):
         "parent": "minecraft:block/template_orientable_trapdoor_bottom",
         "textures": {"texture": f"{MOD_ID}:block/{name}"},
     }
+
+
+def sign(planks):
+    return {"textures": {"particle": f"{MOD_ID}:block/{planks}"}}
+
+
+def hanging_sign(stripped_log):
+    return {"textures": {"particle": f"{MOD_ID}:block/{stripped_log}"}}

@@ -41,6 +41,8 @@ for var in VARIANTS:
     trapdoor_name = f"{var}_trapdoor"
     pressure_plate_name = f"{var}_pressure_plate"
     button_name = f"{var}_button"
+    sign_name = f"{var}_sign"
+    hanging_sign_name = f"{var}_hanging_sign"
 
     files = {
         # blockstates
@@ -57,6 +59,8 @@ for var in VARIANTS:
         os.path.join(BLOCKSTATE_DIR, f"{trapdoor_name}.json"): blockstates.trapdoor(trapdoor_name),
         os.path.join(BLOCKSTATE_DIR, f"{pressure_plate_name}.json"): blockstates.pressure_plate(pressure_plate_name),
         os.path.join(BLOCKSTATE_DIR, f"{button_name}.json"): blockstates.button(button_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.sign(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{hanging_sign_name}.json"): blockstates.hanging_sign(hanging_sign_name),
         # block model
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}.json"): models.pillar(log_name),
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}_horizontal.json"): models.pillar_horizontal(log_name),
@@ -99,6 +103,8 @@ for var in VARIANTS:
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}.json"): models.button(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}_pressed.json"): models.button_pressed(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}_inventory.json"): models.button_inventory(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{hanging_sign_name}.json"): models.sign(hanging_sign_name),
         # item models
         os.path.join(ITEM_MODEL_DIR, f"{log_name}.json"): items.block(log_name),
         os.path.join(ITEM_MODEL_DIR, f"{wood_name}.json"): items.block(wood_name),
@@ -113,6 +119,8 @@ for var in VARIANTS:
         os.path.join(ITEM_MODEL_DIR, f"{trapdoor_name}.json"): items.block_bottom(trapdoor_name),
         os.path.join(ITEM_MODEL_DIR, f"{pressure_plate_name}.json"): items.block(pressure_plate_name),
         os.path.join(ITEM_MODEL_DIR, f"{button_name}.json"): items.block_inventory(button_name),
+        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.item_texture(sign_name),
+        os.path.join(ITEM_MODEL_DIR, f"{hanging_sign_name}.json"): items.item_texture(hanging_sign_name),
         # loot tables
         os.path.join(LOOT_TABLE_DIR, f"{log_name}.json"): loottables.block_drops(log_name),
         os.path.join(LOOT_TABLE_DIR, f"{wood_name}.json"): loottables.block_drops(wood_name),
@@ -127,6 +135,8 @@ for var in VARIANTS:
         os.path.join(LOOT_TABLE_DIR, f"{trapdoor_name}.json"): loottables.block_drops(trapdoor_name),
         os.path.join(LOOT_TABLE_DIR, f"{pressure_plate_name}.json"): loottables.block_drops(pressure_plate_name),
         os.path.join(LOOT_TABLE_DIR, f"{button_name}.json"): loottables.block_drops(button_name),
+        os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
+        os.path.join(LOOT_TABLE_DIR, f"{hanging_sign_name}.json"): loottables.block_drops(hanging_sign_name),
         # recipes
         os.path.join(RECIPE_DIR, f"{wood_name}.json"): recipes.wood(log_name, wood_name),
         os.path.join(RECIPE_DIR, f"{stripped_wood_name}.json"): recipes.wood(stripped_log_name, stripped_wood_name),
@@ -141,6 +151,8 @@ for var in VARIANTS:
             planks_name, pressure_plate_name
         ),
         os.path.join(RECIPE_DIR, f"{button_name}.json"): recipes.wooden_button(planks_name, button_name),
+        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.sign(planks_name, sign_name),
+        os.path.join(RECIPE_DIR, f"{hanging_sign_name}.json"): recipes.hanging_sign(planks_name, hanging_sign_name),
     }
 
     for path, data in files.items():

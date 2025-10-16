@@ -206,3 +206,25 @@ def brick_variant(additive, result):
         "ingredients": [{"item": "minecraft:bricks"}, {"item": f"{additive}"}],
         "result": {"id": f"{MOD_ID}:{result}", "count": 1},
     }
+
+
+def sign(planks, result):
+    return {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "wooden_sign",
+        "key": {"#": {"item": f"{MOD_ID}:{planks}"}, "X": {"item": "minecraft:stick"}},
+        "pattern": ["###", "###", " X "],
+        "result": {"count": 3, "id": f"{MOD_ID}:{result}"},
+    }
+
+
+def hanging_sign(stripped_log, result):
+    return {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "hanging_sign",
+        "key": {"#": {"item": f"{MOD_ID}:{stripped_log}"}, "X": {"item": "minecraft:chain"}},
+        "pattern": ["X X", "###", "###"],
+        "result": {"count": 6, "id": f"{MOD_ID}:{result}"},
+    }

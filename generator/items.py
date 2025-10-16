@@ -23,3 +23,4 @@ def block_texture(name):
 
 def item_texture(name):
     return {"parent": "item/generated", "textures": {"layer0": f"{MOD_ID}:item/{name}"}}
+

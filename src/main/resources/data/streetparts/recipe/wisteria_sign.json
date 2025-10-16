@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "wooden_sign",
+    "key": {
+        "#": {
+            "item": "streetparts:wisteria_planks"
+        },
+        "X": {
+            "item": "minecraft:stick"
+        }
+    },
+    "pattern": [
+        "###",
+        "###",
+        " X "
+    ],
+    "result": {
+        "count": 3,
+        "id": "streetparts:wisteria_sign"
+    }
+}
