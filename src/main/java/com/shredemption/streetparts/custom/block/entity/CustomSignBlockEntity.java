@@ -1,4 +1,4 @@
-package com.shredemption.streetparts.custom.sign;
+package com.shredemption.streetparts.custom.block.entity;
 
 import com.shredemption.streetparts.registry.BlockEntities;
 

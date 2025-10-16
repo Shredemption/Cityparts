@@ -1,6 +1,8 @@
-package com.shredemption.streetparts.custom.sign;
+package com.shredemption.streetparts.custom.block;
 
 import javax.annotation.Nonnull;
+
+import com.shredemption.streetparts.custom.block.entity.CustomSignBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.StandingSignBlock;
