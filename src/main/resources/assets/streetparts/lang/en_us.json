@@ -289,9 +289,12 @@
   "block.streetparts.ebony_sign": "Ebony Sign",
   "block.streetparts.ebony_hanging_sign": "Ebony Hanging Sign",
 
+  "block.streetparts.direction_sign": "Direction Sign",
+
   "itemGroup.streetparts.construction_blocks": "Construction Blocks",
   "itemGroup.streetparts.road_blocks": "Road Blocks",
   "itemGroup.streetparts.lights": "Light Blocks",
   "itemGroup.streetparts.signs": "Sign Blocks",
-  "itemGroup.streetparts.wood_blocks": "Wood Blocks"
+  "itemGroup.streetparts.wood_blocks": "Wood Blocks",
+  "itemGroup.streetparts.road_furniture": "Road Furniture"
 }

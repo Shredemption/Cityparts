@@ -289,9 +289,12 @@
   "block.streetparts.ebony_sign": "Ebbenhouten bord",
   "block.streetparts.ebony_hanging_sign": "Ebbenhouten hangbord",
 
+  "block.streetparts.direction_sign": "Wegwijzerbord",
+
   "itemGroup.streetparts.construction_blocks": "Constructieblokken",
   "itemGroup.streetparts.road_blocks": "Wegblokken",
   "itemGroup.streetparts.lights": "Lantaarnpalen",
   "itemGroup.streetparts.signs": "Borden",
-  "itemGroup.streetparts.wood_blocks": "Houtblokken"
+  "itemGroup.streetparts.wood_blocks": "Houtblokken",
+  "itemGroup.streetparts.road_furniture": "Straatmeubels"
 }

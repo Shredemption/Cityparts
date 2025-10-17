@@ -17,7 +17,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class DirectionSignBlock extends AttachableHorizontalBlock implements EntityBlock {
 
     private static final VoxelShape baseShape = Shapes.or(
-            Shapes.box(7 / 16f, 4 / 16f, 0 / 16f, 9 / 16f, 12 / 16f, 22 / 16f));
+            Shapes.box(7 / 16f, 5 / 16f, -3 / 16f, 9 / 16f, 12 / 16f, 22 / 16f));
 
     public DirectionSignBlock(BlockBehaviour.Properties properties) {
         super(properties, baseShape);

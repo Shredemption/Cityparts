@@ -7,14 +7,17 @@ import javax.annotation.Nonnull;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import com.shredemption.streetparts.StreetParts;
 import com.shredemption.streetparts.block.DirectionSignBlock;
 import com.shredemption.streetparts.blockentity.DirectionSignBlockEntity;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
+import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
@@ -24,7 +27,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.FastColor;
+// import net.minecraft.util.FastColor;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.level.block.entity.SignText;
 import net.minecraft.world.level.block.state.BlockState;
@@ -37,7 +40,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignBlockEntity> {
 
     private static final ResourceLocation TEXTURE = fromNamespaceAndPath("streetparts",
-            "textures/block/blue_bricks.png");
+            "textures/entity/signs/direction.png");
 
     public static final ModelLayerLocation DIRECTION_SIGN_LAYER = new ModelLayerLocation(
             fromNamespaceAndPath("streetparts", "direction_sign"), "main");
@@ -46,21 +49,15 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
     private static final float MODEL_SCALE = 1f;
 
     private final Font font;
-    private final SignModel model;
+    private final DirectionSignModel model;
 
     public DirectionSignRenderer(BlockEntityRendererProvider.Context context) {
         this.font = context.getFont();
-        this.model = new SignModel(context.bakeLayer(DIRECTION_SIGN_LAYER));
+        this.model = new DirectionSignModel(context.bakeLayer(DirectionSignModel.LAYER_LOCATION));
     }
 
     public static LayerDefinition createDirectionSignLayer() {
-        MeshDefinition mesh = new MeshDefinition();
-        PartDefinition root = mesh.getRoot();
-
-        root.addOrReplaceChild("plate", CubeListBuilder.create().texOffs(0, 0)
-                .addBox(7, 4, -6, 2, 8, 22), PartPose.offset(-8f, -8f, -8f));
-
-        return LayerDefinition.create(mesh, 16, 16);
+        return DirectionSignModel.createBodyLayer();
     }
 
     @Override
@@ -83,7 +80,7 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
 
         poseStack.pushPose();
         poseStack.scale(MODEL_SCALE, MODEL_SCALE, MODEL_SCALE);
-        this.model.root.render(poseStack, vertexconsumer, packedLight, packedOverlay);
+        this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, packedOverlay);
         poseStack.popPose();
 
         renderText(sign, poseStack, buffer, packedLight);
@@ -104,9 +101,10 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
         poseStack.scale(0.015625F, -0.015625F, 0.015625F);
 
         int color = text.getColor().getTextColor();
-        int darkColor = FastColor.ARGB32.color(0, (int) (FastColor.ARGB32.red(color) * 0.4),
-                (int) (FastColor.ARGB32.green(color) * 0.4),
-                (int) (FastColor.ARGB32.blue(color) * 0.4));
+        // int darkColor = FastColor.ARGB32.color(0, (int) (FastColor.ARGB32.red(color)
+        // * 0.4),
+        // (int) (FastColor.ARGB32.green(color) * 0.4),
+        // (int) (FastColor.ARGB32.blue(color) * 0.4));
 
         for (int i = 0; i < 4; i++) {
             FormattedCharSequence line = lines[i];
@@ -123,21 +121,42 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
     public boolean shouldRenderOffScreen(@Nonnull DirectionSignBlockEntity blockEntity) {
         return true;
     }
+}
 
-    public static class SignModel extends net.minecraft.client.model.Model {
-        public final ModelPart root;
+class DirectionSignModel extends Model {
 
-        public SignModel(ModelPart root) {
-            super(RenderType::entityCutoutNoCull);
-            this.root = root.getChild("plate");
-        }
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
+            fromNamespaceAndPath(StreetParts.MOD_ID, "direction_sign"), "main");
+    private final ModelPart bb_main;
 
-        @Override
-        public void renderToBuffer(@Nonnull PoseStack poseStack, @Nonnull VertexConsumer vertexConsumer,
-                int packedLight,
-                int packedOverlay, int color) {
-            this.root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-        }
+    public DirectionSignModel(ModelPart root) {
+        super(RenderType::entityCutoutNoCull);
+        this.bb_main = root.getChild("bb_main");
     }
 
+    public static LayerDefinition createBodyLayer() {
+        MeshDefinition meshdefinition = new MeshDefinition();
+        PartDefinition partdefinition = meshdefinition.getRoot();
+
+        PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create(),
+                PartPose.offset(0.0F, -3.0F, 0.0F));
+
+        bb_main.addOrReplaceChild("cube_r1",
+                CubeListBuilder.create().texOffs(0, 9).addBox(-1.0F, 0.0F, -5.0F, 2.0F, 5.0F, 5.0F,
+                        new CubeDeformation(0.0F)),
+                PartPose.offsetAndRotation(0.0F, 0.0F, 8.0F, 0.7854F, 0.0F, 0.0F));
+
+        bb_main.addOrReplaceChild("cube_r2",
+                CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, -3.5F, -1.0F, 22.0F, 7.0F, 2.0F,
+                        new CubeDeformation(0.0F)),
+                PartPose.offsetAndRotation(0.0F, 3.535F, -6.0F, 0.0F, -1.5708F, 0.0F));
+
+        return LayerDefinition.create(meshdefinition, 64, 32);
+    }
+
+    @Override
+    public void renderToBuffer(@Nonnull PoseStack poseStack, @Nonnull VertexConsumer vertexConsumer, int packedLight,
+            int packedOverlay, int color) {
+        bb_main.render(poseStack, vertexConsumer, packedLight, packedOverlay);
+    }
 }
