@@ -2,6 +2,7 @@ package com.shredemption.streetparts;
 
 import com.shredemption.streetparts.registry.BlockEntities;
 import com.shredemption.streetparts.registry.WoodBlocksRegistry;
+import com.shredemption.streetparts.render.DirectionSignRenderer;
 
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -41,6 +42,7 @@ public class ClientSetup {
 
                     BlockEntityRenderers.register(BlockEntities.SIGN.get(), SignRenderer::new);
                     BlockEntityRenderers.register(BlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
+                    BlockEntityRenderers.register(BlockEntities.DIRECTION_SIGN.get(), DirectionSignRenderer::new);
                 });
             });
         }
