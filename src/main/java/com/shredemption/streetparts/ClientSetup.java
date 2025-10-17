@@ -14,6 +14,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 public class ClientSetup {
 
@@ -43,7 +44,13 @@ public class ClientSetup {
                     BlockEntityRenderers.register(BlockEntities.SIGN.get(), SignRenderer::new);
                     BlockEntityRenderers.register(BlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
                     BlockEntityRenderers.register(BlockEntities.DIRECTION_SIGN.get(), DirectionSignRenderer::new);
+
                 });
+            });
+
+            modBus.addListener((EntityRenderersEvent.RegisterLayerDefinitions event) -> {
+                event.registerLayerDefinition(DirectionSignRenderer.DIRECTION_SIGN_LAYER,
+                        DirectionSignRenderer::createDirectionSignLayer);
             });
         }
     }
