@@ -2,7 +2,7 @@ package com.shredemption.streetparts.block;
 
 import javax.annotation.Nonnull;
 
-import com.shredemption.streetparts.block.entity.ModHangingSignBlockEntity;
+import com.shredemption.streetparts.blockentity.ModHangingSignBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.CeilingHangingSignBlock;

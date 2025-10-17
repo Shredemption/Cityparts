@@ -1,4 +1,4 @@
-package com.shredemption.streetparts.block.template;
+package com.shredemption.streetparts.template;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

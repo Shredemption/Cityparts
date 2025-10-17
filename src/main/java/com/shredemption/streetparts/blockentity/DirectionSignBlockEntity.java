@@ -1,4 +1,4 @@
-package com.shredemption.streetparts.block.entity;
+package com.shredemption.streetparts.blockentity;
 
 import com.shredemption.streetparts.registry.BlockEntities;
 

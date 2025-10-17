@@ -10,7 +10,7 @@ import com.shredemption.streetparts.block.ModCeilingHangingSignBlock;
 import com.shredemption.streetparts.block.ModStandingSignBlock;
 import com.shredemption.streetparts.block.ModWallHangingSignBlock;
 import com.shredemption.streetparts.block.ModWallSignBlock;
-import com.shredemption.streetparts.block.template.StrippableRotatedPillarBlock;
+import com.shredemption.streetparts.template.StrippableRotatedPillarBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;

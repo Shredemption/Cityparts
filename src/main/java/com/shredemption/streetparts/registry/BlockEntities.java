@@ -1,9 +1,9 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.block.entity.DirectionSignBlockEntity;
-import com.shredemption.streetparts.block.entity.ModHangingSignBlockEntity;
-import com.shredemption.streetparts.block.entity.ModSignBlockEntity;
+import com.shredemption.streetparts.blockentity.DirectionSignBlockEntity;
+import com.shredemption.streetparts.blockentity.ModHangingSignBlockEntity;
+import com.shredemption.streetparts.blockentity.ModSignBlockEntity;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;

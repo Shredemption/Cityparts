@@ -2,7 +2,7 @@ package com.shredemption.streetparts.block;
 
 import javax.annotation.Nonnull;
 
-import com.shredemption.streetparts.block.entity.ModSignBlockEntity;
+import com.shredemption.streetparts.blockentity.ModSignBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.WallSignBlock;
