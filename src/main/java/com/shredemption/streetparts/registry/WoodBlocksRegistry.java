@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.block.CustomCeilingHangingSignBlock;
-import com.shredemption.streetparts.custom.block.CustomStandingSignBlock;
-import com.shredemption.streetparts.custom.block.CustomWallHangingSignBlock;
-import com.shredemption.streetparts.custom.block.CustomWallSignBlock;
-import com.shredemption.streetparts.custom.block.StrippableRotatedPillarBlock;
+import com.shredemption.streetparts.block.ModCeilingHangingSignBlock;
+import com.shredemption.streetparts.block.ModStandingSignBlock;
+import com.shredemption.streetparts.block.ModWallHangingSignBlock;
+import com.shredemption.streetparts.block.ModWallSignBlock;
+import com.shredemption.streetparts.block.StrippableRotatedPillarBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -215,14 +215,14 @@ public class WoodBlocksRegistry {
                         REGISTERED_BLOCKS.add(buttonBlock);
 
                         String signName = type + "_sign";
-                        DeferredBlock<CustomStandingSignBlock> signBlock = BLOCKS.register(signName,
-                                        () -> new CustomStandingSignBlock(WOOD_TYPES.get(type),
+                        DeferredBlock<ModStandingSignBlock> signBlock = BLOCKS.register(signName,
+                                        () -> new ModStandingSignBlock(WOOD_TYPES.get(type),
                                                         BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
                         REGISTERED_BLOCKS.add(signBlock);
 
                         String wallSignName = type + "_wall_sign";
-                        DeferredBlock<CustomWallSignBlock> wallSignBlock = BLOCKS.register(wallSignName,
-                                        () -> new CustomWallSignBlock(WOOD_TYPES.get(type),
+                        DeferredBlock<ModWallSignBlock> wallSignBlock = BLOCKS.register(wallSignName,
+                                        () -> new ModWallSignBlock(WOOD_TYPES.get(type),
                                                         BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
 
                         ITEMS.register(signName, () -> new SignItem(new Item.Properties().stacksTo(16), signBlock.get(),
@@ -232,17 +232,17 @@ public class WoodBlocksRegistry {
                         SIGN_BLOCKS.add(wallSignBlock);
 
                         String ceilingHangingSignName = type + "_hanging_sign";
-                        DeferredBlock<CustomCeilingHangingSignBlock> ceilingHangingSignBlock = BLOCKS
+                        DeferredBlock<ModCeilingHangingSignBlock> ceilingHangingSignBlock = BLOCKS
                                         .register(ceilingHangingSignName,
-                                                        () -> new CustomCeilingHangingSignBlock(WOOD_TYPES.get(type),
+                                                        () -> new ModCeilingHangingSignBlock(WOOD_TYPES.get(type),
                                                                         BlockBehaviour.Properties.ofFullCopy(
                                                                                         Blocks.OAK_HANGING_SIGN)));
                         REGISTERED_BLOCKS.add(ceilingHangingSignBlock);
 
                         String wallHangingSignName = type + "_wall_hanging_sign";
-                        DeferredBlock<CustomWallHangingSignBlock> wallHangingSignBlock = BLOCKS.register(
+                        DeferredBlock<ModWallHangingSignBlock> wallHangingSignBlock = BLOCKS.register(
                                         wallHangingSignName,
-                                        () -> new CustomWallHangingSignBlock(WOOD_TYPES.get(type),
+                                        () -> new ModWallHangingSignBlock(WOOD_TYPES.get(type),
                                                         BlockBehaviour.Properties
                                                                         .ofFullCopy(Blocks.OAK_HANGING_SIGN)));
 

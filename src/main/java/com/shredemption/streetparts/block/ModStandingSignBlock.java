@@ -1,22 +1,22 @@
-package com.shredemption.streetparts.custom.block;
+package com.shredemption.streetparts.block;
 
 import javax.annotation.Nonnull;
 
-import com.shredemption.streetparts.custom.block.entity.CustomSignBlockEntity;
+import com.shredemption.streetparts.block.entity.ModSignBlockEntity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.WallSignBlock;
+import net.minecraft.world.level.block.StandingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
-public class CustomWallSignBlock extends WallSignBlock {
-    public CustomWallSignBlock(WoodType woodType, Properties properties) {
+public class ModStandingSignBlock extends StandingSignBlock {
+    public ModStandingSignBlock(WoodType woodType, Properties properties) {
         super(woodType, properties);
     }
 
     @Override
     public BlockEntity newBlockEntity(@Nonnull BlockPos pos, @Nonnull BlockState state) {
-        return new CustomSignBlockEntity(pos, state);
+        return new ModSignBlockEntity(pos, state);
     }
 }

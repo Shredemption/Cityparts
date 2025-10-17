@@ -1,8 +1,8 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.block.entity.CustomHangingSignBlockEntity;
-import com.shredemption.streetparts.custom.block.entity.CustomSignBlockEntity;
+import com.shredemption.streetparts.block.entity.ModHangingSignBlockEntity;
+import com.shredemption.streetparts.block.entity.ModSignBlockEntity;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
@@ -16,19 +16,19 @@ public class BlockEntities {
                         .create(Registries.BLOCK_ENTITY_TYPE, StreetParts.MOD_ID);
 
         @SuppressWarnings("null")
-        public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CustomSignBlockEntity>> SIGN = BLOCK_ENTITIES
+        public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ModSignBlockEntity>> SIGN = BLOCK_ENTITIES
                         .register("sign",
                                         () -> BlockEntityType.Builder
-                                                        .of(CustomSignBlockEntity::new,
+                                                        .of(ModSignBlockEntity::new,
                                                                         WoodBlocksRegistry.getAllSignBlocks()
                                                                                         .toArray(Block[]::new))
                                                         .build(null));
 
         @SuppressWarnings("null")
-        public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CustomHangingSignBlockEntity>> HANGING_SIGN = BLOCK_ENTITIES
+        public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ModHangingSignBlockEntity>> HANGING_SIGN = BLOCK_ENTITIES
                         .register("hanging_sign",
                                         () -> BlockEntityType.Builder
-                                                        .of(CustomHangingSignBlockEntity::new,
+                                                        .of(ModHangingSignBlockEntity::new,
                                                                         WoodBlocksRegistry.getAllHangingSignBlocks()
                                                                                         .toArray(Block[]::new))
                                                         .build(null));

@@ -1,4 +1,4 @@
-package com.shredemption.streetparts.custom.block.entity;
+package com.shredemption.streetparts.block.entity;
 
 import com.shredemption.streetparts.registry.BlockEntities;
 
@@ -8,8 +8,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CustomHangingSignBlockEntity extends SignBlockEntity {
-    public CustomHangingSignBlockEntity(BlockPos pos, BlockState state) {
+public class ModHangingSignBlockEntity extends SignBlockEntity {
+    public ModHangingSignBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntities.HANGING_SIGN.get(), pos, state);
     }
 
