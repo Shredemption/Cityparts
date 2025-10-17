@@ -5,6 +5,7 @@ import com.shredemption.streetparts.registry.BlockEntities;
 import com.shredemption.streetparts.registry.ConstructionBlocksRegistry;
 import com.shredemption.streetparts.registry.LightBlocksRegistry;
 import com.shredemption.streetparts.registry.RoadBlocksRegistry;
+import com.shredemption.streetparts.registry.RoadFurnitureRegistry;
 import com.shredemption.streetparts.registry.SignBlockRegistry;
 import com.shredemption.streetparts.registry.WoodBlocksRegistry;
 
@@ -45,6 +46,7 @@ public class StreetParts {
         SignBlockRegistry.registerSignBlocks(modEventBus);
         LightBlocksRegistry.registerLightBlocks(modEventBus);
         WoodBlocksRegistry.registerWoodBlocks(modEventBus);
+        RoadFurnitureRegistry.registerRoadFurnitureBlocks(modEventBus);
         BlockEntities.register(modEventBus);
 
         ClientSetup.register(modEventBus);
