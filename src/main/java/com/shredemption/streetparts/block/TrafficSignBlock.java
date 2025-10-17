@@ -1,5 +1,7 @@
 package com.shredemption.streetparts.block;
 
+import com.shredemption.streetparts.block.template.AttachableHorizontalBlock;
+
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.shapes.Shapes;

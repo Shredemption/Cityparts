@@ -1,4 +1,4 @@
-package com.shredemption.streetparts.block;
+package com.shredemption.streetparts.block.template;
 
 import java.util.EnumMap;
 import java.util.Map;
