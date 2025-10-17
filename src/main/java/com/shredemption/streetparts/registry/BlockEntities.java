@@ -1,6 +1,7 @@
 package com.shredemption.streetparts.registry;
 
 import com.shredemption.streetparts.StreetParts;
+import com.shredemption.streetparts.block.entity.DirectionSignBlockEntity;
 import com.shredemption.streetparts.block.entity.ModHangingSignBlockEntity;
 import com.shredemption.streetparts.block.entity.ModSignBlockEntity;
 
@@ -30,6 +31,15 @@ public class BlockEntities {
                                         () -> BlockEntityType.Builder
                                                         .of(ModHangingSignBlockEntity::new,
                                                                         WoodBlocksRegistry.getAllHangingSignBlocks()
+                                                                                        .toArray(Block[]::new))
+                                                        .build(null));
+
+        @SuppressWarnings("null")
+        public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DirectionSignBlockEntity>> DIRECTION_SIGN = BLOCK_ENTITIES
+                        .register("direction_sign",
+                                        () -> BlockEntityType.Builder
+                                                        .of(DirectionSignBlockEntity::new,
+                                                                        RoadFurnitureRegistry.getDirectionSignBlocks()
                                                                                         .toArray(Block[]::new))
                                                         .build(null));
 

@@ -20,37 +20,45 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
 public class RoadFurnitureRegistry {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
-            .create(Registries.CREATIVE_MODE_TAB, StreetParts.MOD_ID);
+        public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
+        public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);
+        public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
+                        .create(Registries.CREATIVE_MODE_TAB, StreetParts.MOD_ID);
 
-    private static final List<DeferredBlock<? extends Block>> REGISTERED_BLOCKS = new ArrayList<>();
+        private static final List<DeferredBlock<? extends Block>> REGISTERED_BLOCKS = new ArrayList<>();
+        private static final List<DeferredBlock<? extends Block>> DIR_SIGNS = new ArrayList<>();
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ROAD_FURNITURE_TAB = CREATIVE_TABS
-            .register("streetparts_road_furnitrue", () -> CreativeModeTab.builder()
-                    .title(net.minecraft.network.chat.Component
-                            .translatable("itemGroup.streetparts.road_furniture"))
-                    .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
-                            .get(fromNamespaceAndPath(StreetParts.MOD_ID,
-                                    "direction_sign"))
-                            .getDefaultInstance())
-                    .displayItems((params, output) -> {
-                        REGISTERED_BLOCKS.forEach(b -> output.accept(b.get().asItem()));
-                    })
-                    .build());
+        public static List<? extends Block> getDirectionSignBlocks() {
+                return DIR_SIGNS.stream().map(DeferredBlock::get).toList();
+        }
 
-    public static void registerRoadFurnitureBlocks(IEventBus modEventBus) {
-        BLOCKS.register(modEventBus);
-        ITEMS.register(modEventBus);
-        CREATIVE_TABS.register(modEventBus);
+        public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ROAD_FURNITURE_TAB = CREATIVE_TABS
+                        .register("streetparts_road_furnitrue", () -> CreativeModeTab.builder()
+                                        .title(net.minecraft.network.chat.Component
+                                                        .translatable("itemGroup.streetparts.road_furniture"))
+                                        .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
+                                                        .get(fromNamespaceAndPath(StreetParts.MOD_ID,
+                                                                        "direction_sign"))
+                                                        .getDefaultInstance())
+                                        .displayItems((params, output) -> {
+                                                REGISTERED_BLOCKS.forEach(b -> output.accept(b.get().asItem()));
+                                        })
+                                        .build());
 
-        String dirSignName = "direction_sign";
-        DeferredBlock<DirectionSignBlock> dirSignBlock = BLOCKS.register(dirSignName,
-                () -> new DirectionSignBlock(
-                        BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.STONE)));
-        ITEMS.register(dirSignName, () -> new BlockItem(dirSignBlock.get(), new Item.Properties()));
-        REGISTERED_BLOCKS.add(dirSignBlock);
+        public static void registerRoadFurnitureBlocks(IEventBus modEventBus) {
+                BLOCKS.register(modEventBus);
+                ITEMS.register(modEventBus);
+                CREATIVE_TABS.register(modEventBus);
 
-    }
+                String dirSignName = "direction_sign";
+                DeferredBlock<DirectionSignBlock> dirSignBlock = BLOCKS.register(dirSignName,
+                                () -> new DirectionSignBlock(
+                                                BlockBehaviour.Properties.ofFullCopy(
+                                                                net.minecraft.world.level.block.Blocks.STONE)));
+                ITEMS.register(dirSignName, () -> new BlockItem(dirSignBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(dirSignBlock);
+
+                DIR_SIGNS.add(dirSignBlock);
+
+        }
 }
