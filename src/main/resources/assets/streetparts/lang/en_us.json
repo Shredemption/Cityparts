@@ -201,6 +201,8 @@
   "block.streetparts.olive_pressure_plate": "Olive Pressure Plate",
   "block.streetparts.olive_button": "Olive Button",
   "block.streetparts.olive_leaves": "Olive Leaves",
+  "block.streetparts.olive_sign": "Olive Sign",
+  "block.streetparts.olive_hanging_sign": "Olive Hanging Sign",
 
   "block.streetparts.verdant_log": "Verdant Log",
   "block.streetparts.verdant_wood": "Verdant Wood",
@@ -216,6 +218,8 @@
   "block.streetparts.verdant_pressure_plate": "Verdant Pressure Plate",
   "block.streetparts.verdant_button": "Verdant Button",
   "block.streetparts.verdant_leaves": "Verdant Leaves",
+  "block.streetparts.verdant_sign": "Verdant Sign",
+  "block.streetparts.verdant_hanging_sign": "Verdant Hanging Sign",
 
   "block.streetparts.moon_log": "Moon Log",
   "block.streetparts.moon_wood": "Moon Wood",
@@ -231,6 +235,8 @@
   "block.streetparts.moon_pressure_plate": "Moon Pressure Plate",
   "block.streetparts.moon_button": "Moon Button",
   "block.streetparts.moon_leaves": "Moon Leaves",
+  "block.streetparts.moon_sign": "Moon Sign",
+  "block.streetparts.moon_hanging_sign": "Moon Hanging Sign",
 
   "block.streetparts.sky_log": "Sky Log",
   "block.streetparts.sky_wood": "Sky Wood",
@@ -246,6 +252,8 @@
   "block.streetparts.sky_pressure_plate": "Sky Pressure Plate",
   "block.streetparts.sky_button": "Sky Button",
   "block.streetparts.sky_leaves": "Sky Leaves",
+  "block.streetparts.sky_sign": "Sky Sign",
+  "block.streetparts.sky_hanging_sign": "Sky Hanging Sign",
 
   "block.streetparts.wisteria_log": "Wisteria Log",
   "block.streetparts.wisteria_wood": "Wisteria Wood",
@@ -261,6 +269,8 @@
   "block.streetparts.wisteria_pressure_plate": "Wisteria Pressure Plate",
   "block.streetparts.wisteria_button": "Wisteria Button",
   "block.streetparts.wisteria_leaves": "Wisteria Leaves",
+  "block.streetparts.wisteria_sign": "Wisteria Sign",
+  "block.streetparts.wisteria_hanging_sign": "Wisteria Hanging Sign",
 
   "block.streetparts.ebony_log": "Ebony Log",
   "block.streetparts.ebony_wood": "Ebony Wood",
@@ -276,17 +286,12 @@
   "block.streetparts.ebony_pressure_plate": "Ebony Pressure Plate",
   "block.streetparts.ebony_button": "Ebony Button",
   "block.streetparts.ebony_leaves": "Ebony Leaves",
-
-  "block.streetparts.traffic_cone": "Traffic Cone",
-  "block.streetparts.guard_rail": "Guard Rail",
-  "block.streetparts.traffic_light": "Traffic Light",
-  "block.streetparts.striped_post": "Striped Post",
-  "block.streetparts.direction_sign": "Direction Sign",
+  "block.streetparts.ebony_sign": "Ebony Sign",
+  "block.streetparts.ebony_hanging_sign": "Ebony Hanging Sign",
 
   "itemGroup.streetparts.construction_blocks": "Construction Blocks",
   "itemGroup.streetparts.road_blocks": "Road Blocks",
   "itemGroup.streetparts.lights": "Light Blocks",
   "itemGroup.streetparts.signs": "Sign Blocks",
-  "itemGroup.streetparts.wood_blocks": "Wood Blocks",
-  "itemGroup.streetparts.parts": "Street Parts"
+  "itemGroup.streetparts.wood_blocks": "Wood Blocks"
 }

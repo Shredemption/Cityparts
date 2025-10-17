@@ -201,6 +201,8 @@
   "block.streetparts.olive_pressure_plate": "Olijfhouten drukplaat",
   "block.streetparts.olive_button": "Olijfhouten knop",
   "block.streetparts.olive_leaves": "Olijfbladeren",
+  "block.streetparts.olive_sign": "Olijfhouten bord",
+  "block.streetparts.olive_hanging_sign": "Olijfhouten hangbord",
 
   "block.streetparts.verdant_log": "Weelderige stam",
   "block.streetparts.verdant_wood": "Weelderig hout",
@@ -216,6 +218,8 @@
   "block.streetparts.verdant_pressure_plate": "Weelderige drukplaat",
   "block.streetparts.verdant_button": "Weelderige knop",
   "block.streetparts.verdant_leaves": "Weelderige bladeren",
+  "block.streetparts.verdant_sign": "Weelderig bord",
+  "block.streetparts.verdant_hanging_sign": "Weelderig hangbord",
 
   "block.streetparts.moon_log": "Maanstam",
   "block.streetparts.moon_wood": "Maanhout",
@@ -231,6 +235,8 @@
   "block.streetparts.moon_pressure_plate": "Maanhouten drukplaat",
   "block.streetparts.moon_button": "Maanhouten knop",
   "block.streetparts.moon_leaves": "Maanbladeren",
+  "block.streetparts.moon_sign": "Maanhouten bord",
+  "block.streetparts.moon_hanging_sign": "Maanhouten hangbord",
 
   "block.streetparts.sky_log": "Luchtstam",
   "block.streetparts.sky_wood": "Luchthout",
@@ -246,6 +252,8 @@
   "block.streetparts.sky_pressure_plate": "Luchthouten drukplaat",
   "block.streetparts.sky_button": "Luchthouten knop",
   "block.streetparts.sky_leaves": "Luchtbladeren",
+  "block.streetparts.sky_sign": "Luchthouten bord",
+  "block.streetparts.sky_hanging_sign": "Luchthouten hangbord",
 
   "block.streetparts.wisteria_log": "Wisteriastam",
   "block.streetparts.wisteria_wood": "Wisteriahout",
@@ -261,6 +269,8 @@
   "block.streetparts.wisteria_pressure_plate": "Wisteriahouten drukplaat",
   "block.streetparts.wisteria_button": "Wisteriahouten knop",
   "block.streetparts.wisteria_leaves": "Wisteriabladeren",
+  "block.streetparts.wisteria_sign": "Wisteriahouten bord",
+  "block.streetparts.wisteria_hanging_sign": "Wisteriahouten hangbord",
 
   "block.streetparts.ebony_log": "Ebbenhouten stam",
   "block.streetparts.ebony_wood": "Ebbenhout",
@@ -276,17 +286,12 @@
   "block.streetparts.ebony_pressure_plate": "Ebbenhouten drukplaat",
   "block.streetparts.ebony_button": "Ebbenhouten knop",
   "block.streetparts.ebony_leaves": "Ebbenbladeren",
-
-  "block.streetparts.traffic_cone": "Verkeerskegel",
-  "block.streetparts.guard_rail": "Leuning",
-  "block.streetparts.traffic_light": "Verkeerslicht",
-  "block.streetparts.striped_post": "Gestreepte paal",
-  "block.streetparts.direction_sign": "Richtingbord",
+  "block.streetparts.ebony_sign": "Ebbenhouten bord",
+  "block.streetparts.ebony_hanging_sign": "Ebbenhouten hangbord",
 
   "itemGroup.streetparts.construction_blocks": "Constructieblokken",
   "itemGroup.streetparts.road_blocks": "Wegblokken",
   "itemGroup.streetparts.lights": "Lantaarnpalen",
   "itemGroup.streetparts.signs": "Borden",
-  "itemGroup.streetparts.wood_blocks": "Houtblokken",
-  "itemGroup.streetparts.parts": "Straatonderdelen"
+  "itemGroup.streetparts.wood_blocks": "Houtblokken"
 }
