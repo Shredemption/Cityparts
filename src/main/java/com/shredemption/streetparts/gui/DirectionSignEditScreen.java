@@ -122,13 +122,11 @@ public class DirectionSignEditScreen extends Screen {
         guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, 40, 0xFFFFFF);
 
         // sign
-
         float direction = isFrontText ? -1f : 1f;
 
         guiGraphics.pose().pushPose();
         guiGraphics.pose().translate(this.width / 2f + direction * 15f, 90f, 50f);
         guiGraphics.pose().scale(75f, 75f, 75f);
-
         guiGraphics.pose().mulPose(Axis.YP.rotationDegrees(direction * 89f));
 
         VertexConsumer vertex = guiGraphics.bufferSource()
@@ -144,11 +142,36 @@ public class DirectionSignEditScreen extends Screen {
 
         int color = sign.getText(this.isFrontText).getColor().getTextColor();
         int lineHeight = sign.getTextLineHeight();
+
+        boolean blink = (System.currentTimeMillis() / 500L) % 2 == 0;
+        int cursorPos = signField.getCursorPos();
+        int selectionPos = signField.getSelectionPos();
+
         for (int i = 0; i < MAX_LINES; i++) {
             String text = this.messages[i];
             int x = -this.font.width(text) / 2;
             int y = i * lineHeight - lineHeight;
             guiGraphics.drawString(this.font, text, x, y, color, false);
+
+            if (i == this.line && blink && cursorPos >= 0) {
+                int cursorX = this.font.width(text.substring(0, Math.min(cursorPos, text.length())))
+                        - this.font.width(text) / 2;
+                if (cursorPos >= text.length()) {
+                    // Draw underscore at end
+                    guiGraphics.drawString(this.font, "_", cursorX, y, color, false);
+                } else {
+                    // Draw vertical line
+                    guiGraphics.fill(cursorX, y - 1, cursorX + 1, y + lineHeight, 0xFF000000 | color);
+                }
+            }
+
+            if (i == this.line && cursorPos != selectionPos) {
+                int start = Math.min(cursorPos, selectionPos);
+                int end = Math.max(cursorPos, selectionPos);
+                int highlightStart = this.font.width(text.substring(0, start)) - this.font.width(text) / 2;
+                int highlightEnd = this.font.width(text.substring(0, end)) - this.font.width(text) / 2;
+                guiGraphics.fill(highlightStart, y, highlightEnd, y + lineHeight, 0x8033B5E5);
+            }
         }
         guiGraphics.pose().popPose();
 
