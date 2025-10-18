@@ -6,9 +6,12 @@ import java.util.UUID;
 import javax.annotation.Nonnull;
 
 import com.shredemption.streetparts.blockentity.DirectionSignBlockEntity;
+import com.shredemption.streetparts.gui.DirectionSignEditScreen;
 import com.shredemption.streetparts.template.AttachableHorizontalBlock;
 
 import net.minecraft.Util;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.contents.PlainTextContents;
@@ -32,6 +35,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class DirectionSignBlock extends AttachableHorizontalBlock implements EntityBlock {
 
@@ -124,9 +129,17 @@ public class DirectionSignBlock extends AttachableHorizontalBlock implements Ent
         return uuid != null && !uuid.equals(player.getUUID());
     }
 
-    public void openTextEdit(Player player, DirectionSignBlockEntity directionSignEntity, boolean isFrontText) {
-        directionSignEntity.setAllowedPlayerEditor(player.getUUID());
-        player.openTextEdit(directionSignEntity, isFrontText);
+    @OnlyIn(Dist.CLIENT)
+    public void openTextEdit(Player player, DirectionSignBlockEntity directionSignEntity, boolean editingFrontText) {
+        Minecraft mc = Minecraft.getInstance();
+
+        mc.execute(() -> {
+            Screen currentScreen = mc.screen;
+            if (currentScreen != null)
+                currentScreen.removed();
+
+            mc.setScreen(new DirectionSignEditScreen(directionSignEntity, editingFrontText));
+        });
     }
 
     private boolean hasEditableText(Player player, DirectionSignBlockEntity directionSignEntity, boolean isFrontText) {

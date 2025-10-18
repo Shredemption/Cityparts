@@ -38,7 +38,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignBlockEntity> {
 
-    private static final ResourceLocation TEXTURE = fromNamespaceAndPath("streetparts",
+    public static final ResourceLocation TEXTURE = fromNamespaceAndPath("streetparts",
             "textures/entity/signs/direction.png");
 
     public static final ModelLayerLocation DIRECTION_SIGN_LAYER = new ModelLayerLocation(
