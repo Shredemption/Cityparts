@@ -6,8 +6,10 @@ import javax.annotation.Nonnull;
 
 import org.joml.Vector3f;
 
+import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import com.shredemption.streetparts.StreetParts;
 import com.shredemption.streetparts.blockentity.DirectionSignBlockEntity;
 import com.shredemption.streetparts.render.DirectionSignRenderer;
@@ -27,6 +29,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -113,22 +116,29 @@ public class DirectionSignEditScreen extends Screen {
 
         super.render(guiGraphics, mouseX, mouseY, partialTick);
 
+        Lighting.setupForFlatItems();
+
         // title
         guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, 40, 0xFFFFFF);
 
         // sign
+
+        float direction = isFrontText ? -1f : 1f;
+
         guiGraphics.pose().pushPose();
-        guiGraphics.pose().translate(this.width / 2f, 90f, 50f);
-        guiGraphics.pose().scale(62.5f, 62.5f, -62.5f);
+        guiGraphics.pose().translate(this.width / 2f + direction * 15f, 90f, 50f);
+        guiGraphics.pose().scale(75f, 75f, 75f);
+
+        guiGraphics.pose().mulPose(Axis.YP.rotationDegrees(direction * 89f));
 
         VertexConsumer vertex = guiGraphics.bufferSource()
                 .getBuffer(RenderType.entityCutout(DirectionSignRenderer.TEXTURE));
-        this.signModel.bb_main.render(guiGraphics.pose(), vertex, 15728880, 0);
+        this.signModel.bb_main.render(guiGraphics.pose(), vertex, 0xFF00FF, OverlayTexture.NO_OVERLAY);
         guiGraphics.pose().popPose();
 
         // Render 2 lines of text on sign
         guiGraphics.pose().pushPose();
-        guiGraphics.pose().translate(this.width / 2f, 90f, 55f);
+        guiGraphics.pose().translate(this.width / 2f, 94f, 55f);
         Vector3f scale = new Vector3f(TEXT_SCALE, TEXT_SCALE, TEXT_SCALE);
         guiGraphics.pose().scale(scale.x(), scale.y(), scale.z());
 
@@ -141,11 +151,18 @@ public class DirectionSignEditScreen extends Screen {
             guiGraphics.drawString(this.font, text, x, y, color, false);
         }
         guiGraphics.pose().popPose();
+
+        Lighting.setupFor3DItems();
     }
 
     @Override
     public boolean isPauseScreen() {
         return false;
+    }
+
+    @Override
+    public void renderBackground(@Nonnull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        this.renderTransparentBackground(guiGraphics);
     }
 }
 
