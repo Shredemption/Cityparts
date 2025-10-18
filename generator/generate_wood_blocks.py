@@ -42,7 +42,9 @@ for var in VARIANTS:
     pressure_plate_name = f"{var}_pressure_plate"
     button_name = f"{var}_button"
     sign_name = f"{var}_sign"
+    wall_sign_name = f"{var}_wall_sign"
     hanging_sign_name = f"{var}_hanging_sign"
+    wall_hanging_sign_name = f"{var}_wall_hanging_sign"
 
     files = {
         # blockstates
@@ -59,8 +61,10 @@ for var in VARIANTS:
         os.path.join(BLOCKSTATE_DIR, f"{trapdoor_name}.json"): blockstates.trapdoor(trapdoor_name),
         os.path.join(BLOCKSTATE_DIR, f"{pressure_plate_name}.json"): blockstates.pressure_plate(pressure_plate_name),
         os.path.join(BLOCKSTATE_DIR, f"{button_name}.json"): blockstates.button(button_name),
-        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.sign(sign_name),
-        os.path.join(BLOCKSTATE_DIR, f"{hanging_sign_name}.json"): blockstates.hanging_sign(hanging_sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.block(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{wall_sign_name}.json"): blockstates.block(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{hanging_sign_name}.json"): blockstates.block(hanging_sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{wall_hanging_sign_name}.json"): blockstates.block(hanging_sign_name),
         # block model
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}.json"): models.pillar(log_name),
         os.path.join(BLOCK_MODEL_DIR, f"{log_name}_horizontal.json"): models.pillar_horizontal(log_name),

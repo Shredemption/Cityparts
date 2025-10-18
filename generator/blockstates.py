@@ -655,11 +655,3 @@ def trapdoor(name):
             "facing=west,half=top,open=true": {"model": f"{MOD_ID}:block/{name}_open", "x": 180, "y": 90},
         }
     }
-
-
-def sign(name):
-    return {"variants": {"": {"model": f"{MOD_ID}:block/{name}"}}}
-
-
-def hanging_sign(name):
-    return {"variants": {"": {"model": f"{MOD_ID}:block/{name}"}}}
