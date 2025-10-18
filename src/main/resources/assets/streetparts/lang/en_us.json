@@ -292,6 +292,8 @@
   "block.streetparts.direction_sign": "Direction Sign",
   "block.streetparts.traffic_cone": "Traffic Cone",
   "block.streetparts.traffic_barrier": "Traffic Barrier",
+  "block.streetparts.caution_tape": "Caution Tape",
+  "block.streetparts.barrier_tape": "Barrier Tape",
 
   "itemGroup.streetparts.construction_blocks": "Construction Blocks",
   "itemGroup.streetparts.road_blocks": "Road Blocks",

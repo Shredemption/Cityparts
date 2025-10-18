@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.shredemption.streetparts.StreetParts;
 import com.shredemption.streetparts.block.DirectionSignBlock;
+import com.shredemption.streetparts.template.HorizontalConnectingBlock;
 import com.shredemption.streetparts.template.RotatableHorizontalBlock;
 import com.shredemption.streetparts.template.SupportedShapedBlock;
 
@@ -13,6 +14,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.neoforged.bus.api.IEventBus;
@@ -65,19 +67,40 @@ public class RoadFurnitureRegistry {
                 String trafficConeName = "traffic_cone";
                 DeferredBlock<SupportedShapedBlock> trafficConeBlock = BLOCKS.register(trafficConeName,
                                 () -> new SupportedShapedBlock(
-                                                BlockBehaviour.Properties.of().strength(0.0f), Shapes.or(
-                                                                Shapes.box(2 / 16f, 0, 2 / 16f, 14 / 16f, 1f,
-                                                                                14 / 16f))));
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.or(Shapes.box(2 / 16f, 0, 2 / 16f, 14 / 16f, 1f, 14 / 16f))));
                 ITEMS.register(trafficConeName, () -> new BlockItem(trafficConeBlock.get(), new Item.Properties()));
                 REGISTERED_BLOCKS.add(trafficConeBlock);
 
                 String barrierName = "traffic_barrier";
                 DeferredBlock<RotatableHorizontalBlock> barrierBlock = BLOCKS.register(barrierName,
                                 () -> new RotatableHorizontalBlock(
-                                                BlockBehaviour.Properties.of().strength(0.5f), Shapes.or(
-                                                                Shapes.box(-6 / 16f, 0, 2 / 16f, 22 / 16f, 14 / 16f,
-                                                                                14 / 16f))));
+                                                BlockBehaviour.Properties.of().strength(0.5f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.or(Shapes.box(-6 / 16f, 0, 2 / 16f, 22 / 16f, 14 / 16f,
+                                                                14 / 16f))));
                 ITEMS.register(barrierName, () -> new BlockItem(barrierBlock.get(), new Item.Properties()));
                 REGISTERED_BLOCKS.add(barrierBlock);
+
+                String cautionTapeName = "caution_tape";
+                DeferredBlock<HorizontalConnectingBlock> cautionTapeBlock = BLOCKS.register(cautionTapeName,
+                                () -> new HorizontalConnectingBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.box(6 / 16f, 0 / 16f, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f),
+                                                Shapes.box(7 / 16f, 11 / 16f, 0 / 16f, 9 / 16f, 15 / 16f, 8 / 16f)));
+                ITEMS.register(cautionTapeName, () -> new BlockItem(cautionTapeBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(cautionTapeBlock);
+
+                String barrierTapeName = "barrier_tape";
+                DeferredBlock<HorizontalConnectingBlock> barrierTapeBlock = BLOCKS.register(barrierTapeName,
+                                () -> new HorizontalConnectingBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.box(6 / 16f, 0 / 16f, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f),
+                                                Shapes.box(7 / 16f, 11 / 16f, 0 / 16f, 9 / 16f, 15 / 16f, 8 / 16f)));
+                ITEMS.register(barrierTapeName, () -> new BlockItem(barrierTapeBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(barrierTapeBlock);
         }
 }

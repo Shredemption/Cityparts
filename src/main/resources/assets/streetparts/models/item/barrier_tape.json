@@ -1,0 +1,6 @@
+{
+    "parent": "streetparts:block/template/tape_inventory",
+    "textures": {
+      "tape": "streetparts:block/barrier_tape"
+    }
+}

@@ -292,6 +292,8 @@
   "block.streetparts.direction_sign": "Wegwijzerbord",
   "block.streetparts.traffic_cone": "Pylon",
   "block.streetparts.traffic_barrier": "Verkeershek",
+  "block.streetparts.caution_tape": "Waarschuwingslint",
+  "block.streetparts.barrier_tape": "Afzetlint",
 
   "itemGroup.streetparts.construction_blocks": "Constructieblokken",
   "itemGroup.streetparts.road_blocks": "Wegblokken",
