@@ -53,6 +53,7 @@ public class DirectionSignBlock extends AttachableHorizontalBlock implements Ent
     }
 
     @Override
+    @SuppressWarnings("null")
     protected ItemInteractionResult useItemOn(
             @Nonnull ItemStack stack, @Nonnull BlockState state, @Nonnull Level level, @Nonnull BlockPos pos,
             @Nonnull Player player, @Nonnull InteractionHand hand, @Nonnull BlockHitResult hitResult) {
