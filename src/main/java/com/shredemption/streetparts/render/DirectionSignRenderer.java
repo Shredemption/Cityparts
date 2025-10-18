@@ -27,7 +27,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-// import net.minecraft.util.FastColor;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.level.block.entity.SignText;
 import net.minecraft.world.level.block.state.BlockState;
@@ -45,7 +44,8 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
     public static final ModelLayerLocation DIRECTION_SIGN_LAYER = new ModelLayerLocation(
             fromNamespaceAndPath("streetparts", "direction_sign"), "main");
 
-    private static final Vec3 TEXT_OFFSET = new Vec3(0.0, 0.25F, 0.05F);
+    private static final Vec3 TEXT_OFFSET = new Vec3(0.073f, -0.125f, -0.2f);
+    private static final float TEXT_SCALE = 0.014f;
     private static final float MODEL_SCALE = 1f;
 
     private final Font font;
@@ -90,31 +90,50 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
 
     private void renderText(DirectionSignBlockEntity sign, PoseStack poseStack, MultiBufferSource buffer,
             int packedLight) {
-        SignText text = sign.getFrontText();
+
+        for (int side = 0; side < 2; side++) {
+            boolean isFront = (side == 0);
+            SignText text = isFront ? sign.getFrontText() : sign.getBackText();
+
+            poseStack.pushPose();
+
+            Vec3 offset = TEXT_OFFSET;
+            if (!isFront) {
+                offset = new Vec3(-TEXT_OFFSET.x, TEXT_OFFSET.y, TEXT_OFFSET.z);
+            }
+
+            poseStack.translate(offset.x, offset.y, offset.z);
+
+            float yRot = -sign.getBlockState().getValue(DirectionSignBlock.FACING).toYRot() + 90f;
+            poseStack.mulPose(Axis.YP.rotationDegrees(yRot));
+
+            if (!isFront) {
+                poseStack.mulPose(Axis.YP.rotationDegrees(180f));
+            }
+
+            poseStack.scale(TEXT_SCALE, -TEXT_SCALE, TEXT_SCALE);
+
+            renderTextLines(sign, text, poseStack, buffer, packedLight);
+            poseStack.popPose();
+        }
+    }
+
+    private void renderTextLines(DirectionSignBlockEntity sign, SignText text, PoseStack poseStack,
+            MultiBufferSource buffer, int packedLight) {
         FormattedCharSequence[] lines = text.getRenderMessages(Minecraft.getInstance().isTextFilteringEnabled(), s -> {
             var list = this.font.split(s, sign.getMaxTextLineWidth());
             return list.isEmpty() ? FormattedCharSequence.EMPTY : list.get(0);
         });
 
-        poseStack.pushPose();
-        poseStack.translate(TEXT_OFFSET.x, TEXT_OFFSET.y, TEXT_OFFSET.z);
-        poseStack.scale(0.015625F, -0.015625F, 0.015625F);
-
         int color = text.getColor().getTextColor();
-        // int darkColor = FastColor.ARGB32.color(0, (int) (FastColor.ARGB32.red(color)
-        // * 0.4),
-        // (int) (FastColor.ARGB32.green(color) * 0.4),
-        // (int) (FastColor.ARGB32.blue(color) * 0.4));
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 2; i++) {
             FormattedCharSequence line = lines[i];
             float x = -this.font.width(line) / 2f;
             this.font.drawInBatch(line, x, i * 10 - 20, color, false, poseStack.last().pose(), buffer,
                     Font.DisplayMode.POLYGON_OFFSET, 0, packedLight);
 
         }
-
-        poseStack.popPose();
     }
 
     @Override
