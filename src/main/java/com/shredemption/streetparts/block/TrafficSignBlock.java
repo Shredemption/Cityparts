@@ -11,7 +11,7 @@ public class TrafficSignBlock extends AttachableHorizontalBlock {
 
     private static final VoxelShape SignShape = Shapes.or(
             Shapes.box(7 / 16f, 9 / 16f, 1.0f, 9 / 16f, 11 / 16f, 1.375f),
-            Shapes.box(2 / 16f, 4 / 16f, 15 / 16f, 14 / 16f, 1.0f, 1.0f));
+            Shapes.box(1 / 16f, 2 / 16f, 15 / 16f, 15 / 16f, 16 / 16f, 16 / 16f));
 
     public TrafficSignBlock(BlockBehaviour.Properties properties) {
         super(properties, SignShape);

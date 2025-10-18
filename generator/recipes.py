@@ -109,7 +109,7 @@ def wooden_button(planks, button):
     }
 
 
-def sign(result):
+def traffic_sign(result):
     return {
         "type": "minecraft:stonecutting",
         "ingredient": {"item": "minecraft:iron_ingot"},

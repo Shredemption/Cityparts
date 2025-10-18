@@ -75,7 +75,7 @@ for sign in ROUND:
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_round(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
         os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
-        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.sign(sign_name),
+        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}_from_sign.json"): recipes.one_from_tag_stonecutter(
             signs_tag, sign_name
         ),
@@ -92,9 +92,9 @@ for sign in SQUARE:
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_square(sign_name),
-        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
+        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block(sign_name),
         os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
-        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.sign(sign_name),
+        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}_from_sign.json"): recipes.one_from_tag_stonecutter(
             signs_tag, sign_name
         ),
@@ -113,7 +113,7 @@ for sign in TRIANGLE:
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_triangle(sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
         os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
-        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.sign(sign_name),
+        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}_from_sign.json"): recipes.one_from_tag_stonecutter(
             signs_tag, sign_name
         ),
