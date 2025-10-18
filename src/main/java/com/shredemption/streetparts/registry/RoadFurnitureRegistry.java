@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.shredemption.streetparts.StreetParts;
 import com.shredemption.streetparts.block.DirectionSignBlock;
+import com.shredemption.streetparts.template.RotatableHorizontalBlock;
 import com.shredemption.streetparts.template.SupportedShapedBlock;
 
 import net.minecraft.core.registries.Registries;
@@ -71,5 +72,13 @@ public class RoadFurnitureRegistry {
                 ITEMS.register(trafficConeName, () -> new BlockItem(trafficConeBlock.get(), new Item.Properties()));
                 REGISTERED_BLOCKS.add(trafficConeBlock);
 
+                String barrierName = "traffic_barrier";
+                DeferredBlock<RotatableHorizontalBlock> barrierBlock = BLOCKS.register(barrierName,
+                                () -> new RotatableHorizontalBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f), Shapes.or(
+                                                                Shapes.box(-6 / 16f, 0, 2 / 16f, 22 / 16f, 14 / 16f,
+                                                                                14 / 16f))));
+                ITEMS.register(barrierName, () -> new BlockItem(barrierBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(barrierBlock);
         }
 }
