@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#W#", "P P"],
+  "key": {
+    "#": {
+      "item": "minecraft:red_dye"
+    },
+    "W": {
+      "item": "minecraft:white_concrete"
+    },
+    "P": {
+      "tag": "streetparts:light_posts"
+    }
+  },
+  "result": {
+    "id": "streetparts:traffic_barrier",
+    "count": 2
+  }
+}
