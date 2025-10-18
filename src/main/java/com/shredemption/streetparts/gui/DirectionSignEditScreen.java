@@ -82,6 +82,7 @@ public class DirectionSignEditScreen extends Screen {
                 this.isFrontText);
     }
 
+    @SuppressWarnings("null")
     private void onDone() {
         this.minecraft.setScreen(null);
     }

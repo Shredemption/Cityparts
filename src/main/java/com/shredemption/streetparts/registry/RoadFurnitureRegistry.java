@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.shredemption.streetparts.StreetParts;
 import com.shredemption.streetparts.block.DirectionSignBlock;
+import com.shredemption.streetparts.template.SupportedShapedBlock;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -59,6 +61,15 @@ public class RoadFurnitureRegistry {
                 REGISTERED_BLOCKS.add(dirSignBlock);
 
                 DIR_SIGNS.add(dirSignBlock);
+
+                String trafficConeName = "traffic_cone";
+                DeferredBlock<SupportedShapedBlock> trafficConeBlock = BLOCKS.register(trafficConeName,
+                                () -> new SupportedShapedBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f), Shapes.or(
+                                                                Shapes.box(2 / 16f, 0, 2 / 16f, 14 / 16f, 1f,
+                                                                                14 / 16f))));
+                ITEMS.register(trafficConeName, () -> new BlockItem(trafficConeBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(trafficConeBlock);
 
         }
 }
