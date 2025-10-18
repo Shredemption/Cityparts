@@ -9,7 +9,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -98,8 +97,7 @@ public class SignBlockRegistry {
                 for (String type : roundSigns) {
                         String fullName = "sign_round_" + type;
                         DeferredBlock<TrafficSignBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new TrafficSignBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_ROUND_SIGNS.add(fullBlock);
                 }
@@ -107,8 +105,7 @@ public class SignBlockRegistry {
                 for (String type : squareSigns) {
                         String fullName = "sign_square_" + type;
                         DeferredBlock<TrafficSignBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new TrafficSignBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_SQUARE_SIGNS.add(fullBlock);
                 }
@@ -116,8 +113,7 @@ public class SignBlockRegistry {
                 for (String type : triangleSigns) {
                         String fullName = "sign_triangle_" + type;
                         DeferredBlock<TrafficSignBlock> fullBlock = BLOCKS.register(fullName,
-                                        () -> new TrafficSignBlock(BlockBehaviour.Properties.of()
-                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f)));
+                                        () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_TRIANGLE_SIGNS.add(fullBlock);
                 }

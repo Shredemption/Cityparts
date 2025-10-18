@@ -56,8 +56,7 @@ public class RoadFurnitureRegistry {
                 String dirSignName = "direction_sign";
                 DeferredBlock<DirectionSignBlock> dirSignBlock = BLOCKS.register(dirSignName,
                                 () -> new DirectionSignBlock(
-                                                BlockBehaviour.Properties.ofFullCopy(
-                                                                net.minecraft.world.level.block.Blocks.STONE)));
+                                                BlockBehaviour.Properties.of().strength(0.5f)));
                 ITEMS.register(dirSignName, () -> new BlockItem(dirSignBlock.get(), new Item.Properties()));
                 REGISTERED_BLOCKS.add(dirSignBlock);
 
@@ -75,7 +74,7 @@ public class RoadFurnitureRegistry {
                 String barrierName = "traffic_barrier";
                 DeferredBlock<RotatableHorizontalBlock> barrierBlock = BLOCKS.register(barrierName,
                                 () -> new RotatableHorizontalBlock(
-                                                BlockBehaviour.Properties.of().strength(0.0f), Shapes.or(
+                                                BlockBehaviour.Properties.of().strength(0.5f), Shapes.or(
                                                                 Shapes.box(-6 / 16f, 0, 2 / 16f, 22 / 16f, 14 / 16f,
                                                                                 14 / 16f))));
                 ITEMS.register(barrierName, () -> new BlockItem(barrierBlock.get(), new Item.Properties()));
