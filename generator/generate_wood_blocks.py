@@ -103,8 +103,8 @@ for var in VARIANTS:
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}.json"): models.button(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}_pressed.json"): models.button_pressed(planks_name),
         os.path.join(BLOCK_MODEL_DIR, f"{button_name}_inventory.json"): models.button_inventory(planks_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign(planks_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{hanging_sign_name}.json"): models.sign(hanging_sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.block_particle(planks_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{hanging_sign_name}.json"): models.block_particle(planks_name),
         # item models
         os.path.join(ITEM_MODEL_DIR, f"{log_name}.json"): items.block(log_name),
         os.path.join(ITEM_MODEL_DIR, f"{wood_name}.json"): items.block(wood_name),

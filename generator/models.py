@@ -292,9 +292,5 @@ def trapdoor_bottom(name):
     }
 
 
-def sign(planks):
-    return {"textures": {"particle": f"{MOD_ID}:block/{planks}"}}
-
-
-def hanging_sign(stripped_log):
-    return {"textures": {"particle": f"{MOD_ID}:block/{stripped_log}"}}
+def block_particle(texture):
+    return {"textures": {"particle": f"{MOD_ID}:block/{texture}"}}
