@@ -50,6 +50,7 @@
     "streetparts:asphalt",
     "streetparts:asphalt_slab",
     "streetparts:red_asphalt",
-    "streetparts:red_asphalt_slab"
+    "streetparts:red_asphalt_slab",
+    "streetparts:direction_sign"
   ]
 }
