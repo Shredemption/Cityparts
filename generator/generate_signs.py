@@ -73,7 +73,7 @@ for sign in ROUND:
     files = {
         os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
         os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_round(sign_name),
-        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block_texture(sign_name),
+        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block(sign_name),
         os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}_from_sign.json"): recipes.one_from_tag_stonecutter(
