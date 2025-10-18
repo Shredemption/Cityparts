@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "streetparts:olive_wall_sign",
+    "streetparts:verdant_wall_sign",
+    "streetparts:sky_wall_sign",
+    "streetparts:moon_wall_sign",
+    "streetparts:wisteria_wall_sign",
+    "streetparts:ebony_wall_sign"
+  ]
+}

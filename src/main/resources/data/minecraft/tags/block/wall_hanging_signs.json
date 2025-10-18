@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "streetparts:olive_wall_hanging_sign",
+    "streetparts:verdant_wall_hanging_sign",
+    "streetparts:sky_wall_hanging_sign",
+    "streetparts:moon_wall_hanging_sign",
+    "streetparts:wisteria_wall_hanging_sign",
+    "streetparts:ebony_wall_hanging_sign"
+  ]
+}
