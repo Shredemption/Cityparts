@@ -34,6 +34,43 @@ VARIANTS = [
     "tallrightt",
     "sharktooth",
     "pedestrian_crossing",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "ij",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0",
 ]
 
 BASE_PATH = r"./src/main/resources/"
@@ -72,7 +109,9 @@ for var in VARIANTS:
         # recipes
         os.path.join(RECIPE_DIR, f"{block_name}.json"): recipes.one_from_tag_stonecutter(block_tag, block_name),
         os.path.join(RECIPE_DIR, f"{slab_name}.json"): recipes.one_from_tag_stonecutter(slab_tab, slab_name),
-        os.path.join(RECIPE_DIR, f"{slab_name}_from_block.json"): recipes.two_from_tag_stonecutter(block_tag, slab_name),
+        os.path.join(RECIPE_DIR, f"{slab_name}_from_block.json"): recipes.two_from_tag_stonecutter(
+            block_tag, slab_name
+        ),
     }
 
     for path, data in files.items():

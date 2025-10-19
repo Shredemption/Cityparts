@@ -57,7 +57,10 @@ public class RoadBlocksRegistry {
                         "tallrightt",
 
                         "sharktooth",
-                        "pedestrian_crossing");
+                        "pedestrian_crossing",
+
+                        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s",
+                        "t", "u", "v", "w", "x", "y", "z", "ij", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
 
         public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(StreetParts.MOD_ID);
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(StreetParts.MOD_ID);
@@ -111,8 +114,10 @@ public class RoadBlocksRegistry {
                         String slabName = "roadlines_" + suffix + "_slab";
                         DeferredBlock<RotatableHorizontalBlock> slabBlock = BLOCKS
                                         .register(slabName,
-                                                        () -> new RotatableHorizontalBlock(BlockBehaviour.Properties.of()
-                                                                        .mapColor(MapColor.COLOR_GRAY).strength(2.0f),
+                                                        () -> new RotatableHorizontalBlock(
+                                                                        BlockBehaviour.Properties.of()
+                                                                                        .mapColor(MapColor.COLOR_GRAY)
+                                                                                        .strength(2.0f),
                                                                         Shapes.box(0, 0, 0, 1, 0.5, 1)));
                         ITEMS.register(slabName, () -> new BlockItem(slabBlock.get(), new Item.Properties()));
                         REGISTERED_SLAB_BLOCKS.add(slabBlock);
