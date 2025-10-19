@@ -14,6 +14,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -36,6 +37,8 @@ public class CityParts {
     // FML will recognize some parameter types like IEventBus or ModContainer and
     // pass them in automatically.
     public CityParts(IEventBus modEventBus, ModContainer modContainer) {
+        modContainer.registerConfig(ModConfig.Type.COMMON, CityPartsConfig.SPEC);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
