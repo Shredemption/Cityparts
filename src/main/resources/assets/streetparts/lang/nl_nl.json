@@ -370,6 +370,7 @@
   "block.streetparts.traffic_barrier": "Verkeershek",
   "block.streetparts.caution_tape": "Waarschuwingslint",
   "block.streetparts.barrier_tape": "Afzetlint",
+  "block.streetparts.striped_post": "Gestreepte paal",
 
   "itemGroup.streetparts.construction_blocks": "Constructieblokken",
   "itemGroup.streetparts.road_blocks": "Wegblokken",

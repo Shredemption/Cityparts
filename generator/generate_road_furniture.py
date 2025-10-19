@@ -11,6 +11,7 @@ BLOCKS = [
     "traffic_barrier",
     "caution_tape",
     "barrier_tape",
+    "striped_post",
 ]
 
 BASE_PATH = r"./src/main/resources/"

@@ -7,6 +7,7 @@ import com.shredemption.streetparts.StreetParts;
 import com.shredemption.streetparts.block.DirectionSignBlock;
 import com.shredemption.streetparts.template.HorizontalConnectingBlock;
 import com.shredemption.streetparts.template.RotatableHorizontalBlock;
+import com.shredemption.streetparts.template.ShapedBlock;
 import com.shredemption.streetparts.template.SupportedShapedBlock;
 
 import net.minecraft.core.registries.Registries;
@@ -102,5 +103,14 @@ public class RoadFurnitureRegistry {
                                                 Shapes.box(7 / 16f, 11 / 16f, 0 / 16f, 9 / 16f, 15 / 16f, 8 / 16f)));
                 ITEMS.register(barrierTapeName, () -> new BlockItem(barrierTapeBlock.get(), new Item.Properties()));
                 REGISTERED_BLOCKS.add(barrierTapeBlock);
+
+                String stripedPostName = "striped_post";
+                DeferredBlock<ShapedBlock> stripedPostBlock = BLOCKS.register(stripedPostName,
+                                () -> new ShapedBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f),
+                                                Shapes.box(5.5 / 16f, 0 / 16f, 5.5 / 16f, 10.5 / 16f, 16 / 16f,
+                                                                10.5 / 16f)));
+                ITEMS.register(stripedPostName, () -> new BlockItem(stripedPostBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(stripedPostBlock);
         }
 }
