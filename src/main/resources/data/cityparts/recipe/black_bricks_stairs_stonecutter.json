@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "cityparts:black_bricks"
+    },
+    "result": {
+        "count": 1,
+        "id": "cityparts:black_bricks_stairs"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "cityparts:block/deepslate_pavement",
+        "top": "cityparts:block/deepslate_pavement",
+        "side": "cityparts:block/deepslate_pavement"
+    }
+}

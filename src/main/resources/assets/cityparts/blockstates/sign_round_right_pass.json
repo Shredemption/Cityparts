@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/sign_round_right_pass"
+        },
+        "facing=south": {
+            "model": "cityparts:block/sign_round_right_pass",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/sign_round_right_pass",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/sign_round_right_pass",
+            "y": 90
+        }
+    }
+}

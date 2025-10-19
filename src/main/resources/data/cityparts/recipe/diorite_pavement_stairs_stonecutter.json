@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "cityparts:diorite_pavement"
+    },
+    "result": {
+        "count": 1,
+        "id": "cityparts:diorite_pavement_stairs"
+    }
+}

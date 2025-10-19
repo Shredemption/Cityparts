@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/door_top_left_open",
+    "textures": {
+        "bottom": "cityparts:block/olive_door_bottom",
+        "top": "cityparts:block/olive_door_top"
+    }
+}

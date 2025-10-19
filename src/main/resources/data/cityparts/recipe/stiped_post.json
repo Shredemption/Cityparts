@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:blue_dye"
+    },
+    {
+      "tag": "cityparts:light_posts"
+    }
+  ],
+  "result": {
+    "id": "cityparts:striped_post",
+    "count": 1
+  }
+}

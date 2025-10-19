@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "streetparts:olive_slab",
-    "streetparts:verdant_slab",
-    "streetparts:moon_slab",
-    "streetparts:sky_slab",
-    "streetparts:wisteria_slab",
-    "streetparts:ebony_slab"
+    "cityparts:olive_slab",
+    "cityparts:verdant_slab",
+    "cityparts:moon_slab",
+    "cityparts:sky_slab",
+    "cityparts:wisteria_slab",
+    "cityparts:ebony_slab"
   ]
 }

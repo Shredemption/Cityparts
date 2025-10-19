@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/button",
+    "textures": {
+        "texture": "cityparts:block/verdant_planks"
+    }
+}

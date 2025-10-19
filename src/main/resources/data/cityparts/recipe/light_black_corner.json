@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "tag": "cityparts:lights"
+    },
+    "result": {
+        "count": 1,
+        "id": "cityparts:light_black_corner"
+    }
+}

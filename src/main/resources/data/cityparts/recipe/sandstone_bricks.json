@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "pavement",
+    "category": "building",
+    "ingredients": [
+        {
+            "item": "minecraft:bricks"
+        },
+        {
+            "item": "minecraft:sand"
+        }
+    ],
+    "result": {
+        "id": "cityparts:sandstone_bricks",
+        "count": 1
+    }
+}

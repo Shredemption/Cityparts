@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=x": {
+            "model": "cityparts:block/verdant_wood_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "cityparts:block/verdant_wood"
+        },
+        "axis=z": {
+            "model": "cityparts:block/verdant_wood_horizontal",
+            "x": 90
+        }
+    }
+}

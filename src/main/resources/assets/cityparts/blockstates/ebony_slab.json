@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cityparts:block/ebony_slab"
+        },
+        "type=top": {
+            "model": "cityparts:block/ebony_slab_top"
+        },
+        "type=double": {
+            "model": "cityparts:block/ebony_planks"
+        }
+    }
+}

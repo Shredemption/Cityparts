@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "streetparts:block/wisteria_planks",
-        "top": "streetparts:block/wisteria_planks",
-        "side": "streetparts:block/wisteria_planks"
-    }
-}

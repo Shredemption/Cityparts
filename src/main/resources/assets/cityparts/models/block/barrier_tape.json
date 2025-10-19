@@ -1,0 +1,6 @@
+{
+  "parent": "cityparts:block/template/tape_lint",
+  "textures": {
+    "tape": "cityparts:block/barrier_tape"
+  }
+}

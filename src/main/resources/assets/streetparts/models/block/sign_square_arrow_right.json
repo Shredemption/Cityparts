@@ -1,6 +1,0 @@
-{
-    "parent": "streetparts:block/template/sign_square",
-    "textures": {
-        "sign": "streetparts:block/sign_square_arrow_right"
-    }
-}

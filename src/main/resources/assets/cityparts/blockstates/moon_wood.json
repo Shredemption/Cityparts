@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "axis=x": {
+            "model": "cityparts:block/moon_wood_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "cityparts:block/moon_wood"
+        },
+        "axis=z": {
+            "model": "cityparts:block/moon_wood_horizontal",
+            "x": 90
+        }
+    }
+}

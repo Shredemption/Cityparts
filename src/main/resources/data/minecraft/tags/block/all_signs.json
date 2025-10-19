@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values":[
-        "streetparts:direction_sign"
+        "cityparts:direction_sign"
     ]
 }

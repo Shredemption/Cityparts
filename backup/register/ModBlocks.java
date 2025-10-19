@@ -1,11 +1,11 @@
-package com.shredemption.streetparts.register;
+package com.shredemption.cityparts.register;
 
-import com.shredemption.streetparts.StreetParts;
-import com.shredemption.streetparts.custom.DirectionSignBlock;
-import com.shredemption.streetparts.custom.GuardRailBlock;
-import com.shredemption.streetparts.custom.StripedPostBlock;
-import com.shredemption.streetparts.custom.TrafficConeBlock;
-import com.shredemption.streetparts.custom.lights.TrafficLightBlock;
+import com.shredemption.cityparts.cityparts;
+import com.shredemption.cityparts.custom.DirectionSignBlock;
+import com.shredemption.cityparts.custom.GuardRailBlock;
+import com.shredemption.cityparts.custom.StripedPostBlock;
+import com.shredemption.cityparts.custom.TrafficConeBlock;
+import com.shredemption.cityparts.custom.lights.TrafficLightBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -30,30 +30,30 @@ public class ModBlocks {
 
     private static TrafficConeBlock registerTrafficConeBlock(String name, TrafficConeBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(cityparts.MOD_ID, name), block);
     }
     private static GuardRailBlock registerGuardRailBlock(String name, GuardRailBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(cityparts.MOD_ID, name), block);
     }
     private static TrafficLightBlock registerTrafficLight(String name, TrafficLightBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(cityparts.MOD_ID, name), block);
     }
     private static StripedPostBlock registerStripedPostBlock(String name, StripedPostBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(cityparts.MOD_ID, name), block);
     }
     private static DirectionSignBlock registerDirectionSignBlock(String name, DirectionSignBlock block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(StreetParts.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(cityparts.MOD_ID, name), block);
     }
 
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(StreetParts.MOD_ID, name),
+        Registry.register(Registries.ITEM, Identifier.of(cityparts.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
     }
     public static void registerModBlocks() {
-        StreetParts.LOGGER.debug("Registering Other Blocks for " + StreetParts.MOD_ID);
+        cityparts.LOGGER.debug("Registering Other Blocks for " + cityparts.MOD_ID);
     }
 }

@@ -1,8 +1,8 @@
 {
     "variants": {
-        "facing=north": { "model": "streetparts:block/lights/traffic_light" },
-        "facing=south": { "model": "streetparts:block/lights/traffic_light", "y": 180 },
-        "facing=west":  { "model": "streetparts:block/lights/traffic_light", "y": 270 },
-        "facing=east":  { "model": "streetparts:block/lights/traffic_light", "y": 90 }
+        "facing=north": { "model": "cityparts:block/lights/traffic_light" },
+        "facing=south": { "model": "cityparts:block/lights/traffic_light", "y": 180 },
+        "facing=west":  { "model": "cityparts:block/lights/traffic_light", "y": 270 },
+        "facing=east":  { "model": "cityparts:block/lights/traffic_light", "y": 90 }
     }
 }

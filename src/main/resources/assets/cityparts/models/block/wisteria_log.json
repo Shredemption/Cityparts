@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "cityparts:block/wisteria_log_top",
+        "side": "cityparts:block/wisteria_log"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cityparts:block/moon_slab"
+        },
+        "type=top": {
+            "model": "cityparts:block/moon_slab_top"
+        },
+        "type=double": {
+            "model": "cityparts:block/moon_planks"
+        }
+    }
+}

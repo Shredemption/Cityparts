@@ -1,5 +1,5 @@
 {
 	"variants":{
-		"": {"model": "streetparts:block/lights/striped_post"}
+		"": {"model": "cityparts:block/lights/striped_post"}
 	}
 }

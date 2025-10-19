@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "cityparts:block/verdant_planks",
+        "top": "cityparts:block/verdant_planks",
+        "side": "cityparts:block/verdant_planks"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "building",
+    "group": "planks",
+    "ingredients": [
+        {
+            "tag": "cityparts:sky_logs"
+        }
+    ],
+    "result": {
+        "count": 4,
+        "id": "cityparts:sky_planks"
+    }
+}

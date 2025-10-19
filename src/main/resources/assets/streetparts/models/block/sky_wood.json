@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/cube_column",
-    "textures": {
-        "end": "streetparts:block/sky_log",
-        "side": "streetparts:block/sky_log"
-    }
-}

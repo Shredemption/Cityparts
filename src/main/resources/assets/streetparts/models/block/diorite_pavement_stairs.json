@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "streetparts:block/diorite_pavement",
-        "top": "streetparts:block/diorite_pavement",
-        "side": "streetparts:block/diorite_pavement"
-    }
-}

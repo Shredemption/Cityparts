@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/roadlines_p"
+        },
+        "facing=south": {
+            "model": "cityparts:block/roadlines_p",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/roadlines_p",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/roadlines_p",
+            "y": 90
+        }
+    }
+}

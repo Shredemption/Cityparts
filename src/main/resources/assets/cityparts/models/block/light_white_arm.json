@@ -1,0 +1,6 @@
+{
+    "parent": "cityparts:block/template/light_arm",
+    "textures": {
+        "0": "cityparts:block/white_post"
+    }
+}

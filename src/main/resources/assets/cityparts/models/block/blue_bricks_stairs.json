@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "cityparts:block/blue_bricks",
+        "top": "cityparts:block/blue_bricks",
+        "side": "cityparts:block/blue_bricks"
+    }
+}

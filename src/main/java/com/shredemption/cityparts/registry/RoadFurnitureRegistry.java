@@ -1,0 +1,127 @@
+package com.shredemption.cityparts.registry;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.shredemption.cityparts.CityParts;
+import com.shredemption.cityparts.block.DirectionSignBlock;
+import com.shredemption.cityparts.template.HorizontalConnectingBlock;
+import com.shredemption.cityparts.template.RotatableHorizontalBlock;
+import com.shredemption.cityparts.template.ShapedBlock;
+import com.shredemption.cityparts.template.SupportedShapedBlock;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
+
+public class RoadFurnitureRegistry {
+        public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CityParts.MOD_ID);
+        public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CityParts.MOD_ID);
+        public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
+                        .create(Registries.CREATIVE_MODE_TAB, CityParts.MOD_ID);
+
+        private static final List<DeferredBlock<? extends Block>> REGISTERED_BLOCKS = new ArrayList<>();
+        private static final List<DeferredBlock<? extends Block>> DIR_SIGNS = new ArrayList<>();
+
+        public static List<? extends Block> getDirectionSignBlocks() {
+                return DIR_SIGNS.stream().map(DeferredBlock::get).toList();
+        }
+
+        public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ROAD_FURNITURE_TAB = CREATIVE_TABS
+                        .register("streetparts_road_furnitrue", () -> CreativeModeTab.builder()
+                                        .title(net.minecraft.network.chat.Component
+                                                        .translatable("itemGroup.cityparts.road_furniture"))
+                                        .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
+                                                        .get(fromNamespaceAndPath(CityParts.MOD_ID,
+                                                                        "direction_sign"))
+                                                        .getDefaultInstance())
+                                        .displayItems((params, output) -> {
+                                                REGISTERED_BLOCKS.forEach(b -> output.accept(b.get().asItem()));
+                                        })
+                                        .build());
+
+        public static void registerRoadFurnitureBlocks(IEventBus modEventBus) {
+                BLOCKS.register(modEventBus);
+                ITEMS.register(modEventBus);
+                CREATIVE_TABS.register(modEventBus);
+
+                String dirSignName = "direction_sign";
+                DeferredBlock<DirectionSignBlock> dirSignBlock = BLOCKS.register(dirSignName,
+                                () -> new DirectionSignBlock(
+                                                BlockBehaviour.Properties.of().strength(0.5f)));
+                ITEMS.register(dirSignName, () -> new BlockItem(dirSignBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(dirSignBlock);
+
+                DIR_SIGNS.add(dirSignBlock);
+
+                String trafficConeName = "traffic_cone";
+                DeferredBlock<SupportedShapedBlock> trafficConeBlock = BLOCKS.register(trafficConeName,
+                                () -> new SupportedShapedBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.or(Shapes.box(2 / 16f, 0, 2 / 16f, 14 / 16f, 1f, 14 / 16f))));
+                ITEMS.register(trafficConeName, () -> new BlockItem(trafficConeBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(trafficConeBlock);
+
+                String barrierName = "traffic_barrier";
+                DeferredBlock<RotatableHorizontalBlock> barrierBlock = BLOCKS.register(barrierName,
+                                () -> new RotatableHorizontalBlock(
+                                                BlockBehaviour.Properties.of().strength(0.5f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.or(Shapes.box(-6 / 16f, 0, 2 / 16f, 22 / 16f, 14 / 16f,
+                                                                14 / 16f))));
+                ITEMS.register(barrierName, () -> new BlockItem(barrierBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(barrierBlock);
+
+                String cautionTapeName = "caution_tape";
+                DeferredBlock<HorizontalConnectingBlock> cautionTapeBlock = BLOCKS.register(cautionTapeName,
+                                () -> new HorizontalConnectingBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.box(6 / 16f, 0 / 16f, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f),
+                                                Shapes.box(7 / 16f, 11 / 16f, 0 / 16f, 9 / 16f, 15 / 16f, 8 / 16f)));
+                ITEMS.register(cautionTapeName, () -> new BlockItem(cautionTapeBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(cautionTapeBlock);
+
+                String barrierTapeName = "barrier_tape";
+                DeferredBlock<HorizontalConnectingBlock> barrierTapeBlock = BLOCKS.register(barrierTapeName,
+                                () -> new HorizontalConnectingBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .sound(SoundType.SCAFFOLDING),
+                                                Shapes.box(6 / 16f, 0 / 16f, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f),
+                                                Shapes.box(7 / 16f, 11 / 16f, 0 / 16f, 9 / 16f, 15 / 16f, 8 / 16f)));
+                ITEMS.register(barrierTapeName, () -> new BlockItem(barrierTapeBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(barrierTapeBlock);
+
+                String stripedPostName = "striped_post";
+                DeferredBlock<ShapedBlock> stripedPostBlock = BLOCKS.register(stripedPostName,
+                                () -> new ShapedBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .mapColor(MapColor.COLOR_BLUE),
+                                                Shapes.box(5.5 / 16f, 0 / 16f, 5.5 / 16f, 10.5 / 16f, 16 / 16f,
+                                                                10.5 / 16f)));
+                ITEMS.register(stripedPostName, () -> new BlockItem(stripedPostBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(stripedPostBlock);
+
+                String reflectorPostName = "reflector_post";
+                DeferredBlock<RotatableHorizontalBlock> reflectorPostBlock = BLOCKS.register(reflectorPostName,
+                                () -> new RotatableHorizontalBlock(
+                                                BlockBehaviour.Properties.of().strength(2.0f)
+                                                                .mapColor(MapColor.COLOR_BLACK),
+                                                Shapes.box(6 / 16f, 0 / 16f, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f)));
+                ITEMS.register(reflectorPostName, () -> new BlockItem(reflectorPostBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(reflectorPostBlock);
+        }
+}

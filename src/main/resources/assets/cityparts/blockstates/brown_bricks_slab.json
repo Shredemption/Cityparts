@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cityparts:block/brown_bricks_slab"
+        },
+        "type=top": {
+            "model": "cityparts:block/brown_bricks_slab_top"
+        },
+        "type=double": {
+            "model": "cityparts:block/brown_bricks"
+        }
+    }
+}

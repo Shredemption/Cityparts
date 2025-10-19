@@ -1,0 +1,6 @@
+{
+    "parent": "cityparts:block/template/roadlines_slab",
+    "textures": {
+        "top": "cityparts:block/roadlines_shortrightt"
+    }
+}

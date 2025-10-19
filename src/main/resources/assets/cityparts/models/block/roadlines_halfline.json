@@ -1,0 +1,6 @@
+{
+    "parent": "cityparts:block/template/roadlines",
+    "textures": {
+        "top": "cityparts:block/roadlines_halfline"
+    }
+}

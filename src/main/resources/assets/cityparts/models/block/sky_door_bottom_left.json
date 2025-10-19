@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/door_bottom_left",
+    "textures": {
+        "bottom": "cityparts:block/sky_door_bottom",
+        "top": "cityparts:block/sky_door_top"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/roadlines_pedestrian_crossing"
+        },
+        "facing=south": {
+            "model": "cityparts:block/roadlines_pedestrian_crossing",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/roadlines_pedestrian_crossing",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/roadlines_pedestrian_crossing",
+            "y": 90
+        }
+    }
+}

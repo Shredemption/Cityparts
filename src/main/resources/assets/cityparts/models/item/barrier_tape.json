@@ -1,0 +1,6 @@
+{
+    "parent": "cityparts:block/template/tape_inventory",
+    "textures": {
+      "tape": "cityparts:block/barrier_tape"
+    }
+}

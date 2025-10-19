@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "streetparts:olive_planks",
-    "streetparts:verdant_planks",
-    "streetparts:moon_planks",
-    "streetparts:sky_planks",
-    "streetparts:wisteria_planks",
-    "streetparts:ebony_planks"
+    "cityparts:olive_planks",
+    "cityparts:verdant_planks",
+    "cityparts:moon_planks",
+    "cityparts:sky_planks",
+    "cityparts:wisteria_planks",
+    "cityparts:ebony_planks"
   ]
 }

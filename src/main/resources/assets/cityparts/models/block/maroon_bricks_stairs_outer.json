@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "cityparts:block/maroon_bricks",
+        "top": "cityparts:block/maroon_bricks",
+        "side": "cityparts:block/maroon_bricks"
+    }
+}

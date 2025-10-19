@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"particle": "streetparts:blocks/guard_rail",
-		"texture": "streetparts:blocks/guard_rail"
+		"particle": "cityparts:blocks/guard_rail",
+		"texture": "cityparts:blocks/guard_rail"
 	},
 	"elements": [
 		{

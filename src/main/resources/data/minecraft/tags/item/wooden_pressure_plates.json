@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "streetparts:olive_pressure_plate",
-    "streetparts:verdant_pressure_plate",
-    "streetparts:moon_pressure_plate",
-    "streetparts:sky_pressure_plate",
-    "streetparts:wisteria_pressure_plate",
-    "streetparts:ebony_pressure_plate"
+    "cityparts:olive_pressure_plate",
+    "cityparts:verdant_pressure_plate",
+    "cityparts:moon_pressure_plate",
+    "cityparts:sky_pressure_plate",
+    "cityparts:wisteria_pressure_plate",
+    "cityparts:ebony_pressure_plate"
   ]
 }

@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cityparts:block/verdant_slab"
+        },
+        "type=top": {
+            "model": "cityparts:block/verdant_slab_top"
+        },
+        "type=double": {
+            "model": "cityparts:block/verdant_planks"
+        }
+    }
+}

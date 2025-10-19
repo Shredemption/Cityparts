@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab",
-    "textures": {
-        "bottom": "streetparts:block/maroon_bricks",
-        "top": "streetparts:block/maroon_bricks",
-        "side": "streetparts:block/maroon_bricks"
-    }
-}

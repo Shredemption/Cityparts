@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "powered=false": {
+            "model": "cityparts:block/verdant_pressure_plate"
+        },
+        "powered=true": {
+            "model": "cityparts:block/verdant_pressure_plate_down"
+        }
+    }
+}

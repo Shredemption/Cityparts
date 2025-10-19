@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "cityparts:maroon_bricks"
+    },
+    "result": {
+        "count": 1,
+        "id": "cityparts:maroon_bricks_stairs"
+    }
+}

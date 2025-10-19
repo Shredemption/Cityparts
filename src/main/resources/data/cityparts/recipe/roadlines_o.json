@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "tag": "cityparts:roadlines"
+    },
+    "result": {
+        "count": 1,
+        "id": "cityparts:roadlines_o"
+    }
+}

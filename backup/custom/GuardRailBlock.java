@@ -1,4 +1,4 @@
-package com.shredemption.streetparts.custom;
+package com.shredemption.cityparts.custom;
 
 
 import net.minecraft.block.FenceBlock;

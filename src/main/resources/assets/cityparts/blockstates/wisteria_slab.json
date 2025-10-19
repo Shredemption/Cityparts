@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cityparts:block/wisteria_slab"
+        },
+        "type=top": {
+            "model": "cityparts:block/wisteria_slab_top"
+        },
+        "type=double": {
+            "model": "cityparts:block/wisteria_planks"
+        }
+    }
+}

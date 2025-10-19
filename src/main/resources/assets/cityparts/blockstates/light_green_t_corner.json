@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/light_green_t_corner"
+        },
+        "facing=south": {
+            "model": "cityparts:block/light_green_t_corner",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/light_green_t_corner",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/light_green_t_corner",
+            "y": 90
+        }
+    }
+}

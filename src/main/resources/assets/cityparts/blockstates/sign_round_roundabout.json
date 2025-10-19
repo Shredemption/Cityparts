@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/sign_round_roundabout"
+        },
+        "facing=south": {
+            "model": "cityparts:block/sign_round_roundabout",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/sign_round_roundabout",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/sign_round_roundabout",
+            "y": 90
+        }
+    }
+}

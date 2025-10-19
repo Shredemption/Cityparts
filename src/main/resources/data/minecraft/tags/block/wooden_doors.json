@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "streetparts:olive_door",
-    "streetparts:verdant_door",
-    "streetparts:moon_door",
-    "streetparts:sky_door",
-    "streetparts:wisteria_door",
-    "streetparts:ebony_door"
+    "cityparts:olive_door",
+    "cityparts:verdant_door",
+    "cityparts:moon_door",
+    "cityparts:sky_door",
+    "cityparts:wisteria_door",
+    "cityparts:ebony_door"
   ]
 }

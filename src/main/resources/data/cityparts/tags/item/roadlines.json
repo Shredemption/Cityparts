@@ -1,0 +1,33 @@
+{
+  "values": [
+    "cityparts:asphalt",
+    "cityparts:roadlines_midline",
+    "cityparts:roadlines_sideline",
+    "cityparts:roadlines_straightarrow",
+    "cityparts:roadlines_innercorner",
+    "cityparts:roadlines_outercorner",
+    "cityparts:roadlines_tsplitmid",
+    "cityparts:roadlines_jcorner",
+    "cityparts:roadlines_lcorner",
+    "cityparts:roadlines_tsplitshort",
+    "cityparts:roadlines_leftarrow",
+    "cityparts:roadlines_rightarrow",
+    "cityparts:roadlines_leftrightarrow",
+    "cityparts:roadlines_leftsubarrow",
+    "cityparts:roadlines_rightsubarrow",
+    "cityparts:roadlines_halfline",
+    "cityparts:roadlines_middlecorner",
+    "cityparts:roadlines_cornercross",
+    "cityparts:roadlines_shortleftt",
+    "cityparts:roadlines_shortrightt",
+    "cityparts:roadlines_tallleftt",
+    "cityparts:roadlines_tallrightt",
+    "cityparts:roadlines_leftrightsubarrow",
+    "cityparts:roadlines_sharktooth",
+    "cityparts:roadlines_pedestrian_crossing",
+    "cityparts:roadlines_cross",
+    "cityparts:roadlines_tsplittall",
+    "cityparts:roadlines_middleleftt",
+    "cityparts:roadlines_middlerightt"
+  ]
+}

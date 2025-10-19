@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cityparts:block/olive_slab"
+        },
+        "type=top": {
+            "model": "cityparts:block/olive_slab_top"
+        },
+        "type=double": {
+            "model": "cityparts:block/olive_planks"
+        }
+    }
+}

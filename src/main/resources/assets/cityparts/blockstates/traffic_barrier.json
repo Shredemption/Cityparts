@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/traffic_barrier"
+        },
+        "facing=south": {
+            "model": "cityparts:block/traffic_barrier",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/traffic_barrier",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/traffic_barrier",
+            "y": 90
+        }
+    }
+}

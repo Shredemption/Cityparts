@@ -4,7 +4,7 @@ import json
 import blockstates, models, items, loottables, recipes
 
 # === CONFIG ===
-MOD_ID = "streetparts"
+MOD_ID = "cityparts"
 VARIANTS = [
     "olive",
     "verdant",

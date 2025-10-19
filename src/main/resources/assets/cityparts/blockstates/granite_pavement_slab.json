@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "cityparts:block/granite_pavement_slab"
+        },
+        "type=top": {
+            "model": "cityparts:block/granite_pavement_slab_top"
+        },
+        "type=double": {
+            "model": "cityparts:block/granite_pavement"
+        }
+    }
+}

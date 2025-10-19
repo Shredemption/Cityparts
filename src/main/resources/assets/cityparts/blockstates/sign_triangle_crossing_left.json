@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/sign_triangle_crossing_left"
+        },
+        "facing=south": {
+            "model": "cityparts:block/sign_triangle_crossing_left",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/sign_triangle_crossing_left",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/sign_triangle_crossing_left",
+            "y": 90
+        }
+    }
+}

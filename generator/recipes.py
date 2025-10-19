@@ -1,4 +1,4 @@
-MOD_ID = "streetparts"
+MOD_ID = "cityparts"
 
 
 def wood(log, wood):

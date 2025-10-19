@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/door_top_left_open",
-    "textures": {
-        "bottom": "streetparts:block/moon_door_bottom",
-        "top": "streetparts:block/moon_door_top"
-    }
-}

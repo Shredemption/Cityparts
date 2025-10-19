@@ -1,0 +1,6 @@
+{
+    "parent": "cityparts:block/template/light_l_corner",
+    "textures": {
+        "0": "cityparts:block/gray_post"
+    }
+}

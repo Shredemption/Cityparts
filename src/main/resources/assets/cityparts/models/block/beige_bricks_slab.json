@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "cityparts:block/beige_bricks",
+        "top": "cityparts:block/beige_bricks",
+        "side": "cityparts:block/beige_bricks"
+    }
+}

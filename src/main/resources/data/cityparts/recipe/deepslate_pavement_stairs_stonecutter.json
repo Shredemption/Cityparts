@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "cityparts:deepslate_pavement"
+    },
+    "result": {
+        "count": 1,
+        "id": "cityparts:deepslate_pavement_stairs"
+    }
+}

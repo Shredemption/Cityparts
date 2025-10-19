@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/cube_column",
-    "textures": {
-        "end": "streetparts:block/verdant_log_top",
-        "side": "streetparts:block/verdant_log"
-    }
-}

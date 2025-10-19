@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:red_dye"
+    },
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "item": "cityparts:light_black_post"
+    }
+  ],
+  "result": {
+    "id": "cityparts:reflector_post",
+    "count": 1
+  }
+}

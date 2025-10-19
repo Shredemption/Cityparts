@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "#streetparts:olive_logs",
-    "#streetparts:verdant_logs",
-    "#streetparts:moon_logs",
-    "#streetparts:sky_logs",
-    "#streetparts:wisteria_logs",
-    "#streetparts:ebony_logs"
+    "#cityparts:olive_logs",
+    "#cityparts:verdant_logs",
+    "#cityparts:moon_logs",
+    "#cityparts:sky_logs",
+    "#cityparts:wisteria_logs",
+    "#cityparts:ebony_logs"
   ]
 }

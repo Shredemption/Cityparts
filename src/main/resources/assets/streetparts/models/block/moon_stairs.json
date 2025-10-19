@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "streetparts:block/moon_planks",
-        "top": "streetparts:block/moon_planks",
-        "side": "streetparts:block/moon_planks"
-    }
-}

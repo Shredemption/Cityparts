@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/cube_column_horizontal",
-    "textures": {
-        "end": "streetparts:block/stripped_verdant_log_top",
-        "side": "streetparts:block/stripped_verdant_log"
-    }
-}

@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/roadlines_tallleftt"
+        },
+        "facing=south": {
+            "model": "cityparts:block/roadlines_tallleftt",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/roadlines_tallleftt",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/roadlines_tallleftt",
+            "y": 90
+        }
+    }
+}

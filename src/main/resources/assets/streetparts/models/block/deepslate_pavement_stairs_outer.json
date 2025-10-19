@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "streetparts:block/deepslate_pavement",
-        "top": "streetparts:block/deepslate_pavement",
-        "side": "streetparts:block/deepslate_pavement"
-    }
-}

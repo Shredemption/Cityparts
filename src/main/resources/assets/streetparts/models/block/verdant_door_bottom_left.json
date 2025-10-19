@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/door_bottom_left",
-    "textures": {
-        "bottom": "streetparts:block/verdant_door_bottom",
-        "top": "streetparts:block/verdant_door_top"
-    }
-}

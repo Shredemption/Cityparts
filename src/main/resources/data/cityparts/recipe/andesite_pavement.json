@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "pavement",
+    "category": "building",
+    "pattern": [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key": {
+        "x": {
+            "item": "minecraft:andesite"
+        }
+    },
+    "result": {
+        "id": "cityparts:andesite_pavement",
+        "count": 9
+    }
+}

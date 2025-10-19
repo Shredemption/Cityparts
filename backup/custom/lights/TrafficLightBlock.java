@@ -1,4 +1,4 @@
-package com.shredemption.streetparts.custom.lights;
+package com.shredemption.cityparts.custom.lights;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;

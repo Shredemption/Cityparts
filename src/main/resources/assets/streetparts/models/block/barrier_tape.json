@@ -1,6 +1,0 @@
-{
-  "parent": "streetparts:block/template/tape_lint",
-  "textures": {
-    "tape": "streetparts:block/barrier_tape"
-  }
-}

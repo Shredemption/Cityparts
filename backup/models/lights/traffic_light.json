@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "streetparts:blocks/gray_post",
-		"2": "streetparts:blocks/traffic_light",
-		"3": "streetparts:blocks/traffic_light_back",
-		"4": "streetparts:blocks/black_post",
-		"particle": "streetparts:blocks/traffic_light_back"
+		"1": "cityparts:blocks/gray_post",
+		"2": "cityparts:blocks/traffic_light",
+		"3": "cityparts:blocks/traffic_light_back",
+		"4": "cityparts:blocks/black_post",
+		"particle": "cityparts:blocks/traffic_light_back"
 	},
 	"elements": [
 		{

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#", "O", "B"],
+  "key": {
+    "#": {
+      "item": "minecraft:white_dye"
+    },
+    "O": {
+      "item": "minecraft:orange_wool"
+    },
+    "B": {
+      "item": "minecraft:black_concrete"
+    }
+  },
+  "result": {
+    "id": "cityparts:traffic_cone",
+    "count": 2
+  }
+}

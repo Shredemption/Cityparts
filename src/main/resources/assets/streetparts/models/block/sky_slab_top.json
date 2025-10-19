@@ -1,8 +1,0 @@
-{
-    "parent": "block/slab_top",
-    "textures": {
-        "bottom": "streetparts:block/sky_planks",
-        "top": "streetparts:block/sky_planks",
-        "side": "streetparts:block/sky_planks"
-    }
-}

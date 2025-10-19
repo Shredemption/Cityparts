@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "streetparts:olive_wall_hanging_sign",
-    "streetparts:verdant_wall_hanging_sign",
-    "streetparts:sky_wall_hanging_sign",
-    "streetparts:moon_wall_hanging_sign",
-    "streetparts:wisteria_wall_hanging_sign",
-    "streetparts:ebony_wall_hanging_sign"
+    "cityparts:olive_wall_hanging_sign",
+    "cityparts:verdant_wall_hanging_sign",
+    "cityparts:sky_wall_hanging_sign",
+    "cityparts:moon_wall_hanging_sign",
+    "cityparts:wisteria_wall_hanging_sign",
+    "cityparts:ebony_wall_hanging_sign"
   ]
 }

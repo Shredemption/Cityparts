@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "streetparts:olive_button",
-    "streetparts:verdant_button",
-    "streetparts:moon_button",
-    "streetparts:sky_button",
-    "streetparts:wisteria_button",
-    "streetparts:ebony_button"
+    "cityparts:olive_button",
+    "cityparts:verdant_button",
+    "cityparts:moon_button",
+    "cityparts:sky_button",
+    "cityparts:wisteria_button",
+    "cityparts:ebony_button"
   ]
 }
