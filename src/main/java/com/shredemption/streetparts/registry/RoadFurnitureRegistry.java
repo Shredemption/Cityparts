@@ -17,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -107,10 +108,20 @@ public class RoadFurnitureRegistry {
                 String stripedPostName = "striped_post";
                 DeferredBlock<ShapedBlock> stripedPostBlock = BLOCKS.register(stripedPostName,
                                 () -> new ShapedBlock(
-                                                BlockBehaviour.Properties.of().strength(0.0f),
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .mapColor(MapColor.COLOR_BLUE),
                                                 Shapes.box(5.5 / 16f, 0 / 16f, 5.5 / 16f, 10.5 / 16f, 16 / 16f,
                                                                 10.5 / 16f)));
                 ITEMS.register(stripedPostName, () -> new BlockItem(stripedPostBlock.get(), new Item.Properties()));
                 REGISTERED_BLOCKS.add(stripedPostBlock);
+
+                String reflectorPostName = "reflector_post";
+                DeferredBlock<RotatableHorizontalBlock> reflectorPostBlock = BLOCKS.register(reflectorPostName,
+                                () -> new RotatableHorizontalBlock(
+                                                BlockBehaviour.Properties.of().strength(2.0f)
+                                                                .mapColor(MapColor.COLOR_BLACK),
+                                                Shapes.box(6 / 16f, 0 / 16f, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f)));
+                ITEMS.register(reflectorPostName, () -> new BlockItem(reflectorPostBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(reflectorPostBlock);
         }
 }

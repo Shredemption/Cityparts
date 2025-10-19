@@ -371,6 +371,7 @@
   "block.streetparts.caution_tape": "Caution Tape",
   "block.streetparts.barrier_tape": "Barrier Tape",
   "block.streetparts.striped_post": "Striped Post",
+  "block.streetparts.reflector_post": "Reflector Post",
 
   "itemGroup.streetparts.construction_blocks": "Construction Blocks",
   "itemGroup.streetparts.road_blocks": "Road Blocks",
