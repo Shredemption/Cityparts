@@ -26,11 +26,11 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.level.block.entity.SignText;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -72,8 +72,8 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
 
         poseStack.translate(0.5, 0.5, 0.5);
 
-        DirectionProperty FACING = DirectionSignBlock.FACING;
-        float rotation = -state.getValue(FACING).toYRot();
+        Direction facing = state.getValue(DirectionSignBlock.FACING);
+        float rotation = -facing.toYRot();
         poseStack.mulPose(Axis.YP.rotationDegrees(rotation));
 
         VertexConsumer vertexconsumer = buffer.getBuffer(RenderType.entityCutout(TEXTURE));
@@ -83,13 +83,13 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
         this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, packedOverlay);
         poseStack.popPose();
 
-        renderText(sign, poseStack, buffer, packedLight);
+        renderText(sign, poseStack, buffer, packedLight, facing);
 
         poseStack.popPose();
     }
 
     private void renderText(DirectionSignBlockEntity sign, PoseStack poseStack, MultiBufferSource buffer,
-            int packedLight) {
+            int packedLight, Direction facing) {
 
         for (int side = 0; side < 2; side++) {
             boolean isFront = (side == 0);
@@ -104,8 +104,7 @@ public class DirectionSignRenderer implements BlockEntityRenderer<DirectionSignB
 
             poseStack.translate(offset.x, offset.y, offset.z);
 
-            float yRot = -sign.getBlockState().getValue(DirectionSignBlock.FACING).toYRot() + 90f;
-            poseStack.mulPose(Axis.YP.rotationDegrees(yRot));
+            poseStack.mulPose(Axis.YP.rotationDegrees(90f));
 
             if (!isFront) {
                 poseStack.mulPose(Axis.YP.rotationDegrees(180f));

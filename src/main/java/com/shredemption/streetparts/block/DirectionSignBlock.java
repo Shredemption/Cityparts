@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 
 import com.shredemption.streetparts.blockentity.DirectionSignBlockEntity;
 import com.shredemption.streetparts.gui.DirectionSignEditScreen;
+import com.shredemption.streetparts.network.OpenDirectionSignEditPayload;
 import com.shredemption.streetparts.template.AttachableHorizontalBlock;
 
 import net.minecraft.Util;
@@ -15,6 +16,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.contents.PlainTextContents;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -37,6 +39,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 public class DirectionSignBlock extends AttachableHorizontalBlock implements EntityBlock {
 
@@ -97,29 +100,50 @@ public class DirectionSignBlock extends AttachableHorizontalBlock implements Ent
     @Override
     protected InteractionResult useWithoutItem(@Nonnull BlockState state, @Nonnull Level level, @Nonnull BlockPos pos,
             @Nonnull Player player, @Nonnull BlockHitResult hitResult) {
+
         if (level.getBlockEntity(pos) instanceof DirectionSignBlockEntity directionSignEntity) {
+
             if (level.isClientSide) {
                 Util.pauseInIde(new IllegalStateException("Expected to only call this on server"));
+                return InteractionResult.PASS;
             }
 
             boolean isFrontText = directionSignEntity.isFacingFrontText(player);
             boolean hadClickCommand = directionSignEntity.executeClickCommandsIfPresent(player, level, pos,
                     isFrontText);
+
             if (directionSignEntity.isWaxed()) {
                 level.playSound(null, directionSignEntity.getBlockPos(),
                         directionSignEntity.getSignInteractionFailedSoundEvent(), SoundSource.BLOCKS);
                 return InteractionResult.SUCCESS;
-            } else if (hadClickCommand) {
+            }
+
+            else if (hadClickCommand) {
                 return InteractionResult.SUCCESS;
-            } else if (!this.otherPlayerIsEditingSign(player, directionSignEntity)
+            }
+
+            else if (!this.otherPlayerIsEditingSign(player, directionSignEntity)
                     && player.mayBuild()
                     && this.hasEditableText(player, directionSignEntity, isFrontText)) {
-                this.openTextEdit(player, directionSignEntity, isFrontText);
+
+                directionSignEntity.setAllowedPlayerEditor(player.getUUID());
+
+                if (player instanceof ServerPlayer serverPlayer) {
+                    PacketDistributor.sendToPlayer(serverPlayer, new OpenDirectionSignEditPayload(pos, isFrontText));
+                }
+
+                System.out.println("SERVER open editor at " + pos + " playerYaw=" + player.getYRot() +
+                        " isFrontText=" + isFrontText + " blockFacing=" + state.getValue(DirectionSignBlock.FACING));
+
                 return InteractionResult.SUCCESS;
-            } else {
+            }
+
+            else {
                 return InteractionResult.PASS;
             }
-        } else {
+        }
+
+        else {
             return InteractionResult.PASS;
         }
     }

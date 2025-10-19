@@ -1,6 +1,7 @@
 package com.shredemption.streetparts;
 
 import com.mojang.logging.LogUtils;
+import com.shredemption.streetparts.network.OpenDirectionSignEditPayload;
 import com.shredemption.streetparts.registry.BlockEntities;
 import com.shredemption.streetparts.registry.ConstructionBlocksRegistry;
 import com.shredemption.streetparts.registry.LightBlocksRegistry;
@@ -16,6 +17,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+
+import java.lang.reflect.Method;
+
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -33,6 +38,8 @@ public class StreetParts {
     public StreetParts(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        modEventBus.addListener(this::onRegisterPayloads);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (StreetParts)
@@ -59,5 +66,29 @@ public class StreetParts {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+    }
+
+    public void onRegisterPayloads(RegisterPayloadHandlersEvent event) {
+        var registrar = event.registrar("1"); // network version
+
+        // Register payload for server → client
+        registrar.playToClient(
+                OpenDirectionSignEditPayload.TYPE,
+                OpenDirectionSignEditPayload.STREAM_CODEC,
+                (payload, ctx) -> ctx.enqueueWork(() -> {
+                    try {
+                        // Try to find the client-side handler class by name.
+                        // This class contains client-only references (Minecraft, Screen, etc.)
+                        Class<?> clientHandler = Class.forName("com.shredemption.streetparts.ClientPayloadHandlers");
+                        Method m = clientHandler.getMethod("handleOpenDirectionSign", payload.getClass());
+                        m.invoke(null, payload); // invoke static method
+                    } catch (ClassNotFoundException ignored) {
+                        // We're on the server or client handler class is not present: safe to ignore.
+                    } catch (NoSuchMethodException | IllegalAccessException
+                            | java.lang.reflect.InvocationTargetException e) {
+                        // Unexpected reflection error — log for debugging
+                        e.printStackTrace();
+                    }
+                }));
     }
 }
