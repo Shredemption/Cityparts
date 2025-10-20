@@ -71,7 +71,7 @@ public class RoadBlocksRegistry {
         private static final List<DeferredBlock<RotatableHorizontalBlock>> REGISTERED_SLAB_BLOCKS = new ArrayList<>();
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ROAD_BLOCKS_TAB = CREATIVE_TABS
-                        .register("streetparts_road_blocks", () -> CreativeModeTab.builder()
+                        .register("cityparts_road_blocks", () -> CreativeModeTab.builder()
                                         .title(net.minecraft.network.chat.Component
                                                         .translatable("itemGroup.cityparts.road_blocks"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM

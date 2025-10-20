@@ -103,7 +103,7 @@ public class WoodBlocksRegistry {
         }
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WOOD_TAB = CREATIVE_TABS
-                        .register("streetpartswood_blocks", () -> CreativeModeTab.builder()
+                        .register("cityparts_wood_blocks", () -> CreativeModeTab.builder()
                                         .title(net.minecraft.network.chat.Component
                                                         .translatable("itemGroup.cityparts.wood_blocks"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM

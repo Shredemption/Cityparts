@@ -40,7 +40,7 @@ public class RoadFurnitureRegistry {
         }
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ROAD_FURNITURE_TAB = CREATIVE_TABS
-                        .register("streetparts_road_furnitrue", () -> CreativeModeTab.builder()
+                        .register("cityparts_road_furnitrue", () -> CreativeModeTab.builder()
                                         .title(net.minecraft.network.chat.Component
                                                         .translatable("itemGroup.cityparts.road_furniture"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM

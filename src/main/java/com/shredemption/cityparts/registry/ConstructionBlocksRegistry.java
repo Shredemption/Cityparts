@@ -66,7 +66,7 @@ public class ConstructionBlocksRegistry {
         }
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CONSTRUCTION_BLOCKS_TAB = CREATIVE_TABS
-                        .register("streetparts_construction_blocks", () -> CreativeModeTab.builder()
+                        .register("cityparts_construction_blocks", () -> CreativeModeTab.builder()
                                         .title(Component.translatable("itemGroup.cityparts.construction_blocks"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
                                                         .get(fromNamespaceAndPath(CityParts.MOD_ID, "stone_pavement"))

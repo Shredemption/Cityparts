@@ -78,7 +78,7 @@ public class LightBlocksRegistry {
         private static final List<DeferredBlock<RotatableHorizontalBlock>> REGISTERED_LIGHT_BLOCKS = new ArrayList<>();
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> LIGHTS_TAB = CREATIVE_TABS
-                        .register("streetparts_lights", () -> CreativeModeTab.builder()
+                        .register("cityparts_light_blocks", () -> CreativeModeTab.builder()
                                         .title(net.minecraft.network.chat.Component
                                                         .translatable("itemGroup.cityparts.lights"))
                                         .icon(() -> net.minecraft.core.registries.BuiltInRegistries.ITEM
