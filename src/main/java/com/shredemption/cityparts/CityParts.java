@@ -2,6 +2,8 @@ package com.shredemption.cityparts;
 
 import com.mojang.logging.LogUtils;
 import com.shredemption.cityparts.network.OpenDirectionSignEditPayload;
+import com.shredemption.cityparts.network.SaveDirectionSignPayload;
+import com.shredemption.cityparts.network.ServerPayloadHandlers;
 import com.shredemption.cityparts.registry.BlockEntities;
 import com.shredemption.cityparts.registry.ConstructionBlocksRegistry;
 import com.shredemption.cityparts.registry.LightBlocksRegistry;
@@ -10,6 +12,7 @@ import com.shredemption.cityparts.registry.RoadFurnitureRegistry;
 import com.shredemption.cityparts.registry.SignBlockRegistry;
 import com.shredemption.cityparts.registry.WoodBlocksRegistry;
 
+import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -82,7 +85,8 @@ public class CityParts {
                     try {
                         // Try to find the client-side handler class by name.
                         // This class contains client-only references (Minecraft, Screen, etc.)
-                        Class<?> clientHandler = Class.forName("com.shredemption.cityparts.ClientPayloadHandlers");
+                        Class<?> clientHandler = Class
+                                .forName("com.shredemption.cityparts.network.ClientPayloadHandlers");
                         Method m = clientHandler.getMethod("handleOpenDirectionSign", payload.getClass());
                         m.invoke(null, payload); // invoke static method
                     } catch (ClassNotFoundException ignored) {
@@ -91,6 +95,15 @@ public class CityParts {
                             | java.lang.reflect.InvocationTargetException e) {
                         // Unexpected reflection error — log for debugging
                         e.printStackTrace();
+                    }
+                }));
+
+        registrar.playToServer(
+                SaveDirectionSignPayload.TYPE,
+                SaveDirectionSignPayload.STREAM_CODEC,
+                (payload, ctx) -> ctx.enqueueWork(() -> {
+                    if (ctx.player() instanceof ServerPlayer player) {
+                        ServerPayloadHandlers.handleSaveDirectionSign(payload, player);
                     }
                 }));
     }

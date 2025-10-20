@@ -12,6 +12,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.shredemption.cityparts.CityParts;
 import com.shredemption.cityparts.blockentity.DirectionSignBlockEntity;
+import com.shredemption.cityparts.network.SaveDirectionSignPayload;
 import com.shredemption.cityparts.render.DirectionSignRenderer;
 
 import net.minecraft.client.Minecraft;
@@ -33,6 +34,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 @OnlyIn(Dist.CLIENT)
 public class DirectionSignEditScreen extends Screen {
@@ -84,6 +86,24 @@ public class DirectionSignEditScreen extends Screen {
 
     @SuppressWarnings("null")
     private void onDone() {
+        if (this.sign != null) {
+            // Convert the edited text to Component[]
+            Component[] lines = new Component[MAX_LINES];
+            for (int i = 0; i < MAX_LINES; i++) {
+                lines[i] = Component.literal(messages[i]);
+            }
+
+            // Create the payload
+            SaveDirectionSignPayload payload = new SaveDirectionSignPayload(
+                    this.sign.getBlockPos(),
+                    this.isFrontText,
+                    lines);
+
+            // Send to server
+            PacketDistributor.sendToServer(payload);
+        }
+
+        // Close the screen
         this.minecraft.setScreen(null);
     }
 

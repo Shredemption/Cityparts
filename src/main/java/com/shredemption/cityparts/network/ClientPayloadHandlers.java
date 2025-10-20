@@ -1,8 +1,7 @@
-package com.shredemption.cityparts;
+package com.shredemption.cityparts.network;
 
 import com.shredemption.cityparts.blockentity.DirectionSignBlockEntity;
 import com.shredemption.cityparts.gui.DirectionSignEditScreen;
-import com.shredemption.cityparts.network.OpenDirectionSignEditPayload;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
