@@ -132,9 +132,6 @@ public class DirectionSignBlock extends AttachableHorizontalBlock implements Ent
                     PacketDistributor.sendToPlayer(serverPlayer, new OpenDirectionSignEditPayload(pos, isFrontText));
                 }
 
-                System.out.println("SERVER open editor at " + pos + " playerYaw=" + player.getYRot() +
-                        " isFrontText=" + isFrontText + " blockFacing=" + state.getValue(DirectionSignBlock.FACING));
-
                 return InteractionResult.SUCCESS;
             }
 
