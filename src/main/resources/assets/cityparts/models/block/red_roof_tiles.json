@@ -1,0 +1,6 @@
+{
+  "parent": "cityparts:block/template/roof_tiles",
+  "textures": {
+    "tile": "cityparts:block/maroon_bricks"
+  }
+}

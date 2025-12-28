@@ -1,0 +1,6 @@
+{
+  "parent": "cityparts:block/template/roof_tiles_inner",
+  "textures": {
+    "tile": "block/hay_block_side"
+  }
+}

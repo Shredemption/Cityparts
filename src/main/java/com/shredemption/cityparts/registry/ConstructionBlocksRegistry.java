@@ -6,10 +6,12 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -31,7 +33,8 @@ public class ConstructionBlocksRegistry {
 
         public enum BlockSetType {
                 FULL, // block + slab + stairs + wall
-                SLAB // block + slab
+                SLAB, // block + slab
+                STAIR_ONLY, // stairs only
         }
 
         private static final List<DeferredBlock<? extends Block>> REGISTERED_BLOCKS = new ArrayList<>();
@@ -132,5 +135,18 @@ public class ConstructionBlocksRegistry {
                                 BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).strength(2.0f),
                                 BlockSetType.FULL);
 
+                String redRoofTilesName = "red_roof_tiles";
+                DeferredBlock<StairBlock> redRoofTiles = BLOCKS.register(redRoofTilesName,
+                                () -> new StairBlock(Blocks.STONE.defaultBlockState(),
+                                                Properties.of().mapColor(MapColor.CRIMSON_HYPHAE).strength(2.0f)));
+                ITEMS.register(redRoofTilesName, () -> new BlockItem(redRoofTiles.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(redRoofTiles);
+
+                String hayRoofName = "hay_roof";
+                DeferredBlock<StairBlock> hayRoof = BLOCKS.register(hayRoofName,
+                                () -> new StairBlock(Blocks.STONE.defaultBlockState(),
+                                                Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f)));
+                ITEMS.register(hayRoofName, () -> new BlockItem(hayRoof.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(hayRoof);
         }
 }
