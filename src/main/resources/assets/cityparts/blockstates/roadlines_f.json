@@ -1,19 +1,44 @@
 {
-    "variants": {
-        "facing=north": {
-            "model": "cityparts:block/roadlines_f"
+    "multipart": [
+        {
+            "apply": {
+                "model": "cityparts:block/asphalt"
+            }
         },
-        "facing=south": {
-            "model": "cityparts:block/roadlines_f",
-            "y": 180
+        {
+            "when": {
+                "facing": "north"
+            },
+            "apply": {
+                "model": "cityparts:block/roadlines_f"
+            }
         },
-        "facing=west": {
-            "model": "cityparts:block/roadlines_f",
-            "y": 270
+        {
+            "when": {
+                "facing": "south"
+            },
+            "apply": {
+                "model": "cityparts:block/roadlines_f",
+                "y": 180
+            }
         },
-        "facing=east": {
-            "model": "cityparts:block/roadlines_f",
-            "y": 90
+        {
+            "when": {
+                "facing": "west"
+            },
+            "apply": {
+                "model": "cityparts:block/roadlines_f",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east"
+            },
+            "apply": {
+                "model": "cityparts:block/roadlines_f",
+                "y": 90
+            }
         }
-    }
+    ]
 }

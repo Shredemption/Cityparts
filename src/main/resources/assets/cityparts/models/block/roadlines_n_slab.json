@@ -1,6 +1,6 @@
 {
-    "parent": "cityparts:block/template/roadlines_slab",
+    "parent": "cityparts:block/template/roadlines_slab_marking",
     "textures": {
-        "top": "cityparts:block/roadlines_n"
+        "marking": "cityparts:block/roadlines_n"
     }
 }

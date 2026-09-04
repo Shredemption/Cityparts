@@ -311,6 +311,29 @@ def horizontalRotating(name):
     }
 
 
+def road_block(name):
+    return {
+        "multipart": [
+            {"apply": {"model": f"{MOD_ID}:block/asphalt"}},
+            {"when": {"facing": "north"}, "apply": {"model": f"{MOD_ID}:block/{name}"}},
+            {"when": {"facing": "south"}, "apply": {"model": f"{MOD_ID}:block/{name}", "y": 180}},
+            {"when": {"facing": "west"}, "apply": {"model": f"{MOD_ID}:block/{name}", "y": 270}},
+            {"when": {"facing": "east"}, "apply": {"model": f"{MOD_ID}:block/{name}", "y": 90}},
+        ]
+    }
+
+def road_slab(name):
+    return {
+        "multipart": [
+            {"apply": {"model": f"{MOD_ID}:block/asphalt_slab"}},
+            {"when": {"facing": "north"}, "apply": {"model": f"{MOD_ID}:block/{name}"}},
+            {"when": {"facing": "south"}, "apply": {"model": f"{MOD_ID}:block/{name}", "y": 180}},
+            {"when": {"facing": "west"}, "apply": {"model": f"{MOD_ID}:block/{name}", "y": 270}},
+            {"when": {"facing": "east"}, "apply": {"model": f"{MOD_ID}:block/{name}", "y": 90}},
+        ]
+    }
+
+
 def light(color, type):
     return {
         "variants": {

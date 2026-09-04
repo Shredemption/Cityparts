@@ -95,14 +95,14 @@ for var in VARIANTS:
 
     files = {
         # blockstate
-        os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstates.horizontalRotating(block_name),
-        os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.horizontalRotating(slab_name),
+        os.path.join(BLOCKSTATE_DIR, f"{block_name}.json"): blockstates.road_block(block_name),
+        os.path.join(BLOCKSTATE_DIR, f"{slab_name}.json"): blockstates.road_slab(slab_name),
         # model
         os.path.join(BLOCK_MODEL_DIR, f"{block_name}.json"): models.road_block(block_name),
         os.path.join(BLOCK_MODEL_DIR, f"{slab_name}.json"): models.road_slab(block_name),
         # item
-        os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.block(block_name),
-        os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.block(slab_name),
+        os.path.join(ITEM_MODEL_DIR, f"{block_name}.json"): items.road_block(block_name),
+        os.path.join(ITEM_MODEL_DIR, f"{slab_name}.json"): items.road_slab(block_name),
         # loottable
         os.path.join(LOOT_TABLE_DIR, f"{block_name}.json"): loottables.block_drops(block_name),
         os.path.join(LOOT_TABLE_DIR, f"{slab_name}.json"): loottables.block_drops(slab_name),

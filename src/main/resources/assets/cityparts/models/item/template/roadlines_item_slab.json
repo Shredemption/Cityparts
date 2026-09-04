@@ -1,0 +1,129 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"top": "cityparts:block/asphalt",
+		"bottom": "cityparts:block/asphalt",
+		"side1": "cityparts:block/asphalt",
+		"side2": "cityparts:block/asphalt",
+		"side3": "cityparts:block/asphalt",
+		"side4": "cityparts:block/asphalt",
+		"particle": "#top"
+	},
+	"elements": [
+		{
+			"from": [
+				0,
+				0,
+				0
+			],
+			"to": [
+				16,
+				8,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						8,
+						16,
+						16
+					],
+					"texture": "#side1",
+					"cullface": "north"
+				},
+				"east": {
+					"uv": [
+						0,
+						8,
+						16,
+						16
+					],
+					"texture": "#side4",
+					"cullface": "east"
+				},
+				"south": {
+					"uv": [
+						0,
+						8,
+						16,
+						16
+					],
+					"texture": "#side3",
+					"cullface": "south"
+				},
+				"west": {
+					"uv": [
+						0,
+						8,
+						16,
+						16
+					],
+					"texture": "#side2",
+					"cullface": "west"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"rotation": 180,
+					"texture": "#top",
+					"cullface": "up"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"rotation": 180,
+					"texture": "#bottom",
+					"cullface": "down"
+				}
+			}
+		},
+		{
+			"from": [
+				0,
+				8,
+				0
+			],
+			"to": [
+				16,
+				8.01,
+				16
+			],
+			"faces": {
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"rotation": 180,
+					"texture": "#marking",
+					"tintindex": 0
+				}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [
+				50,
+				-135,
+				0
+			],
+			"scale": [
+				0.59,
+				0.59,
+				0.59
+			]
+		}
+	}
+}

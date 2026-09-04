@@ -125,15 +125,15 @@ def light(color, type):
 
 def road_block(name):
     return {
-        "parent": f"{MOD_ID}:block/template/roadlines",
-        "textures": {"top": f"{MOD_ID}:block/{name}"},
+        "parent": f"{MOD_ID}:block/template/roadlines_marking",
+        "textures": {"marking": f"{MOD_ID}:block/{name}"},
     }
 
 
 def road_slab(name):
     return {
-        "parent": f"{MOD_ID}:block/template/roadlines_slab",
-        "textures": {"top": f"{MOD_ID}:block/{name}"},
+        "parent": f"{MOD_ID}:block/template/roadlines_slab_marking",
+        "textures": {"marking": f"{MOD_ID}:block/{name}"},
     }
 
 
