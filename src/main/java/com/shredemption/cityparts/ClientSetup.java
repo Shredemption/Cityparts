@@ -1,8 +1,10 @@
 package com.shredemption.cityparts;
 
 import com.shredemption.cityparts.registry.BlockEntities;
+import com.shredemption.cityparts.registry.RoadBlocksRegistry;
 import com.shredemption.cityparts.registry.WoodBlocksRegistry;
 import com.shredemption.cityparts.render.DirectionSignRenderer;
+import com.shredemption.cityparts.template.DyableRotatableHorizontalBlock;
 
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -15,6 +17,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 public class ClientSetup {
 
@@ -46,6 +49,19 @@ public class ClientSetup {
                     BlockEntityRenderers.register(BlockEntities.DIRECTION_SIGN.get(), DirectionSignRenderer::new);
 
                 });
+            });
+
+            modBus.addListener((RegisterColorHandlersEvent.Block event) -> {
+                event.register(
+                        (state, level, pos, tintIndex) -> {
+                            if (tintIndex != 0) {
+                                return 0xFFFFFF;
+                            }
+
+                            return state.getValue(
+                                    DyableRotatableHorizontalBlock.COLOR).getTextureDiffuseColor();
+                        },
+                        RoadBlocksRegistry.getRegisteredBlocks());
             });
 
             modBus.addListener((EntityRenderersEvent.RegisterLayerDefinitions event) -> {

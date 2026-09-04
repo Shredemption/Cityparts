@@ -1,6 +1,6 @@
 {
-    "parent": "cityparts:block/template/roadlines",
+    "parent": "cityparts:block/template/roadlines_marking",
     "textures": {
-        "top": "cityparts:block/roadlines_pedestrian_crossing"
+        "marking": "cityparts:block/roadlines_pedestrian_crossing"
     }
 }

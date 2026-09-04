@@ -1,3 +1,6 @@
 {
-    "parent": "cityparts:block/roadlines_straightarrow_slab"
+    "parent": "cityparts:item/template/roadlines_item_slab",
+    "textures": {
+        "marking": "cityparts:block/roadlines_straightarrow"
+    }
 }

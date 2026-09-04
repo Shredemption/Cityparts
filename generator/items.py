@@ -5,6 +5,20 @@ def block(name):
     return {"parent": f"{MOD_ID}:block/{name}"}
 
 
+def road_block(name):
+    return {
+        "parent": "cityparts:item/template/roadlines_item",
+        "textures": {"marking": f"cityparts:block/{name}"},
+    }
+
+
+def road_slab(name):
+    return {
+        "parent": "cityparts:item/template/roadlines_item_slab",
+        "textures": {"marking": f"cityparts:block/{name}"},
+    }
+
+
 def block_inventory(name):
     return {"parent": f"{MOD_ID}:block/{name}_inventory"}
 
@@ -23,4 +37,3 @@ def block_texture(name):
 
 def item_texture(name):
     return {"parent": "item/generated", "textures": {"layer0": f"{MOD_ID}:item/{name}"}}
-
