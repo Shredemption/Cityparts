@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class ItemsRegistry {
+public class PaintItemsRegistry {
 
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CityParts.MOD_ID);
 

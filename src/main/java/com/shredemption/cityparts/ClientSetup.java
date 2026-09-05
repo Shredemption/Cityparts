@@ -2,7 +2,7 @@ package com.shredemption.cityparts;
 
 import com.shredemption.cityparts.registry.BlockEntities;
 import com.shredemption.cityparts.registry.DataComponentsRegistry;
-import com.shredemption.cityparts.registry.ItemsRegistry;
+import com.shredemption.cityparts.registry.PaintItemsRegistry;
 import com.shredemption.cityparts.registry.RoadBlocksRegistry;
 import com.shredemption.cityparts.registry.WoodBlocksRegistry;
 import com.shredemption.cityparts.render.DirectionSignRenderer;
@@ -69,7 +69,7 @@ public class ClientSetup {
 
             return color.getTextureDiffuseColor();
             },
-            ItemsRegistry.PAINTBRUSH.get());
+            PaintItemsRegistry.PAINTBRUSH.get());
             });
 
             modBus.addListener((RegisterColorHandlersEvent.Block event) -> {
