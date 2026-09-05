@@ -46,6 +46,20 @@
 				"up": {"uv": [6, 6, 10, 4], "texture": "#0"},
 				"down": {"uv": [6, 10, 10, 12], "texture": "#0"}
 			}
+		},
+		{
+			"name": "arm-T_3",
+			"from": [6, 8, 6],
+			"to": [10, 9, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 6, 14]},
+			"faces": {
+				"north": {"uv": [6, 8, 10, 9], "texture": "#0"},
+				"east": {"uv": [10, 7, 12, 6], "texture": "#0"},
+				"south": {"uv": [6, 6, 10, 7], "texture": "#0"},
+				"west": {"uv": [4, 6, 6, 7], "texture": "#0"},
+				"up": {"uv": [6, 9, 10, 7], "texture": "#0"},
+				"down": {"uv": [6, 10, 10, 12], "texture": "#0"}
+			}
 		}
 	],
 	"display": {
