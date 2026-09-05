@@ -44,31 +44,152 @@ public class LightBlocksRegistry {
                         "post",
                         "arm",
                         "corner",
+                        "corner_post",
                         "l_corner",
-                        "t_corner");
+                        "l_corner_post",
+                        "t_corner",
+                        "t_corner_post",
+                        "y_corner",
+                        "y_corner_post",
+                        "x_corner",
+                        "x_corner_post");
 
-        private static final Map<String, BlockTypeInfo> TYPE_INFOS = Map.of(
-                        "corner", new BlockTypeInfo(
-                                        BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 10 / 16f)),
-                        "t_corner", new BlockTypeInfo(
-                                        BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 10 / 16f, 12 / 16f, 16 / 16f)),
-                        "arm", new BlockTypeInfo(
-                                        BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 8 / 16f, 0, 10 / 16f, 12 / 16f, 16 / 16f)),
-                        "post", new BlockTypeInfo(
-                                        BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 6 / 16f, 10 / 16f, 16 / 16f, 10 / 16f)),
-                        "l_corner", new BlockTypeInfo(
-                                        BlockBehaviour.Properties.of().strength(2.0f),
-                                        Shapes.box(6 / 16f, 0, 0, 16 / 16f, 12 / 16f, 10 / 16f)),
-                        "light", new BlockTypeInfo(
-                                        BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 15),
-                                        Shapes.or(Shapes.box(5.5 / 16f, 7.5 / 16f, 2 / 16f, 10.5 / 16f, 12.5 / 16f,
-                                                        10 / 16f),
-                                                        Shapes.box(6 / 16f, 8 / 16f, 9 / 16f, 10 / 16f, 12 / 16f,
-                                                                        16 / 16f))));
+        private static final Map<String, List<String>> SHAPES = Map.of(
+                        "corner", List.of("north"),
+                        "l_corner", List.of("north", "east"),
+                        "t_corner", List.of("north", "south"),
+                        "y_corner", List.of("north", "east", "west"),
+                        "x_corner", List.of("north", "east", "south", "west"));
+
+        private static final VoxelShape POST_SHAPE = Shapes.box(
+                        6 / 16f, 0, 6 / 16f,
+                        10 / 16f, 16 / 16f, 10 / 16f);
+
+        private static final VoxelShape HALF_POST_SHAPE = Shapes.box(
+                        6 / 16f, 8 / 16f, 6 / 16f,
+                        10 / 16f, 12 / 16f, 10 / 16f);
+
+        private static final VoxelShape CORNER_PART_NORTH = Shapes.box(
+                        6 / 16f, 0, 0,
+                        10 / 16f, 12 / 16f, 10 / 16f);
+
+        private static VoxelShape rotateShape(VoxelShape shape, int degrees) {
+                degrees = ((degrees % 360) + 360) % 360;
+
+                if (degrees == 0) {
+                        return shape;
+                }
+
+                VoxelShape result = Shapes.empty();
+
+                for (var box : shape.toAabbs()) {
+                        double minX = box.minX;
+                        double minY = box.minY;
+                        double minZ = box.minZ;
+
+                        double maxX = box.maxX;
+                        double maxY = box.maxY;
+                        double maxZ = box.maxZ;
+
+                        double newMinX;
+                        double newMaxX;
+                        double newMinZ;
+                        double newMaxZ;
+
+                        switch (degrees) {
+                                case 90 -> {
+                                        newMinX = 1.0 - maxZ;
+                                        newMaxX = 1.0 - minZ;
+                                        newMinZ = minX;
+                                        newMaxZ = maxX;
+                                }
+
+                                case 180 -> {
+                                        newMinX = 1.0 - maxX;
+                                        newMaxX = 1.0 - minX;
+                                        newMinZ = 1.0 - maxZ;
+                                        newMaxZ = 1.0 - minZ;
+                                }
+
+                                case 270 -> {
+                                        newMinX = minZ;
+                                        newMaxX = maxZ;
+                                        newMinZ = 1.0 - maxX;
+                                        newMaxZ = 1.0 - minX;
+                                }
+
+                                default -> throw new IllegalArgumentException("Unsupported rotation: " + degrees);
+                        }
+
+                        result = Shapes.or(result, Shapes.box(newMinX, minY, newMinZ, newMaxX, maxY, newMaxZ));
+                }
+
+                return result;
+        }
+
+        private static int directionRotation(String direction) {
+                return switch (direction) {
+                        case "north" -> 0;
+                        case "east" -> 90;
+                        case "south" -> 180;
+                        case "west" -> 270;
+                        default -> throw new IllegalArgumentException(
+                                        "Unknown shape direction: " + direction);
+                };
+        }
+
+        private static VoxelShape createCornerShape(List<String> directions, boolean post) {
+
+                VoxelShape result = post ? POST_SHAPE : HALF_POST_SHAPE;
+
+                for (String direction : directions) {
+                        int rotation = directionRotation(direction);
+
+                        VoxelShape part = rotateShape(CORNER_PART_NORTH, rotation);
+
+                        result = Shapes.or(result, part);
+                }
+
+                return result;
+        }
+
+        private static Map<String, BlockTypeInfo> createTypeInfos() {
+
+                Map<String, BlockTypeInfo> infos = new java.util.HashMap<>();
+
+                /*
+                 * Base blocks
+                 */
+
+                infos.put("light",
+                                new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 15),
+                                                Shapes.or(Shapes.box(5.5 / 16f, 7.5 / 16f, 2 / 16f, 10.5 / 16f,
+                                                                12.5 / 16f, 10 / 16f),
+                                                                Shapes.box(6 / 16f, 8 / 16f, 9 / 16f, 10 / 16f,
+                                                                                12 / 16f, 16 / 16f))));
+
+                infos.put("post",
+                                new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f), POST_SHAPE));
+
+                infos.put("arm", new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f),
+                                Shapes.box(6 / 16f, 8 / 16f, 0, 10 / 16f, 12 / 16f, 16 / 16f)));
+
+                for (Map.Entry<String, List<String>> entry : SHAPES.entrySet()) {
+
+                        String shapeName = entry.getKey();
+                        List<String> directions = entry.getValue();
+
+                        infos.put(shapeName, new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f),
+                                        createCornerShape(directions, false)));
+
+                        infos.put(shapeName + "_post", new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f),
+                                        createCornerShape(directions, true)));
+                }
+
+                return Map.copyOf(infos);
+        }
+
+        private static final Map<String, BlockTypeInfo> TYPE_INFOS = createTypeInfos();
 
         public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CityParts.MOD_ID);
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CityParts.MOD_ID);

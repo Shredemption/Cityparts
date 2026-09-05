@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "cityparts:light_black_x_corner_post"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "cityparts:blocks/light_black_x_corner_post"
+}

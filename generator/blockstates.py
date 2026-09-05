@@ -322,6 +322,7 @@ def road_block(name):
         ]
     }
 
+
 def road_slab(name):
     return {
         "multipart": [
@@ -343,6 +344,35 @@ def light(color, type):
             "facing=east": {"model": f"{MOD_ID}:block/light_{color}_{type}", "y": 90},
         }
     }
+
+
+FACING_ROTATIONS = {
+    "north": 0,
+    "east": 90,
+    "south": 180,
+    "west": 270,
+}
+
+
+def light_multipart(color, base, directions):
+    multipart = [{"apply": {"model": f"{MOD_ID}:block/light_{color}_{base}"}}]
+
+    for facing, facing_rotation in FACING_ROTATIONS.items():
+
+        for direction in directions:
+
+            direction_rotation = FACING_ROTATIONS[direction]
+
+            rotation = (facing_rotation + direction_rotation) % 360
+
+            apply = {"model": f"{MOD_ID}:block/light_{color}_corner_part"}
+
+            if rotation != 0:
+                apply["y"] = rotation
+
+            multipart.append({"when": {"facing": facing}, "apply": apply})
+
+    return {"multipart": multipart}
 
 
 def pillar(name):
