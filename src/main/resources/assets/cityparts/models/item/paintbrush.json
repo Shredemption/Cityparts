@@ -1,0 +1,15 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "cityparts:item/paintbrush_paint",
+        "layer1": "cityparts:item/paintbrush_paint_layer"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "damage": 1
+            },
+            "model": "cityparts:item/paintbrush_empty"
+        }
+    ]
+}

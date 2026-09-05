@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "equipment",
+    "ingredients": [
+        {
+            "item": "cityparts:paintbrush"
+        },
+        {
+            "item": "minecraft:black_dye"
+        }
+    ],
+    "result": {
+        "id": "cityparts:paintbrush",
+        "components": {
+            "cityparts:paint_color": "black",
+            "minecraft:damage": 0
+        }
+    }
+}
