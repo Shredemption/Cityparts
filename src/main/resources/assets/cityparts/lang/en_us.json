@@ -19,7 +19,6 @@
   "block.cityparts.deepslate_pavement_stairs": "Deepslate Pavement Stairs",
   "block.cityparts.deepslate_pavement_slab": "Deepslate Pavement Slab",
   "block.cityparts.deepslate_pavement_wall": "Deepslate Pavement Wall",
-
   "block.cityparts.gray_bricks": "Gray Bricks",
   "block.cityparts.gray_bricks_stairs": "Gray Brick Stairs",
   "block.cityparts.gray_bricks_slab": "Gray Brick Slab",
@@ -56,12 +55,10 @@
   "block.cityparts.beige_bricks_stairs": "Beige Brick Stairs",
   "block.cityparts.beige_bricks_slab": "Beige Brick Slab",
   "block.cityparts.beige_bricks_wall": "Beige Brick Wall",
-
   "block.cityparts.asphalt": "Asphalt",
   "block.cityparts.asphalt_slab": "Asphalt Slab",
   "block.cityparts.red_asphalt": "Red Asphalt",
   "block.cityparts.red_asphalt_slab": "Red Asphalt Slab",
-
   "block.cityparts.roadlines_midline": "Middle Line Block",
   "block.cityparts.roadlines_sideline": "Side Line Block",
   "block.cityparts.roadlines_straightarrow": "Straight Arrow Block",
@@ -90,7 +87,6 @@
   "block.cityparts.roadlines_tsplittall": "Tall T-Split Block",
   "block.cityparts.roadlines_middleleftt": "Middle Left T-Split Block",
   "block.cityparts.roadlines_middlerightt": "Middle Right T-Split Block",
-
   "block.cityparts.roadlines_a": "A Block",
   "block.cityparts.roadlines_b": "B Block",
   "block.cityparts.roadlines_c": "C Block",
@@ -128,7 +124,6 @@
   "block.cityparts.roadlines_8": "8 Block",
   "block.cityparts.roadlines_9": "9 Block",
   "block.cityparts.roadlines_0": "0 Block",
-
   "block.cityparts.roadlines_midline_slab": "Middle Line Slab",
   "block.cityparts.roadlines_sideline_slab": "Side Line Slab",
   "block.cityparts.roadlines_straightarrow_slab": "Straight Arrow Slab",
@@ -157,7 +152,6 @@
   "block.cityparts.roadlines_tsplittall_slab": "Tall T-Split Slab",
   "block.cityparts.roadlines_middleleftt_slab": "Middle Left T-Split Slab",
   "block.cityparts.roadlines_middlerightt_slab": "Middle Right T-Split Slab",
-
   "block.cityparts.roadlines_a_slab": "A Slab",
   "block.cityparts.roadlines_b_slab": "B Slab",
   "block.cityparts.roadlines_c_slab": "C Slab",
@@ -195,7 +189,6 @@
   "block.cityparts.roadlines_8_slab": "8 Slab",
   "block.cityparts.roadlines_9_slab": "9 Slab",
   "block.cityparts.roadlines_0_slab": "0 Slab",
-
   "block.cityparts.sign_round_stop": "Stop Sign",
   "block.cityparts.sign_round_no_entry": "No Entry Sign",
   "block.cityparts.sign_round_roundabout": "Roundabout Sign",
@@ -234,35 +227,30 @@
   "block.cityparts.sign_triangle_crossing_right": "Priority Over Left and Right Sign",
   "block.cityparts.sign_triangle_sharp_left": "Sharp Left Turn Sign",
   "block.cityparts.sign_triangle_sharp_right": "Sharp Right Turn Sign",
-
   "block.cityparts.light_gray_post": "Gray Post",
   "block.cityparts.light_gray_arm": "Gray Post Arm",
   "block.cityparts.light_gray_corner": "Gray Post Corner",
   "block.cityparts.light_gray_t_corner": "Gray Post T",
   "block.cityparts.light_gray_light": "Gray Light",
   "block.cityparts.light_gray_l_corner": "Gray Post L Corner",
-
   "block.cityparts.light_white_post": "White Post",
   "block.cityparts.light_white_arm": "White Post Arm",
   "block.cityparts.light_white_corner": "White Post Corner",
   "block.cityparts.light_white_t_corner": "White Post T",
   "block.cityparts.light_white_light": "White Light",
   "block.cityparts.light_white_l_corner": "White Post L Corner",
-
   "block.cityparts.light_black_post": "Black Post",
   "block.cityparts.light_black_arm": "Black Post Arm",
   "block.cityparts.light_black_corner": "Black Post Corner",
   "block.cityparts.light_black_t_corner": "Black Post T",
   "block.cityparts.light_black_light": "Black Light",
   "block.cityparts.light_black_l_corner": "Black Post L Corner",
-
   "block.cityparts.light_green_post": "Green Post",
   "block.cityparts.light_green_arm": "Green Post Arm",
   "block.cityparts.light_green_corner": "Green Post Corner",
   "block.cityparts.light_green_t_corner": "Green Post T",
   "block.cityparts.light_green_light": "Green Light",
   "block.cityparts.light_green_l_corner": "Green Post L Corner",
-
   "block.cityparts.olive_log": "Olive Log",
   "block.cityparts.olive_wood": "Olive Wood",
   "block.cityparts.stripped_olive_log": "Stripped Olive Log",
@@ -279,7 +267,6 @@
   "block.cityparts.olive_leaves": "Olive Leaves",
   "block.cityparts.olive_sign": "Olive Sign",
   "block.cityparts.olive_hanging_sign": "Olive Hanging Sign",
-
   "block.cityparts.verdant_log": "Verdant Log",
   "block.cityparts.verdant_wood": "Verdant Wood",
   "block.cityparts.stripped_verdant_log": "Stripped Verdant Log",
@@ -296,7 +283,6 @@
   "block.cityparts.verdant_leaves": "Verdant Leaves",
   "block.cityparts.verdant_sign": "Verdant Sign",
   "block.cityparts.verdant_hanging_sign": "Verdant Hanging Sign",
-
   "block.cityparts.moon_log": "Moon Log",
   "block.cityparts.moon_wood": "Moon Wood",
   "block.cityparts.stripped_moon_log": "Stripped Moon Log",
@@ -313,7 +299,6 @@
   "block.cityparts.moon_leaves": "Moon Leaves",
   "block.cityparts.moon_sign": "Moon Sign",
   "block.cityparts.moon_hanging_sign": "Moon Hanging Sign",
-
   "block.cityparts.sky_log": "Sky Log",
   "block.cityparts.sky_wood": "Sky Wood",
   "block.cityparts.stripped_sky_log": "Stripped Sky Log",
@@ -330,7 +315,6 @@
   "block.cityparts.sky_leaves": "Sky Leaves",
   "block.cityparts.sky_sign": "Sky Sign",
   "block.cityparts.sky_hanging_sign": "Sky Hanging Sign",
-
   "block.cityparts.wisteria_log": "Wisteria Log",
   "block.cityparts.wisteria_wood": "Wisteria Wood",
   "block.cityparts.stripped_wisteria_log": "Stripped Wisteria Log",
@@ -347,7 +331,6 @@
   "block.cityparts.wisteria_leaves": "Wisteria Leaves",
   "block.cityparts.wisteria_sign": "Wisteria Sign",
   "block.cityparts.wisteria_hanging_sign": "Wisteria Hanging Sign",
-
   "block.cityparts.ebony_log": "Ebony Log",
   "block.cityparts.ebony_wood": "Ebony Wood",
   "block.cityparts.stripped_ebony_log": "Stripped Ebony Log",
@@ -364,7 +347,6 @@
   "block.cityparts.ebony_leaves": "Ebony Leaves",
   "block.cityparts.ebony_sign": "Ebony Sign",
   "block.cityparts.ebony_hanging_sign": "Ebony Hanging Sign",
-
   "block.cityparts.direction_sign": "Direction Sign",
   "block.cityparts.traffic_cone": "Traffic Cone",
   "block.cityparts.traffic_barrier": "Traffic Barrier",
@@ -372,11 +354,12 @@
   "block.cityparts.barrier_tape": "Barrier Tape",
   "block.cityparts.striped_post": "Striped Post",
   "block.cityparts.reflector_post": "Reflector Post",
-
+  "item.cityparts.paintbrush": "Paintbrush",
   "itemGroup.cityparts.construction_blocks": "Construction Blocks",
   "itemGroup.cityparts.road_blocks": "Road Blocks",
   "itemGroup.cityparts.lights": "Light Blocks",
   "itemGroup.cityparts.signs": "Sign Blocks",
   "itemGroup.cityparts.wood_blocks": "Wood Blocks",
-  "itemGroup.cityparts.road_furniture": "Road Furniture"
+  "itemGroup.cityparts.road_furniture": "Road Furniture",
+  "itemGroup.cityparts.paint_items": "Paint Items"
 }

@@ -6,6 +6,8 @@ import com.shredemption.cityparts.network.SaveDirectionSignPayload;
 import com.shredemption.cityparts.network.ServerPayloadHandlers;
 import com.shredemption.cityparts.registry.BlockEntities;
 import com.shredemption.cityparts.registry.ConstructionBlocksRegistry;
+import com.shredemption.cityparts.registry.DataComponentsRegistry;
+import com.shredemption.cityparts.registry.ItemsRegistry;
 import com.shredemption.cityparts.registry.LightBlocksRegistry;
 import com.shredemption.cityparts.registry.RoadBlocksRegistry;
 import com.shredemption.cityparts.registry.RoadFurnitureRegistry;
@@ -61,6 +63,9 @@ public class CityParts {
         WoodBlocksRegistry.registerWoodBlocks(modEventBus);
         RoadFurnitureRegistry.registerRoadFurnitureBlocks(modEventBus);
         BlockEntities.register(modEventBus);
+
+        DataComponentsRegistry.register(modEventBus);
+        ItemsRegistry.registerItems(modEventBus);
 
         ClientSetup.register(modEventBus);
     }

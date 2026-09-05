@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "equipment",
+    "ingredients": [
+        {
+            "item": "cityparts:paintbrush"
+        },
+        {
+            "item": "minecraft:lime_dye"
+        }
+    ],
+    "result": {
+        "id": "cityparts:paintbrush",
+        "components": {
+            "cityparts:paint_color": "lime",
+            "minecraft:damage": 0
+        }
+    }
+}

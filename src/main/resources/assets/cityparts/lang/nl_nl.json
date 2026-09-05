@@ -19,7 +19,6 @@
   "block.cityparts.deepslate_pavement_stairs": "Wrevelstenen klinker trap",
   "block.cityparts.deepslate_pavement_slab": "Wrevelstenen klinker plaat",
   "block.cityparts.deepslate_pavement_wall": "Wrevelstenen klinker muur",
-
   "block.cityparts.gray_bricks": "Grijze bakstenen",
   "block.cityparts.gray_bricks_stairs": "Grijze bakstenen trap",
   "block.cityparts.gray_bricks_slab": "Grijze bakstenen plaat",
@@ -56,12 +55,10 @@
   "block.cityparts.beige_bricks_stairs": "Beige bakstenen trap",
   "block.cityparts.beige_bricks_slab": "Beige bakstenen plaat",
   "block.cityparts.beige_bricks_wall": "Beige bakstenen muur",
-
   "block.cityparts.asphalt": "Asfalt",
   "block.cityparts.asphalt_slab": "Asfalt plaat",
   "block.cityparts.red_asphalt": "Rood asfalt",
   "block.cityparts.red_asphalt_slab": "Rood asfalt plaat",
-
   "block.cityparts.roadlines_midline": "Middellijn blok",
   "block.cityparts.roadlines_sideline": "Zijlijn blok",
   "block.cityparts.roadlines_straightarrow": "Rechtdoor pijl blok",
@@ -90,7 +87,6 @@
   "block.cityparts.roadlines_tsplittall": "Hoge T-splitsing blok",
   "block.cityparts.roadlines_middleleftt": "Midden linker T-splitsing blok",
   "block.cityparts.roadlines_middlerightt": "Midden rechter T-splitsing blok",
-
   "block.cityparts.roadlines_a": "A blok",
   "block.cityparts.roadlines_b": "B blok",
   "block.cityparts.roadlines_c": "C blok",
@@ -128,7 +124,6 @@
   "block.cityparts.roadlines_8": "8 blok",
   "block.cityparts.roadlines_9": "9 blok",
   "block.cityparts.roadlines_0": "0 blok",
-
   "block.cityparts.roadlines_midline_slab": "Middellijn plaat",
   "block.cityparts.roadlines_sideline_slab": "Zijlijn plaat",
   "block.cityparts.roadlines_straightarrow_slab": "Rechtdoor pijl plaat",
@@ -157,7 +152,6 @@
   "block.cityparts.roadlines_tsplittall_slab": "Hoge T-splitsing plaat",
   "block.cityparts.roadlines_middleleftt_slab": "Midden linker T-splitsing plaat",
   "block.cityparts.roadlines_middlerightt_slab": "Midden rechter T-splitsing plaat",
-
   "block.cityparts.roadlines_a_slab": "A plaat",
   "block.cityparts.roadlines_b_slab": "B plaat",
   "block.cityparts.roadlines_c_slab": "C plaat",
@@ -195,7 +189,6 @@
   "block.cityparts.roadlines_8_slab": "8 plaat",
   "block.cityparts.roadlines_9_slab": "9 plaat",
   "block.cityparts.roadlines_0_slab": "0 plaat",
-
   "block.cityparts.sign_round_stop": "Stopbord",
   "block.cityparts.sign_round_no_entry": "Verboden toegang bord",
   "block.cityparts.sign_round_roundabout": "Rotonde bord",
@@ -234,35 +227,30 @@
   "block.cityparts.sign_triangle_crossing_right": "Voorrang over rechts bord",
   "block.cityparts.sign_triangle_sharp_left": "Scherpe bocht links bord",
   "block.cityparts.sign_triangle_sharp_right": "Scherpe bocht rechts bord",
-
   "block.cityparts.gray_light_post": "Grijze paal",
   "block.cityparts.gray_light_arm": "Grijze arm",
   "block.cityparts.gray_light_corner": "Grijze hoek",
   "block.cityparts.gray_light_t": "Grijze T",
   "block.cityparts.gray_light_light": "Grijze lamp",
   "block.cityparts.gray_light_l_corner": "Grijze L-hoek",
-
   "block.cityparts.white_light_post": "Witte paal",
   "block.cityparts.white_light_arm": "Witte arm",
   "block.cityparts.white_light_corner": "Witte hoek",
   "block.cityparts.white_light_t": "Witte T",
   "block.cityparts.white_light_light": "Witte lamp",
   "block.cityparts.white_light_l_corner": "Witte L-hoek",
-
   "block.cityparts.black_light_post": "Zwarte paal",
   "block.cityparts.black_light_arm": "Zwarte arm",
   "block.cityparts.black_light_corner": "Zwarte hoek",
   "block.cityparts.black_light_t": "Zwarte T",
   "block.cityparts.black_light_light": "Zwarte lamp",
   "block.cityparts.black_light_l_corner": "Zwarte L-hoek",
-
   "block.cityparts.green_light_post": "Groene paal",
   "block.cityparts.green_light_arm": "Groene arm",
   "block.cityparts.green_light_corner": "Groene hoek",
   "block.cityparts.green_light_t": "Groene T",
   "block.cityparts.green_light_light": "Groene lamp",
   "block.cityparts.green_light_l_corner": "Groene L-hoek",
-
   "block.cityparts.olive_log": "Olijfstam",
   "block.cityparts.olive_wood": "Olijfhout",
   "block.cityparts.stripped_olive_log": "Gestripte olijfstam",
@@ -279,7 +267,6 @@
   "block.cityparts.olive_leaves": "Olijfbladeren",
   "block.cityparts.olive_sign": "Olijfhouten bord",
   "block.cityparts.olive_hanging_sign": "Olijfhouten hangbord",
-
   "block.cityparts.verdant_log": "Weelderige stam",
   "block.cityparts.verdant_wood": "Weelderig hout",
   "block.cityparts.stripped_verdant_log": "Gestripte weelderige stam",
@@ -296,7 +283,6 @@
   "block.cityparts.verdant_leaves": "Weelderige bladeren",
   "block.cityparts.verdant_sign": "Weelderig bord",
   "block.cityparts.verdant_hanging_sign": "Weelderig hangbord",
-
   "block.cityparts.moon_log": "Maanstam",
   "block.cityparts.moon_wood": "Maanhout",
   "block.cityparts.stripped_moon_log": "Gestripte maanstam",
@@ -313,7 +299,6 @@
   "block.cityparts.moon_leaves": "Maanbladeren",
   "block.cityparts.moon_sign": "Maanhouten bord",
   "block.cityparts.moon_hanging_sign": "Maanhouten hangbord",
-
   "block.cityparts.sky_log": "Luchtstam",
   "block.cityparts.sky_wood": "Luchthout",
   "block.cityparts.stripped_sky_log": "Gestripte luchtstam",
@@ -330,7 +315,6 @@
   "block.cityparts.sky_leaves": "Luchtbladeren",
   "block.cityparts.sky_sign": "Luchthouten bord",
   "block.cityparts.sky_hanging_sign": "Luchthouten hangbord",
-
   "block.cityparts.wisteria_log": "Wisteriastam",
   "block.cityparts.wisteria_wood": "Wisteriahout",
   "block.cityparts.stripped_wisteria_log": "Gestripte wisteriastam",
@@ -347,7 +331,6 @@
   "block.cityparts.wisteria_leaves": "Wisteriabladeren",
   "block.cityparts.wisteria_sign": "Wisteriahouten bord",
   "block.cityparts.wisteria_hanging_sign": "Wisteriahouten hangbord",
-
   "block.cityparts.ebony_log": "Ebbenhouten stam",
   "block.cityparts.ebony_wood": "Ebbenhout",
   "block.cityparts.stripped_ebony_log": "Gestripte ebbenhouten stam",
@@ -364,7 +347,6 @@
   "block.cityparts.ebony_leaves": "Ebbenbladeren",
   "block.cityparts.ebony_sign": "Ebbenhouten bord",
   "block.cityparts.ebony_hanging_sign": "Ebbenhouten hangbord",
-
   "block.cityparts.direction_sign": "Wegwijzerbord",
   "block.cityparts.traffic_cone": "Pylon",
   "block.cityparts.traffic_barrier": "Verkeershek",
@@ -372,11 +354,12 @@
   "block.cityparts.barrier_tape": "Afzetlint",
   "block.cityparts.striped_post": "Gestreepte paal",
   "block.cityparts.reflector_post": "Reflector paal",
-
+  "item.cityparts.paintbrush": "Kwast",
   "itemGroup.cityparts.construction_blocks": "Constructieblokken",
   "itemGroup.cityparts.road_blocks": "Wegblokken",
   "itemGroup.cityparts.lights": "Lantaarnpalen",
   "itemGroup.cityparts.signs": "Borden",
   "itemGroup.cityparts.wood_blocks": "Houtblokken",
-  "itemGroup.cityparts.road_furniture": "Straatmeubels"
+  "itemGroup.cityparts.road_furniture": "Straatmeubels",
+  "itemGroup.cityparts.paint_items": "Verf Items"
 }

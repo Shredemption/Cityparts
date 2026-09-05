@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "equipment",
+    "ingredients": [
+        {
+            "item": "cityparts:paintbrush"
+        },
+        {
+            "item": "minecraft:yellow_dye"
+        }
+    ],
+    "result": {
+        "id": "cityparts:paintbrush",
+        "components": {
+            "cityparts:paint_color": "yellow",
+            "minecraft:damage": 0
+        }
+    }
+}
