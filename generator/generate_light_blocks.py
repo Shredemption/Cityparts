@@ -11,14 +11,20 @@ COLORS = [
     "black",
     "green",
 ]
-TYPES = [
+
+TYPES_BASE = [
     "light",
     "post",
     "arm",
-    "corner",
-    "l_corner",
-    "t_corner",
 ]
+
+SHAPES = {
+    "corner": ["north"],
+    "l_corner": ["north", "east"],
+    "t_corner": ["north", "south"],
+    "y_corner": ["north", "east", "west"],
+    "x_corner": ["north", "east", "south", "west"],
+}
 
 BASE_PATH = r"./src/main/resources/"
 BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
@@ -33,18 +39,73 @@ for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR, RE
 
 
 # === Generate files ===
+lights_tag = "lights"
+
 for color in COLORS:
-    for type in TYPES:
-        fullName = f"light_{color}_{type}"
-        lights_tag = "lights"
+
+    # Multipart piece models
+    files = {
+        os.path.join(BLOCK_MODEL_DIR, f"light_{color}_half_post.json"): models.light_half_post(color),
+        os.path.join(BLOCK_MODEL_DIR, f"light_{color}_corner_part.json"): models.light_corner_part(color),
+    }
+
+    for path, data in files.items():
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
+        print(f"✅ Created {path}")
+
+    # Base types: light, post, arm
+    for type in TYPES_BASE:
+
+        full_name = f"light_{color}_{type}"
 
         files = {
-            os.path.join(BLOCKSTATE_DIR, f"{fullName}.json"): blockstates.light(color, type),
-            os.path.join(BLOCK_MODEL_DIR, f"{fullName}.json"): models.light(color, type),
-            os.path.join(ITEM_MODEL_DIR, f"{fullName}.json"): items.light(color, type),
-            os.path.join(LOOT_TABLE_DIR, f"{fullName}.json"): loottables.block_drops(fullName),
-            os.path.join(RECIPE_DIR, f"{fullName}.json"): recipes.one_from_tag_stonecutter(lights_tag, fullName),
+            os.path.join(BLOCKSTATE_DIR, f"{full_name}.json"): blockstates.light(color, type),
+            os.path.join(BLOCK_MODEL_DIR, f"{full_name}.json"): models.light(color, type),
+            os.path.join(ITEM_MODEL_DIR, f"{full_name}.json"): items.light(color, type),
+            os.path.join(LOOT_TABLE_DIR, f"{full_name}.json"): loottables.block_drops(full_name),
+            os.path.join(RECIPE_DIR, f"{full_name}.json"): recipes.one_from_tag_stonecutter(lights_tag, full_name),
         }
+
+        for path, data in files.items():
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4)
+            print(f"✅ Created {path}")
+
+    # Multipart types
+    for shape, directions in SHAPES.items():
+
+        # Half-post version
+        full_name = f"light_{color}_{shape}"
+
+        files = {
+            os.path.join(BLOCKSTATE_DIR, f"{full_name}.json"): blockstates.light_multipart(
+                color,
+                "half_post",
+                directions,
+            ),
+            os.path.join(ITEM_MODEL_DIR, f"{full_name}.json"): items.light(color, "arm"),
+            os.path.join(LOOT_TABLE_DIR, f"{full_name}.json"): loottables.block_drops(full_name),
+            os.path.join(RECIPE_DIR, f"{full_name}.json"): recipes.one_from_tag_stonecutter(lights_tag, full_name),
+        }
+
+        # Full-post version
+        full_name_post = f"light_{color}_{shape}_post"
+
+        files.update(
+            {
+                os.path.join(BLOCKSTATE_DIR, f"{full_name_post}.json"): blockstates.light_multipart(
+                    color,
+                    "post",
+                    directions,
+                ),
+                os.path.join(ITEM_MODEL_DIR, f"{full_name_post}.json"): items.light(color, "post"),
+                os.path.join(LOOT_TABLE_DIR, f"{full_name_post}.json"): loottables.block_drops(full_name_post),
+                os.path.join(RECIPE_DIR, f"{full_name_post}.json"): recipes.one_from_tag_stonecutter(
+                    lights_tag, full_name_post
+                ),
+            }
+        )
 
         for path, data in files.items():
             with open(path, "w", encoding="utf-8") as f:

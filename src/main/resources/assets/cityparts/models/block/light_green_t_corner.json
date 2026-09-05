@@ -1,6 +1,0 @@
-{
-    "parent": "cityparts:block/template/light_t_corner",
-    "textures": {
-        "0": "cityparts:block/green_post"
-    }
-}

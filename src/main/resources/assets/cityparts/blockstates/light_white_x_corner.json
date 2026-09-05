@@ -1,0 +1,149 @@
+{
+    "multipart": [
+        {
+            "apply": {
+                "model": "cityparts:block/light_white_half_post"
+            }
+        },
+        {
+            "when": {
+                "facing": "north"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part"
+            }
+        },
+        {
+            "when": {
+                "facing": "north"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "north"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "north"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "east"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "east"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "east"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part"
+            }
+        },
+        {
+            "when": {
+                "facing": "south"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 180
+            }
+        },
+        {
+            "when": {
+                "facing": "south"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "south"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part"
+            }
+        },
+        {
+            "when": {
+                "facing": "south"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "west"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 270
+            }
+        },
+        {
+            "when": {
+                "facing": "west"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part"
+            }
+        },
+        {
+            "when": {
+                "facing": "west"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 90
+            }
+        },
+        {
+            "when": {
+                "facing": "west"
+            },
+            "apply": {
+                "model": "cityparts:block/light_white_corner_part",
+                "y": 180
+            }
+        }
+    ]
+}
