@@ -19,6 +19,7 @@ import java.util.Map;
 
 import com.shredemption.cityparts.CityParts;
 import com.shredemption.cityparts.template.RotatableHorizontalBlock;
+import com.shredemption.cityparts.template.RotatableHorizontalLightBlock;
 
 import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
 
@@ -163,13 +164,13 @@ public class LightBlocksRegistry {
                  */
 
                 infos.put("light",
-                                new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 15),
+                                new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f),
                                                 Shapes.or(Shapes.box(5.5 / 16f, 7 / 16f, 2.5 / 16f, 10.5 / 16f,
                                                                 12.5 / 16f, 12 / 16f),
                                                                 Shapes.box(6 / 16f, 8 / 16f, 12 / 16f, 10 / 16f,
                                                                                 12 / 16f, 16 / 16f))));
                 infos.put("post_lamp",
-                                new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 15),
+                                new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f),
                                                 Shapes.box(3 / 16f, 0, 3 / 16f, 13 / 16f, 13 / 16f, 13 / 16f)));
 
                 infos.put("post",
@@ -225,9 +226,20 @@ public class LightBlocksRegistry {
                                 BlockTypeInfo info = TYPE_INFOS.get(type);
                                 MapColor mapColor = COLOR_INFOS.get(color);
                                 String fullName = "light_" + color + "_" + type;
+                                boolean isLight = type.equals("light") || type.equals("post_lamp");
+
                                 DeferredBlock<RotatableHorizontalBlock> block = BLOCKS.register(fullName,
-                                                () -> new RotatableHorizontalBlock(info.properties.mapColor(mapColor),
-                                                                info.shape));
+                                                () -> isLight
+                                                                ? new RotatableHorizontalLightBlock(
+                                                                                info.properties.mapColor(mapColor)
+                                                                                                .lightLevel(state -> state
+                                                                                                                .getValue(RotatableHorizontalLightBlock.LIT)
+                                                                                                                                ? 15
+                                                                                                                                : 0),
+                                                                                info.shape)
+                                                                : new RotatableHorizontalBlock(
+                                                                                info.properties.mapColor(mapColor),
+                                                                                info.shape));
                                 ITEMS.register(fullName, () -> new BlockItem(block.get(), new Item.Properties()));
                                 REGISTERED_LIGHT_BLOCKS.add(block);
                         }

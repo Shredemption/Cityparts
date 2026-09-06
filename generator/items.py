@@ -34,6 +34,16 @@ def light(color, type):
     }
 
 
+def light_light(color, type, state):
+    return {
+        "parent": f"{MOD_ID}:block/template/light_{type}",
+        "textures": {
+            "0": f"{MOD_ID}:block/{color}_post",
+            "1": f"{MOD_ID}:block/lamp_{state}",
+        },
+    }
+
+
 def block_texture(name):
     return {"parent": "item/generated", "textures": {"layer0": f"{MOD_ID}:block/{name}"}}
 

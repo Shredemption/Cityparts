@@ -13,9 +13,12 @@ COLORS = [
 ]
 
 TYPES_BASE = [
-    "light",
     "post",
     "arm",
+]
+
+TYPES_LIGHTS = [
+    "light",
     "post_lamp",
 ]
 
@@ -65,6 +68,24 @@ for color in COLORS:
             os.path.join(BLOCKSTATE_DIR, f"{full_name}.json"): blockstates.light(color, type),
             os.path.join(BLOCK_MODEL_DIR, f"{full_name}.json"): models.light(color, type),
             os.path.join(ITEM_MODEL_DIR, f"{full_name}.json"): items.light(color, type),
+            os.path.join(LOOT_TABLE_DIR, f"{full_name}.json"): loottables.block_drops(full_name),
+            os.path.join(RECIPE_DIR, f"{full_name}.json"): recipes.one_from_tag_stonecutter(lights_tag, full_name),
+        }
+
+        for path, data in files.items():
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4)
+            print(f"✅ Created {path}")
+
+    for type in TYPES_LIGHTS:
+
+        full_name = f"light_{color}_{type}"
+
+        files = {
+            os.path.join(BLOCKSTATE_DIR, f"{full_name}.json"): blockstates.light_on_off(color, type),
+            os.path.join(BLOCK_MODEL_DIR, f"{full_name}_off.json"): models.light_light(color, type, "off"),
+            os.path.join(BLOCK_MODEL_DIR, f"{full_name}_on.json"): models.light_light(color, type, "on"),
+            os.path.join(ITEM_MODEL_DIR, f"{full_name}.json"): items.light_light(color, type, "on"),
             os.path.join(LOOT_TABLE_DIR, f"{full_name}.json"): loottables.block_drops(full_name),
             os.path.join(RECIPE_DIR, f"{full_name}.json"): recipes.one_from_tag_stonecutter(lights_tag, full_name),
         }
@@ -129,7 +150,7 @@ def create_tag(filename, values):
 
 lights_values = []
 
-for type in TYPES_BASE:
+for type in TYPES_BASE + TYPES_LIGHTS:
 
     tag_name = f"light_{type}s.json"
 

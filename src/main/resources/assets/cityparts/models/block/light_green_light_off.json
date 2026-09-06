@@ -2,6 +2,6 @@
     "parent": "cityparts:block/template/light_light",
     "textures": {
         "0": "cityparts:block/green_post",
-        "1": "cityparts:block/lamp_on"
+        "1": "cityparts:block/lamp_off"
     }
 }

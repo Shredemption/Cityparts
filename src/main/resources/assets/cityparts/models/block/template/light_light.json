@@ -2,7 +2,6 @@
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "cityparts:block/lamp",
 		"particle": "#0"
 	},
 	"elements": [

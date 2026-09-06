@@ -122,19 +122,29 @@ def light(color, type):
         "textures": {"0": f"{MOD_ID}:block/{color}_post"},
     }
 
+
+def light_light(color, type, state):
+    return {
+        "parent": f"{MOD_ID}:block/template/light_{type}",
+        "textures": {
+            "0": f"{MOD_ID}:block/{color}_post",
+            "1": f"{MOD_ID}:block/lamp_{state}",
+        },
+    }
+
+
 def light_half_post(color):
     return {
         "parent": f"{MOD_ID}:block/template/light_half_post",
         "textures": {"0": f"{MOD_ID}:block/{color}_post"},
     }
 
+
 def light_corner_part(color):
     return {
         "parent": f"{MOD_ID}:block/template/light_corner_part",
         "textures": {"0": f"{MOD_ID}:block/{color}_post"},
     }
-
-
 
 
 def road_block(name):
