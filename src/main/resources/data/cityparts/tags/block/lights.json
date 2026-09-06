@@ -1,10 +1,18 @@
 {
-  "values": [
-    "#cityparts:light_posts",
-    "#cityparts:light_arms",
-    "#cityparts:light_corners",
-    "#cityparts:light_t_corners",
-    "#cityparts:light_lights",
-    "#cityparts:light_l_corners"
-  ]
+    "values": [
+        "#cityparts:light_lights",
+        "#cityparts:light_posts",
+        "#cityparts:light_arms",
+        "#cityparts:light_post_lamps",
+        "#cityparts:light_corners",
+        "#cityparts:light_corner_posts",
+        "#cityparts:light_l_corners",
+        "#cityparts:light_l_corner_posts",
+        "#cityparts:light_t_corners",
+        "#cityparts:light_t_corner_posts",
+        "#cityparts:light_y_corners",
+        "#cityparts:light_y_corner_posts",
+        "#cityparts:light_x_corners",
+        "#cityparts:light_x_corner_posts"
+    ]
 }

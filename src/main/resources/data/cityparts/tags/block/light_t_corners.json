@@ -1,8 +1,8 @@
 {
-  "values": [
-    "cityparts:light_gray_t_corner",
-    "cityparts:light_white_t_corner",
-    "cityparts:light_black_t_corner",
-    "cityparts:light_green_t_corner"
-  ]
+    "values": [
+        "cityparts:light_gray_t_corner",
+        "cityparts:light_white_t_corner",
+        "cityparts:light_black_t_corner",
+        "cityparts:light_green_t_corner"
+    ]
 }

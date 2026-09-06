@@ -1,8 +1,8 @@
 {
-  "values": [
-    "cityparts:light_gray_light",
-    "cityparts:light_white_light",
-    "cityparts:light_black_light",
-    "cityparts:light_green_light"
-  ]
+    "values": [
+        "cityparts:light_gray_light",
+        "cityparts:light_white_light",
+        "cityparts:light_black_light",
+        "cityparts:light_green_light"
+    ]
 }
