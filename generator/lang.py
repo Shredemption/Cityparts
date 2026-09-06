@@ -30,6 +30,7 @@ COLOR_NAMES = {
 LIGHT_PART_NAMES = {
     "en": {
         "post": "Post",
+        "post_lamp": "Post Lamp",
         "arm": "Arm",
         "corner": "Corner",
         "corner_post": "Corner Post",
@@ -45,6 +46,7 @@ LIGHT_PART_NAMES = {
     },
     "nl": {
         "post": "Paal",
+        "post_lamp": "Paal Lamp",
         "arm": "Arm",
         "corner": "Hoek",
         "corner_post": "Hoek Paal",

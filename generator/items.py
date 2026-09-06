@@ -7,15 +7,15 @@ def block(name):
 
 def road_block(name):
     return {
-        "parent": "cityparts:item/template/roadlines_item",
-        "textures": {"marking": f"cityparts:block/{name}"},
+        "parent": f"{MOD_ID}:item/template/roadlines_item",
+        "textures": {"marking": f"{MOD_ID}:block/{name}"},
     }
 
 
 def road_slab(name):
     return {
-        "parent": "cityparts:item/template/roadlines_item_slab",
-        "textures": {"marking": f"cityparts:block/{name}"},
+        "parent": f"{MOD_ID}:item/template/roadlines_item_slab",
+        "textures": {"marking": f"{MOD_ID}:block/{name}"},
     }
 
 
@@ -28,7 +28,10 @@ def block_bottom(name):
 
 
 def light(color, type):
-    return {"parent": f"{MOD_ID}:block/light_{color}_{type}"}
+    return {
+        "parent": f"{MOD_ID}:block/template/light_{type}",
+        "textures": {"0": f"{MOD_ID}:block/{color}_post"},
+    }
 
 
 def block_texture(name):

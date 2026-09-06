@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/light_green_post_lamp"
+        },
+        "facing=south": {
+            "model": "cityparts:block/light_green_post_lamp",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/light_green_post_lamp",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/light_green_post_lamp",
+            "y": 90
+        }
+    }
+}
