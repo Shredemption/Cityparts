@@ -34,16 +34,22 @@ public class SignBlockRegistry {
                         "arrow_forward_left",
                         "arrow_left_right",
                         "arrow_forward_right",
+                        "5",
+                        "10",
+                        "15",
                         "30",
-                        "45",
                         "50",
                         "60",
+                        "70",
                         "80",
                         "90",
                         "100",
                         "120",
                         "130",
-                        "oncoming_yield");
+                        "end_speed",
+                        "oncoming_yield",
+                        "no_parking",
+                        "no_stopping");
 
         private static final List<String> squareSigns = List.of(
                         "arrow_left",

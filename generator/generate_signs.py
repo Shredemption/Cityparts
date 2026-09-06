@@ -19,16 +19,22 @@ ROUND = [
     "arrow_forward_left",
     "arrow_left_right",
     "arrow_forward_right",
+    "5",
+    "10",
+    "15",
     "30",
-    "45",
     "50",
     "60",
+    "70",
     "80",
     "90",
     "100",
     "120",
     "130",
+    "end_speed",
     "oncoming_yield",
+    "no_parking",
+    "no_stopping",
 ]
 
 SQUARE = [
@@ -59,9 +65,10 @@ BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
 ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
 LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
 RECIPE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/recipe")
+TAG_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/tags/block")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR, RECIPE_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR, RECIPE_DIR, TAG_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -123,5 +130,27 @@ for sign in TRIANGLE:
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)
         print(f"✅ Created {path}")
+
+signs = []
+
+for sign in ROUND:
+    signs.append(f"{MOD_ID}:sign_round_{sign}")
+
+for sign in SQUARE:
+    signs.append(f"{MOD_ID}:sign_square_{sign}")
+
+for sign in TRIANGLE:
+    signs.append(f"{MOD_ID}:sign_triangle_{sign}")
+
+
+signs_tag_data = {"values": signs}
+
+signs_tag_path = os.path.join(TAG_DIR, "signs.json")
+
+with open(signs_tag_path, "w", encoding="utf-8") as f:
+    json.dump(signs_tag_data, f, indent=4)
+    f.write("\n")
+
+print(f"✅ Created {signs_tag_path}")
 
 print("\n✨ All sign model + blockstate files generated successfully!")

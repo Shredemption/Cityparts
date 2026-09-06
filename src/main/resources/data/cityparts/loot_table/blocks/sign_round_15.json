@@ -11,11 +11,11 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "cityparts:sign_round_45"
+                    "name": "cityparts:sign_round_15"
                 }
             ],
             "rolls": 1.0
         }
     ],
-    "random_sequence": "cityparts:blocks/sign_round_45"
+    "random_sequence": "cityparts:blocks/sign_round_15"
 }
