@@ -33,9 +33,10 @@ BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
 ITEM_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/item")
 LOOT_TABLE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/loot_table/blocks")
 RECIPE_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/recipe")
+TAG_DIR = os.path.join(BASE_PATH, f"data/{MOD_ID}/tags/block")
 
 # === Ensure directories exist ===
-for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR, RECIPE_DIR]:
+for path in [BLOCKSTATE_DIR, BLOCK_MODEL_DIR, ITEM_MODEL_DIR, LOOT_TABLE_DIR, RECIPE_DIR, TAG_DIR]:
     os.makedirs(path, exist_ok=True)
 
 
@@ -112,5 +113,58 @@ for color in COLORS:
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4)
             print(f"✅ Created {path}")
+
+
+def create_tag(filename, values):
+    path = os.path.join(TAG_DIR, filename)
+
+    data = {"values": values}
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4)
+        f.write("\n")
+
+    print(f"✅ Created {path}")
+
+
+lights_values = []
+
+for type in TYPES_BASE:
+
+    tag_name = f"light_{type}s.json"
+
+    values = []
+
+    for color in COLORS:
+        values.append(f"{MOD_ID}:light_{color}_{type}")
+
+    create_tag(tag_name, values)
+
+    lights_values.append(f"#{MOD_ID}:light_{type}s")
+
+for shape in SHAPES:
+
+    tag_name = f"light_{shape}s.json"
+    tag_name_post = f"light_{shape}_posts.json"
+
+    values = []
+    values_post = []
+
+    for color in COLORS:
+        values.append(f"{MOD_ID}:light_{color}_{shape}")
+
+        values_post.append(f"{MOD_ID}:light_{color}_{shape}_post")
+
+    create_tag(tag_name, values)
+    create_tag(tag_name_post, values_post)
+
+    lights_values.append(f"#{MOD_ID}:light_{shape}s")
+    lights_values.append(f"#{MOD_ID}:light_{shape}_posts")
+
+create_tag(
+    "lights.json",
+    lights_values,
+)
+
 
 print("\n✨ All lights model + blockstate files generated successfully!")
