@@ -1,3 +1,6 @@
 {
-    "parent": "cityparts:block/light_green_post"
+    "parent": "cityparts:block/template/light_t_corner_post",
+    "textures": {
+        "0": "cityparts:block/green_post"
+    }
 }

@@ -41,6 +41,7 @@ public class LightBlocksRegistry {
 
         private static final List<String> TYPE_ORDER = List.of(
                         "light",
+                        "post_lamp",
                         "post",
                         "arm",
                         "corner",
@@ -163,10 +164,13 @@ public class LightBlocksRegistry {
 
                 infos.put("light",
                                 new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 15),
-                                                Shapes.or(Shapes.box(5.5 / 16f, 7.5 / 16f, 2 / 16f, 10.5 / 16f,
-                                                                12.5 / 16f, 10 / 16f),
-                                                                Shapes.box(6 / 16f, 8 / 16f, 9 / 16f, 10 / 16f,
+                                                Shapes.or(Shapes.box(5.5 / 16f, 7 / 16f, 2.5 / 16f, 10.5 / 16f,
+                                                                12.5 / 16f, 12 / 16f),
+                                                                Shapes.box(6 / 16f, 8 / 16f, 12 / 16f, 10 / 16f,
                                                                                 12 / 16f, 16 / 16f))));
+                infos.put("post_lamp",
+                                new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 15),
+                                                Shapes.box(3 / 16f, 0, 3 / 16f, 13 / 16f, 13 / 16f, 13 / 16f)));
 
                 infos.put("post",
                                 new BlockTypeInfo(BlockBehaviour.Properties.of().strength(2.0f), POST_SHAPE));

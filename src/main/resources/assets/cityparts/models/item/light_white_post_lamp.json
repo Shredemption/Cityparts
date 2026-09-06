@@ -1,0 +1,6 @@
+{
+    "parent": "cityparts:block/template/light_post_lamp",
+    "textures": {
+        "0": "cityparts:block/white_post"
+    }
+}

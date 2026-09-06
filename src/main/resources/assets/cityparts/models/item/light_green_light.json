@@ -1,3 +1,6 @@
 {
-    "parent": "cityparts:block/light_green_light"
+    "parent": "cityparts:block/template/light_light",
+    "textures": {
+        "0": "cityparts:block/green_post"
+    }
 }

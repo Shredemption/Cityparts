@@ -16,6 +16,7 @@ TYPES_BASE = [
     "light",
     "post",
     "arm",
+    "post_lamp",
 ]
 
 SHAPES = {
@@ -84,7 +85,7 @@ for color in COLORS:
                 "half_post",
                 directions,
             ),
-            os.path.join(ITEM_MODEL_DIR, f"{full_name}.json"): items.light(color, "arm"),
+            os.path.join(ITEM_MODEL_DIR, f"{full_name}.json"): items.light(color, shape),
             os.path.join(LOOT_TABLE_DIR, f"{full_name}.json"): loottables.block_drops(full_name),
             os.path.join(RECIPE_DIR, f"{full_name}.json"): recipes.one_from_tag_stonecutter(lights_tag, full_name),
         }
@@ -99,7 +100,7 @@ for color in COLORS:
                     "post",
                     directions,
                 ),
-                os.path.join(ITEM_MODEL_DIR, f"{full_name_post}.json"): items.light(color, "post"),
+                os.path.join(ITEM_MODEL_DIR, f"{full_name_post}.json"): items.light(color, shape + "_post"),
                 os.path.join(LOOT_TABLE_DIR, f"{full_name_post}.json"): loottables.block_drops(full_name_post),
                 os.path.join(RECIPE_DIR, f"{full_name_post}.json"): recipes.one_from_tag_stonecutter(
                     lights_tag, full_name_post
