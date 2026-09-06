@@ -1,8 +1,8 @@
 {
     "values": [
-        "#cityparts:light_lights",
         "#cityparts:light_posts",
         "#cityparts:light_arms",
+        "#cityparts:light_lights",
         "#cityparts:light_post_lamps",
         "#cityparts:light_corners",
         "#cityparts:light_corner_posts",

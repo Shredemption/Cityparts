@@ -346,6 +346,29 @@ def light(color, type):
     }
 
 
+def light_on_off(color, type):
+    full_name = f"light_{color}_{type}"
+
+    variants = {}
+
+    rotations = {"north": 0, "east": 90, "south": 180, "west": 270}
+
+    for facing, rotation in rotations.items():
+
+        for lit, state in [(False, "off"), (True, "on")]:
+
+            key = f"facing={facing},lit={str(lit).lower()}"
+            model = f"{MOD_ID}:block/{full_name}_{state}"
+            variant = {
+                "model": model,
+            }
+            if rotation != 0:
+                variant["y"] = rotation
+            variants[key] = variant
+
+    return {"variants": variants}
+
+
 FACING_ROTATIONS = {
     "north": 0,
     "east": 90,
