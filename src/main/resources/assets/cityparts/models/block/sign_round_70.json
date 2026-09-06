@@ -1,0 +1,6 @@
+{
+    "parent": "cityparts:block/template/sign_round",
+    "textures": {
+        "sign": "cityparts:block/sign_round_70"
+    }
+}
