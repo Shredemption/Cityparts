@@ -52,12 +52,10 @@ public class SignBlockRegistry {
                         "no_stopping");
 
         private static final List<String> squareSigns = List.of(
-                        "arrow_left",
-                        "arrow_forward",
-                        "arrow_right",
-                        "arrow_forward_left",
-                        "arrow_left_right",
-                        "arrow_forward_right",
+                        "oneway_left",
+                        "oneway_straight",
+                        "oneway_right",
+                        "two_way",
                         "oncoming_priority",
                         "parking");
 

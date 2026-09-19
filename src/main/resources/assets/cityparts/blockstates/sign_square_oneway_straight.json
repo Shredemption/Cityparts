@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/sign_square_oneway_straight"
+        },
+        "facing=south": {
+            "model": "cityparts:block/sign_square_oneway_straight",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/sign_square_oneway_straight",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/sign_square_oneway_straight",
+            "y": 90
+        }
+    }
+}

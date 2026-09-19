@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "cityparts:block/sign_square_two_way"
+        },
+        "facing=south": {
+            "model": "cityparts:block/sign_square_two_way",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "cityparts:block/sign_square_two_way",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "cityparts:block/sign_square_two_way",
+            "y": 90
+        }
+    }
+}

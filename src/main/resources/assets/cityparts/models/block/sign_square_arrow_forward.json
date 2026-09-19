@@ -1,6 +1,0 @@
-{
-    "parent": "cityparts:block/template/sign_square",
-    "textures": {
-        "sign": "cityparts:block/sign_square_arrow_forward"
-    }
-}
