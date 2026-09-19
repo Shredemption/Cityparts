@@ -59,7 +59,10 @@ public class RotatableHorizontalLightBlock extends RotatableHorizontalBlock {
 
         int skyLight = level.getBrightness(LightLayer.SKY, pos);
 
-        boolean shouldBeLit = skyLight < SKY_LIGHT_THRESHOLD;
+        boolean isNight = !level.isDay();
+
+        boolean shouldBeLit = skyLight < SKY_LIGHT_THRESHOLD || isNight;
+
         boolean isLit = state.getValue(LIT);
 
         if (shouldBeLit != isLit) {
