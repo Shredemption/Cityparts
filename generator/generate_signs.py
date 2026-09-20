@@ -11,8 +11,11 @@ ROUND = [
     "no_entry",
     "roundabout",
     "left_pass",
+    "left_up_pass",
     "left_right_pass",
     "right_pass",
+    "right_up_pass",
+    "turnaround",
     "arrow_left",
     "arrow_forward",
     "arrow_right",
@@ -35,6 +38,16 @@ ROUND = [
     "oncoming_yield",
     "no_parking",
     "no_stopping",
+    "no_cars",
+    "no_trucks",
+    "no_busses",
+    "no_campers",
+    "no_tracktors",
+    "no_trailers",
+    "no_motorbikes",
+    "no_mopeds",
+    "no_bikes",
+    "no_pedestrians",
 ]
 
 SQUARE = [
