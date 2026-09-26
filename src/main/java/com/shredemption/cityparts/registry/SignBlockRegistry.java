@@ -93,6 +93,12 @@ public class SignBlockRegistry {
                         "sharp_left",
                         "sharp_right");
 
+        private static final List<String> otherSigns = List.of(
+                        "priority",
+                        "priority_end",
+                        "sharktooth",
+                        "stop");
+
         public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CityParts.MOD_ID);
         public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CityParts.MOD_ID);
         public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister
@@ -148,24 +154,12 @@ public class SignBlockRegistry {
                         REGISTERED_TRIANGLE_SIGNS.add(fullBlock);
                 }
 
-                DeferredBlock<TrafficSignBlock> signPriority = BLOCKS.register("sign_priority",
-                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
-                ITEMS.register("sign_priority", () -> new BlockItem(signPriority.get(), new Item.Properties()));
-                REGISTERED_OTHER_SIGNS.add(signPriority);
-
-                DeferredBlock<TrafficSignBlock> signPriorityEnd = BLOCKS.register("sign_priority_end",
-                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
-                ITEMS.register("sign_priority_end", () -> new BlockItem(signPriorityEnd.get(), new Item.Properties()));
-                REGISTERED_OTHER_SIGNS.add(signPriorityEnd);
-
-                DeferredBlock<TrafficSignBlock> signSharktooth = BLOCKS.register("sign_sharktooth",
-                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
-                ITEMS.register("sign_sharktooth", () -> new BlockItem(signSharktooth.get(), new Item.Properties()));
-                REGISTERED_OTHER_SIGNS.add(signSharktooth);
-
-                DeferredBlock<TrafficSignBlock> signStop = BLOCKS.register("sign_stop",
-                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
-                ITEMS.register("sign_stop", () -> new BlockItem(signStop.get(), new Item.Properties()));
-                REGISTERED_OTHER_SIGNS.add(signStop);
+                for (String type : otherSigns) {
+                        String fullName = "sign_" + type;
+                        DeferredBlock<TrafficSignBlock> fullBlock = BLOCKS.register(fullName,
+                                        () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
+                        ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
+                        REGISTERED_OTHER_SIGNS.add(fullBlock);
+                }
         }
 }

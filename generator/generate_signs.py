@@ -81,6 +81,13 @@ TRIANGLE = [
     "sharp_right",
 ]
 
+OTHERS = [
+    "priority",
+    "priority_end",
+    "sharktooth",
+    "stop",
+]
+
 BASE_PATH = r"./src/main/resources/"
 BLOCKSTATE_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/blockstates")
 BLOCK_MODEL_DIR = os.path.join(BASE_PATH, f"assets/{MOD_ID}/models/block")
@@ -156,6 +163,24 @@ for sign in TRIANGLE:
             json.dump(data, f, indent=4)
         print(f"✅ Created {path}")
 
+for sign in OTHERS:
+    sign_name = f"sign_{sign}"
+
+    files = {
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.sign_block(sign_name),
+        os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block(sign_name),
+        os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
+        os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),
+        os.path.join(RECIPE_DIR, f"{sign_name}_from_sign.json"): recipes.one_from_tag_stonecutter(
+            signs_tag, sign_name
+        ),
+    }
+
+    for path, data in files.items():
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
+        print(f"✅ Created {path}")
+
 signs = []
 
 for sign in ROUND:
@@ -166,6 +191,9 @@ for sign in SQUARE:
 
 for sign in TRIANGLE:
     signs.append(f"{MOD_ID}:sign_triangle_{sign}")
+
+for sign in OTHERS:
+    signs.append(f"{MOD_ID}:sign_{sign}")
 
 
 signs_tag_data = {"values": signs}

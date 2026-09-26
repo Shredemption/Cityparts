@@ -65,6 +65,10 @@
         "cityparts:sign_triangle_crossing_left_right",
         "cityparts:sign_triangle_crossing_right",
         "cityparts:sign_triangle_sharp_left",
-        "cityparts:sign_triangle_sharp_right"
+        "cityparts:sign_triangle_sharp_right",
+        "cityparts:sign_priority",
+        "cityparts:sign_priority_end",
+        "cityparts:sign_sharktooth",
+        "cityparts:sign_stop"
     ]
 }
