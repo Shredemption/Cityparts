@@ -57,6 +57,12 @@ SQUARE = [
     "two_way",
     "oncoming_priority",
     "parking",
+    "priority_left_cross",
+    "priority_left_right",
+    "priority_left_straight",
+    "priority_right_cross",
+    "priority_right_left",
+    "priority_right_straight",
 ]
 
 TRIANGLE = [

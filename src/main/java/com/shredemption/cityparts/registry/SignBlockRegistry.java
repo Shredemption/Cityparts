@@ -70,7 +70,13 @@ public class SignBlockRegistry {
                         "oneway_right",
                         "two_way",
                         "oncoming_priority",
-                        "parking");
+                        "parking",
+                        "priority_left_cross",
+                        "priority_left_right",
+                        "priority_left_straight",
+                        "priority_right_cross",
+                        "priority_right_left",
+                        "priority_right_straight");
 
         private static final List<String> triangleSigns = List.of(
                         "warning",
@@ -90,6 +96,7 @@ public class SignBlockRegistry {
         private static final List<DeferredBlock<? extends Block>> REGISTERED_ROUND_SIGNS = new ArrayList<>();
         private static final List<DeferredBlock<? extends Block>> REGISTERED_SQUARE_SIGNS = new ArrayList<>();
         private static final List<DeferredBlock<? extends Block>> REGISTERED_TRIANGLE_SIGNS = new ArrayList<>();
+        private static final List<DeferredBlock<? extends Block>> REGISTERED_OTHER_SIGNS = new ArrayList<>();
 
         public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SIGNS_TAB = CREATIVE_TABS
                         .register("cityparts_sign_blocks", () -> CreativeModeTab.builder()
@@ -103,6 +110,7 @@ public class SignBlockRegistry {
                                                 REGISTERED_ROUND_SIGNS.forEach(b -> output.accept(b.get().asItem()));
                                                 REGISTERED_SQUARE_SIGNS.forEach(b -> output.accept(b.get().asItem()));
                                                 REGISTERED_TRIANGLE_SIGNS.forEach(b -> output.accept(b.get().asItem()));
+                                                REGISTERED_OTHER_SIGNS.forEach(b -> output.accept(b.get().asItem()));
                                         })
                                         .build());
 
@@ -134,5 +142,25 @@ public class SignBlockRegistry {
                         ITEMS.register(fullName, () -> new BlockItem(fullBlock.get(), new Item.Properties()));
                         REGISTERED_TRIANGLE_SIGNS.add(fullBlock);
                 }
+
+                DeferredBlock<TrafficSignBlock> signPriority = BLOCKS.register("sign_priority",
+                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
+                ITEMS.register("sign_priority", () -> new BlockItem(signPriority.get(), new Item.Properties()));
+                REGISTERED_OTHER_SIGNS.add(signPriority);
+
+                DeferredBlock<TrafficSignBlock> signPriorityEnd = BLOCKS.register("sign_priority_end",
+                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
+                ITEMS.register("sign_priority_end", () -> new BlockItem(signPriorityEnd.get(), new Item.Properties()));
+                REGISTERED_OTHER_SIGNS.add(signPriorityEnd);
+
+                DeferredBlock<TrafficSignBlock> signSharktooth = BLOCKS.register("sign_sharktooth",
+                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
+                ITEMS.register("sign_sharktooth", () -> new BlockItem(signSharktooth.get(), new Item.Properties()));
+                REGISTERED_OTHER_SIGNS.add(signSharktooth);
+
+                DeferredBlock<TrafficSignBlock> signStop = BLOCKS.register("sign_stop",
+                                () -> new TrafficSignBlock(BlockBehaviour.Properties.of().strength(2.0f)));
+                ITEMS.register("sign_stop", () -> new BlockItem(signStop.get(), new Item.Properties()));
+                REGISTERED_OTHER_SIGNS.add(signStop);
         }
 }
