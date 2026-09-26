@@ -53,6 +53,7 @@
         "cityparts:sign_square_priority_right_cross",
         "cityparts:sign_square_priority_right_left",
         "cityparts:sign_square_priority_right_straight",
+        "cityparts:sign_square_dead_end",
         "cityparts:sign_triangle_warning",
         "cityparts:sign_triangle_danger",
         "cityparts:sign_triangle_danger_cross",

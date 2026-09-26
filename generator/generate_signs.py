@@ -63,6 +63,7 @@ SQUARE = [
     "priority_right_cross",
     "priority_right_left",
     "priority_right_straight",
+    "dead_end",
 ]
 
 TRIANGLE = [

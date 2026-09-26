@@ -76,7 +76,8 @@ public class SignBlockRegistry {
                         "priority_left_straight",
                         "priority_right_cross",
                         "priority_right_left",
-                        "priority_right_straight");
+                        "priority_right_straight",
+                        "dead_end");
 
         private static final List<String> triangleSigns = List.of(
                         "warning",
