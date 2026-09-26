@@ -62,7 +62,10 @@ public class SignBlockRegistry {
                         "no_motorbikes",
                         "no_mopeds",
                         "no_bikes",
-                        "no_pedestrians");
+                        "no_pedestrians",
+                        "bus_road",
+                        "bike_road",
+                        "pedestrian_road");
 
         private static final List<String> squareSigns = List.of(
                         "oneway_left",
@@ -77,7 +80,8 @@ public class SignBlockRegistry {
                         "priority_right_cross",
                         "priority_right_left",
                         "priority_right_straight",
-                        "dead_end");
+                        "dead_end",
+                        "car_road");
 
         private static final List<String> triangleSigns = List.of(
                         "warning",

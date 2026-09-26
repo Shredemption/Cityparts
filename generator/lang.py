@@ -106,6 +106,9 @@ SIGN_NAMES = {
             "no_mopeds": "Forbidden for Mopeds Sign",
             "no_bikes": "Forbidden for Bikes Sign",
             "no_pedestrians": "Forbidden for Pedestrian Sign",
+            "bus_road": "Bus Road Sign",
+            "bike_road": "Bike Road Sign",
+            "pedestrian_road": "Pedestrian Road Sign",
         },
         "square": {
             "oneway_left": "One Way Left Sign",
@@ -121,6 +124,7 @@ SIGN_NAMES = {
             "priority_right_left": "Priority Right Over Left Sign",
             "priority_right_straight": "Priority Right Over Straight Sign",
             "dead_end": "Dead End Sign",
+            "car_road": "Car Road Sign",
         },
         "triangle": {
             "warning": "Generic Warning Sign",
@@ -176,6 +180,9 @@ SIGN_NAMES = {
             "no_mopeds": "Verboden voor brommers bord",
             "no_bikes": "Verboden voor fietsen bord",
             "no_pedestrians": "Verboden voor voetgangers bord",
+            "bus_road": "Bus weg bord",
+            "bike_road": "Fiestpad bord",
+            "pedestrian_road": "Voetgangersweg bord",
         },
         "square": {
             "oneway_left": "Eenrightingsweg links bord",
@@ -191,6 +198,7 @@ SIGN_NAMES = {
             "priority_right_left": "Voorrang rechts over links bord",
             "priority_right_straight": "Voorrang rechts over rechtdoor bord",
             "dead_end": "Doodlopend einde bord",
+            "car_road": "Autoweg bord",
         },
         "triangle": {
             "warning": "Waarschuwingsbord",

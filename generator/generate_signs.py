@@ -48,6 +48,9 @@ ROUND = [
     "no_mopeds",
     "no_bikes",
     "no_pedestrians",
+    "bus_road",
+    "bike_road",
+    "pedestrian_road",
 ]
 
 SQUARE = [
@@ -64,6 +67,7 @@ SQUARE = [
     "priority_right_left",
     "priority_right_straight",
     "dead_end",
+    "car_road",
 ]
 
 TRIANGLE = [
