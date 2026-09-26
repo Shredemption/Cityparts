@@ -115,6 +115,16 @@ public class RoadFurnitureRegistry {
                 ITEMS.register(stripedPostName, () -> new BlockItem(stripedPostBlock.get(), new Item.Properties()));
                 REGISTERED_BLOCKS.add(stripedPostBlock);
 
+                String reflectivePostName = "reflective_post";
+                DeferredBlock<ShapedBlock> reflectivePostBlock = BLOCKS.register(reflectivePostName,
+                                () -> new ShapedBlock(
+                                                BlockBehaviour.Properties.of().strength(0.0f)
+                                                                .mapColor(MapColor.COLOR_BLUE),
+                                                Shapes.box(5.5 / 16f, 0 / 16f, 5.5 / 16f, 10.5 / 16f, 16 / 16f,
+                                                                10.5 / 16f)));
+                ITEMS.register(reflectivePostName, () -> new BlockItem(reflectivePostBlock.get(), new Item.Properties()));
+                REGISTERED_BLOCKS.add(reflectivePostBlock);
+
                 String reflectorPostName = "reflector_post";
                 DeferredBlock<RotatableHorizontalBlock> reflectorPostBlock = BLOCKS.register(reflectorPostName,
                                 () -> new RotatableHorizontalBlock(
