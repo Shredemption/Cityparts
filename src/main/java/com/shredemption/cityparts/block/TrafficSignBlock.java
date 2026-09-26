@@ -81,12 +81,9 @@ public class TrafficSignBlock extends AttachableHorizontalBlock {
             BlockPos pos) {
 
         if (state.getValue(FACE) == AttachFace.FLOOR) {
-            // Floor-mounted sign needs a solid block underneath.
-            return world.getBlockState(pos.below())
-                    .isFaceSturdy(world, pos.below(), Direction.UP);
+            return !world.getBlockState(pos.below()).getCollisionShape(world, pos.below()).isEmpty();
         }
 
-        // Wall-mounted sign needs support behind it.
         Direction facing = state.getValue(FACING);
         BlockPos supportPos = pos.relative(facing.getOpposite());
 
