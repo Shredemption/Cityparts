@@ -89,8 +89,9 @@ for sign in ROUND:
     signs_tag = "signs"
 
     files = {
-        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_round(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.sign_block(sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.template("sign_round", sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}_floor.json"): models.template("sign_round_floor", sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block(sign_name),
         os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),
@@ -108,8 +109,9 @@ for sign in SQUARE:
     sign_name = f"sign_square_{sign}"
 
     files = {
-        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_square(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.sign_block(sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.template("sign_square", sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}_floor.json"): models.template("sign_square_floor", sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block(sign_name),
         os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),
@@ -127,8 +129,9 @@ for sign in TRIANGLE:
     sign_name = f"sign_triangle_{sign}"
 
     files = {
-        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.horizontalRotating(sign_name),
-        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.sign_triangle(sign_name),
+        os.path.join(BLOCKSTATE_DIR, f"{sign_name}.json"): blockstates.sign_block(sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}.json"): models.template("sign_triangle", sign_name),
+        os.path.join(BLOCK_MODEL_DIR, f"{sign_name}_floor.json"): models.template("sign_triangle_floor", sign_name),
         os.path.join(ITEM_MODEL_DIR, f"{sign_name}.json"): items.block(sign_name),
         os.path.join(LOOT_TABLE_DIR, f"{sign_name}.json"): loottables.block_drops(sign_name),
         os.path.join(RECIPE_DIR, f"{sign_name}.json"): recipes.traffic_sign(sign_name),

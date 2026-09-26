@@ -161,23 +161,9 @@ def road_slab(name):
     }
 
 
-def sign_round(name):
+def template(parent, name):
     return {
-        "parent": f"{MOD_ID}:block/template/sign_round",
-        "textures": {"sign": f"{MOD_ID}:block/{name}"},
-    }
-
-
-def sign_square(name):
-    return {
-        "parent": f"{MOD_ID}:block/template/sign_square",
-        "textures": {"sign": f"{MOD_ID}:block/{name}"},
-    }
-
-
-def sign_triangle(name):
-    return {
-        "parent": f"{MOD_ID}:block/template/sign_triangle",
+        "parent": f"{MOD_ID}:block/template/{parent}",
         "textures": {"sign": f"{MOD_ID}:block/{name}"},
     }
 

@@ -311,6 +311,34 @@ def horizontalRotating(name):
     }
 
 
+def sign_block(name):
+
+    variants = {}
+
+    rotations = {
+        "north": 0,
+        "south": 180,
+        "west": 270,
+        "east": 90,
+    }
+
+    for face in ["wall", "floor", "ceiling"]:
+        model = f"{MOD_ID}:block/{name}"
+
+        if face in ["floor", "ceiling"]:
+            model += "_floor"
+
+        for facing, rotation in rotations.items():
+            variant = {"model": model}
+
+            if rotation != 0:
+                variant["y"] = rotation
+
+            variants[f"face={face},facing={facing}"] = variant
+
+    return {"variants": variants}
+
+
 def road_block(name):
     return {
         "multipart": [

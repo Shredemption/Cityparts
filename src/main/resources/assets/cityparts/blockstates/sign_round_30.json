@@ -1,18 +1,48 @@
 {
     "variants": {
-        "facing=north": {
+        "face=wall,facing=north": {
             "model": "cityparts:block/sign_round_30"
         },
-        "facing=south": {
+        "face=wall,facing=south": {
             "model": "cityparts:block/sign_round_30",
             "y": 180
         },
-        "facing=west": {
+        "face=wall,facing=west": {
             "model": "cityparts:block/sign_round_30",
             "y": 270
         },
-        "facing=east": {
+        "face=wall,facing=east": {
             "model": "cityparts:block/sign_round_30",
+            "y": 90
+        },
+        "face=floor,facing=north": {
+            "model": "cityparts:block/sign_round_30_floor"
+        },
+        "face=floor,facing=south": {
+            "model": "cityparts:block/sign_round_30_floor",
+            "y": 180
+        },
+        "face=floor,facing=west": {
+            "model": "cityparts:block/sign_round_30_floor",
+            "y": 270
+        },
+        "face=floor,facing=east": {
+            "model": "cityparts:block/sign_round_30_floor",
+            "y": 90
+        },
+        "face=ceiling,facing=north": {
+            "model": "cityparts:block/sign_round_30_floor"
+        },
+        "face=ceiling,facing=south": {
+            "model": "cityparts:block/sign_round_30_floor",
+            "y": 180
+        },
+        "face=ceiling,facing=west": {
+            "model": "cityparts:block/sign_round_30_floor",
+            "y": 270
+        },
+        "face=ceiling,facing=east": {
+            "model": "cityparts:block/sign_round_30_floor",
             "y": 90
         }
     }
